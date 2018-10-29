@@ -1,0 +1,183 @@
+---
+title: "Introduction"
+date: 2018-10-29T13:31:38+11:00
+draft: false
+weight: 1
+pre: "<b>1. </b>"
+---
+
+Geometric Algebra is a line of Mathematics which treats vectors as first-class
+citizens, rather than as a concept represented by arrows on a coordinate
+systems or tuples of numbers like $$\begin{pmatrix}3 \\ 4\end{pmatrix}$$.
+
+For a flat Euclidean space, Geometric Algebra can be derived from a single rule that
+the square of the magnitude of any vector $$\mathbf{a}$$ is equal to the
+square of the vector itself:
+
+$$ |\mathbf{a}|^2 = \mathbf{a}^2  $$
+
+This is similar to the more familiar [dot-product](https://en.wikipedia.org/wiki/Dot_product#Geometric_definition) of a vector with itself
+defining the Euclidean magnitude-squared of a vector, but as we will see, much more powerful.
+
+## Normal basis vectors
+
+Starting with a single dimension, we define a normal basis vector
+$$\mathbf{x}$$ (bold will indicate a vector) as a vector with a magnitude
+of one:
+
+$$ \mathbf{x}^2 = 1$$
+
+Any other vector $$\mathbf{a}$$ within this single dimension can be represented as some multiple
+of $$\mathbf{x}$$, such as $$5\mathbf{x}$$ or
+$$-3.141579\mathbf{x}$$ or, more generally,
+
+$$\mathbf{a} = x\mathbf{x}$$
+
+Evaluating the magnitude-squared of $$\mathbf{a}$$ results in:
+
+$$
+\mathbf{a}^2 = (x\mathbf{x})^2 = x\mathbf{x}x\mathbf{x} = x^2\mathbf{x}^2 = x^2
+$$
+
+as we would expect.
+
+## Orthogonal basis vectors
+To describe vectors in two dimensions We need to add a second basis vector $$y$$ with the similar property of unit-magnitude,
+so when multiplied by itself,
+
+$$ \mathbf{y}^2 = 1 $$
+
+We also need to ensure that this second vector $$\mathbf{y}$$ is orthogonal
+to $$\mathbf{x}$$, though we don't yet know how to represent this orthogonality.
+Nonetheless, by defining a general two-dimensional vector $$\mathbf{a}$$ as
+
+$$ \mathbf{a} = x\mathbf{x} + y\mathbf{y} $$
+
+we can derive orthogonality by using the rule that the magnitude-squared of any vector is equal to the vector squared,
+to evaluate that:
+
+$$
+\begin{aligned}
+\mathbf{a}^2
+&= (x\mathbf{x} + y\mathbf{y})(x\mathbf{x} + y\mathbf{y}) \\
+&= x\mathbf{x}x\mathbf{x} + x\mathbf{x}y\mathbf{y} + y\mathbf{y}x\mathbf{x} + y\mathbf{y}y\mathbf{y} \\
+&= x^2 + y^2 + xy(\mathbf{xy} + \mathbf{yx})
+\end{aligned}
+$$
+
+So we see that the square of the magnitude of the vector $$\mathbf{a}$$  - a scalar number - will
+only equal the square of the vector if
+
+$$ \mathbf{xy} = -\mathbf{yx} $$
+
+This then is the definition of orthogonal vectors - they are anti-commutative.
+
+With this definition of orthogonality, we have
+
+$$ \mathbf{a}^2 = x^2 + y^2 $$
+
+which is exactly what we are used to - Pythagoras' theorem.
+
+## Adding two vectors
+
+The algebraic addition of two arbitrary two-dimensional vectors is straight
+forward,
+
+$$
+\begin{aligned}
+\mathbf{a} + \mathbf{b}
+&= (a_x\mathbf{x} + a_y\mathbf{y}) + (b_x\mathbf{x} + b_y\mathbf{y}) \\
+&= (a_x + b_x)\mathbf{x} + (a_y + b_y)\mathbf{y} \\
+&= \mathbf{b} + \mathbf{a}
+\end{aligned}
+$$
+
+The order in which the vectors are added is not relevant which means that
+vectors are associative under addition (and subtraction), as $$\mathbf{a} +
+\mathbf{b} = \mathbf{b} + \mathbf{a}$$.
+
+{{% notice note %}}
+**Activity**: See if you can calculated the magnitude-squared of $$\mathbf{a} + \mathbf{b}$$
+
+{{% expand "Solution" %}}
+Currently we can only evaluate this as:
+
+$$
+\begin{aligned}
+(\mathbf{a} + \mathbf{b})^2
+&= (\mathbf{a} + \mathbf{b})(\mathbf{a} + \mathbf{b}) \\
+&= \mathbf{a}^2 + \mathbf{ab} + \mathbf{ba} + \mathbf{b}^2
+\end{aligned}
+$$
+
+but after the following section on multiplying two vectors, we will be able to
+see that this is in fact the [law of
+cosines](https://en.wikipedia.org/wiki/Law_of_cosines).
+{{% /expand %}}
+
+{{% /notice %}}
+
+## Multiplying two vectors
+The geometric product of two vectors may be a little less familiar:
+
+$$
+\begin{aligned}
+\mathbf{a} \mathbf{b}
+&= (a_x\mathbf{x} + a_y\mathbf{y})(b_x\mathbf{x} + b_y\mathbf{y}) \\
+&= a_x\mathbf{x}b_x\mathbf{x} + a_x\mathbf{x}b_y\mathbf{y} + a_y\mathbf{y}b_x\mathbf{x} + a_y\mathbf{y}b_y\mathbf{y} \\
+&= a_x b_x + a_y b_y + a_x b_y \mathbf{xy} + a_y b_x \mathbf{yx} \\
+&= a_x b_x + a_y b_y + \mathbf{xy}(a_x b_y - a_y b_x) \\
+\mathbf{ba} &= a_x b_x + a_y b_y - \mathbf{xy}(a_x b_y - a_y b_x)
+\end{aligned}
+$$
+
+The vector product is not commutative, as $$\mathbf{ab} \neq \mathbf{ba}$$
+nor is it anti-commutative, as $$\mathbf{ab} \neq -\mathbf{ba}$$.
+If you are familiar with the traditional vector dot and cross products,
+you may recognise $$\mathbf{ab}$$ as some combination of both, but what is
+relevant is that it is a combination of a scalar (a pure number)
+and a pseudo-scalar (the $$\mathbf{xy}$$ term, which is not scalar, nor is
+it a vector).
+
+Of particular interest is that the pseudo-scalar $$\mathbf{xy}$$ has the
+property that:
+
+$$ (\mathbf{xy})^2 = \mathbf{xyxy} = -\mathbf{xyyx} = -1 $$
+
+## Rotating vectors in two-dimensions
+
+It is worth noting briefly that the product of two vectors, $$\mathbf{ab}$$
+appears to define a scale and rotation. We will look at this in more
+detail later, but we can already see that if $$\mathbf{a}$$ and $$\mathbf{b}$$
+are perpendicular and have a magnitude of 1:
+
+$$
+\begin{aligned}
+\mathbf{a} &= \mathbf{x} \\
+\mathbf{b} &= \mathbf{y}
+\end{aligned}
+$$
+
+so that
+
+$$ \mathbf{ab} = \mathbf{xy}$$
+
+then this product will rotate any other vector $$\mathbf{c}$$:
+
+$$ \mathbf{c} = c_x\mathbf{x} + c_y\mathbf{y} $$
+
+by a right-angle each time it is applied:
+
+$$
+\begin{aligned}
+\mathbf{abc} &= \mathbf{xy}(c_x\mathbf{x} + c_y\mathbf{y}) \\
+&= c_y\mathbf{x} - c_x\mathbf{y} \\
+\mathbf{ababc} &= -c_x\mathbf{x} - c_y\mathbf{y} = -\mathbf{c} \\
+\mathbf{abababc} &= -c_y\mathbf{x} + c_x\mathbf{y} \\
+\mathbf{ababababc} &= \mathbf{c}
+\end{aligned}
+$$
+
+But we will first need to understand Euler's formula to
+appreciate this rotation in its general form.
+
