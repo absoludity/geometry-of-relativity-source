@@ -6,4 +6,21 @@ weight: 1
 ---
 # The Geometry of Relativity
 
-TODO: Add content. See [intro](intro/)
+Both [relativity](https://en.wikipedia.org/wiki/Special_relativity) and
+[quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics) are often
+hard to grasp for our minds because they describe physical situations beyond
+the extremes of our every-day experience.
+
+The mathematical tools that we use to describe Special Relativity can be
+marvelously helpful, but may also unintentionally hide from view a geometric
+understanding of the Lorentz transformation.
+
+[Geometric Algebra](https://en.wikipedia.org/wiki/Geometric_algebra) is a
+relatively recent branch of Mathematics which appears to simplify physical
+processes involving vectors. This site is my attempt to communicate the beauty
+of geometric algebra as simply as possible while having fun investigating a
+derivation of the Lorentz transformation as a geometric rotation in
+space-time as well as looking at the implications of that geometry.
+
+{{% children description="true" depth="1" %}}
+

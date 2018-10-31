@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Tags :: Geometry of Relativity</title>
+    <title>Euler&#39;s Formula and Geometric Algebra :: Geometry of Relativity</title>
 
     
     <link href="/css/nucleus.css?1540947150" rel="stylesheet">
@@ -43,7 +43,7 @@
 
 
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/rotations-in-space/eulers-formula-and-geometric-algebra/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -108,7 +108,7 @@
   
     
     <li data-nav-id="/rotations-in-space/" title="Rotations in Space" class="dd-item 
-        
+        parent
         
         
         ">
@@ -163,8 +163,8 @@
   
     
     <li data-nav-id="/rotations-in-space/eulers-formula-and-geometric-algebra/" title="Euler&#39;s Formula and Geometric Algebra" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/rotations-in-space/eulers-formula-and-geometric-algebra/">
@@ -253,6 +253,17 @@
               <div>
                 <div id="top-bar">
                 
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity/edit/master/content/rotations-in-space/eulers-formula-and-geometric-algebra/_index.mmark" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -267,7 +278,19 @@
                     
           
           
-            Tags
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>The Geometry of Relativity</a> > <a href='/rotations-in-space/'>Rotations in Space</a> > Euler's Formula and Geometric Algebra
+          
+         
+          
+         
           
            
                   </span>
@@ -287,13 +310,128 @@
         
         <div id="body-inner">
           
-            <h1>Tags</h1>
+            <h1>Euler&#39;s Formula and Geometric Algebra</h1>
           
 
         
 
 
+<p>While working to understand and derive Euler's formula we
+introduced an imaginary unit <span  class="math">\(i\)</span> with the property that <span  class="math">\(i^2 = -1\)</span>. But
+we've already seen that the product of the two basis vectors has this same
+property in that <span  class="math">\( (\mathbf{xy})^2 = -1 \)</span>.</p>
 
+<p>In this section we will investigate the properties of various rotations using Euler's formula and Geometric Algebra in two dimensional space.</p>
+
+<p></p>
+
+<h2 id="properties-of-spatial-rotations">Properties of spatial rotations</h2>
+
+<p>Rather than introducing the imaginary unit <span  class="math">\(i\)</span> we could have evaluated the
+exponent function using the value <span  class="math">\(\mathbf{xy}\theta\)</span> instead.
+Doing so leads to a similarly periodic result:</p>
+
+<p><span  class="math">\[ e^{\mathbf{xy}\theta} = \cos \theta + \mathbf{xy}\sin \theta \]</span></p>
+
+<p>Rather than representing a complex rotation, in this form it represents a
+rotation in the <span  class="math">\(\mathbf{xy}\)</span> plane of our two dimensional space. To see that
+this is the case, consider multiplying an arbitrary vector <span  class="math">\(\mathbf{a}\)</span> by
+this rotation:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+\mathbf{a}e^{\mathbf{xy}\theta}
+&= (a_x\mathbf{x} + a_y\mathbf{y})(\cos \theta + \mathbf{xy}\sin \theta) \\
+&= a_x \cos\theta \mathbf{x} + a_x\mathbf{xxy}\sin\theta + a_y\cos\theta\mathbf{y} + a_y\mathbf{yxy}\sin\theta \\
+&= (a_x \cos\theta - a_y\sin\theta)\mathbf{x} + (a_x\sin\theta + a_y\cos\theta)\mathbf{y}
+\end{aligned}
+\]</span></p>
+
+<p>which matches the normal definition for a two-dimensional rotation of a vector with
+components <span  class="math">\((a_x, a_y)\)</span>.</p>
+
+<p>In the following section, <a href="../2d-rotations-in-space">2d rotations in space</a>, we
+will use this rotation to simplify the way we represent arbitrary vectors, but
+for now it will help to note a few properties of this rotation
+<span  class="math">\(e^{\mathbf{xy}\theta}\)</span>.</p>
+
+<p>First, the exponent differs in sign depending on
+whether you left or right multiply your vector, so:</p>
+
+<p><span  class="math">\[
+\mathbf{x}e^{\mathbf{xy}\theta} = e^{-\mathbf{xy}\theta} \mathbf{x} \\
+\mathbf{y}e^{\mathbf{xy}\theta} = e^{-\mathbf{xy}\theta} \mathbf{y}
+\]</span></p>
+
+<p>This can be seen by expanding to the trigonometric values as follows:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+\mathbf{x}e^{\mathbf{xy}\theta}
+&= \mathbf{x}\cos \theta + \mathbf{xxy}\sin \theta \\
+&= \mathbf{x} \cos \theta -\mathbf{xyx}\sin \theta \\
+&= (\cos \theta -\mathbf{xy}\sin \theta)\mathbf{x}\\
+&= e^{-\mathbf{xy}\theta} \mathbf{x}
+\end{aligned}
+\]</span></p>
+
+<p>Next, the exponent does not differ in sign when left or right multiplying by the
+pseudo-scalar <span  class="math">\(\mathbf{xy}\)</span>:</p>
+
+<p><span  class="math">\[ \mathbf{xy}e^{\mathbf{xy}\theta} = e^{\mathbf{xy}\theta} \mathbf{xy} \]</span></p>
+
+<p>which can be seen using the same method as the previous example.</p>
+
+<p>Finally, it's worth noting that, based on the above definition of <span  class="math">\(e^{\mathbf{xy}\theta}\)</span>,
+both <span  class="math">\(\cos\theta\)</span> and <span  class="math">\(\sin\theta\)</span> can be represented as a combination of exponentials
+as follows:</p>
+
+<p><span  class="math">\[ \cos\theta = \frac{e^{\mathbf{xy}\theta} + e^{-\mathbf{xy}\theta}}{2} \]</span></p>
+
+<p><span  class="math">\[ \sin\theta = \frac{e^{\mathbf{xy}\theta} - e^{-\mathbf{xy}\theta}}{2\mathbf{xy}} \]</span></p>
+
+<h2 id="properties-of-hyperbolic-rotations">Properties of hyperbolic rotations</h2>
+
+<p>We can also investigate using another exponent, such as <span  class="math">\(\mathbf{x}\theta\)</span>, which
+results in something less familiar, but just as significant when looking at the
+geometry of relativity.</p>
+
+<p>In this case, we need to return to the full definition of our exponential function which
+we <a href="../eulers-formula/">derived with Euler's formula</a>, to see how it behaves:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+e^{\mathbf{x}\theta}
+&= \sum_{k=0}^{\infty} \frac{(\mathbf{x}\theta)^k}{k!} \\
+&= \frac{(\mathbf{x}\theta)^0}{0!} + \frac{(\mathbf{x}\theta)^1}{1!} + \frac{(\mathbf{x}\theta)^2}{2!} + \frac{(\mathbf{x}\theta)^3}{3!} + ... \\
+&= \sum_{k=0}^{\infty} \frac{\theta^{2k}}{2k!} + \mathbf{x}\sum_{k=0}^{\infty} \frac{\theta^{2k + 1}}{(2k +1)!}
+\end{aligned}
+\]</span></p>
+
+<p>The two summations in the last line are one way to define the hyperbolic functions
+<span  class="math">\(\cosh\theta\)</span> and <span  class="math">\(\sinh\theta\)</span> respectively, so that</p>
+
+<p><span  class="math">\[ e^{\mathbf{x}\theta} = \cosh\theta + \mathbf{x}\sinh\theta \]</span></p>
+
+<p>We will see later how this hyperbolic rotation becomes important for
+two-dimensional rotations in space-time but for now,
+a few analogous but different properties to note, all of which can be seen by expanding <span  class="math">\(e^{\mathbf{x}\theta}\)</span> to the equivalent trigonometric values:</p>
+
+<p><span  class="math">\[\mathbf{x}e^{\mathbf{x}\theta} = e^{\mathbf{x}\theta}\mathbf{x}\]</span></p>
+
+<p><span  class="math">\[\mathbf{y}e^{\mathbf{x}\theta} = e^{-\mathbf{x}\theta}\mathbf{y}\]</span></p>
+
+<p><span  class="math">\[\mathbf{x}e^{\mathbf{y}\theta} = e^{-\mathbf{y}\theta}\mathbf{x}\]</span></p>
+
+<p><span  class="math">\[\mathbf{y}e^{\mathbf{y}\theta} = e^{\mathbf{y}\theta}\mathbf{y}\]</span></p>
+
+<p><span  class="math">\[\mathbf{xy}e^{\mathbf{x}\theta} = e^{-\mathbf{x}\theta}\mathbf{xy}\]</span></p>
+
+<p><span  class="math">\[\mathbf{xy}e^{\mathbf{y}\theta} = e^{-\mathbf{y}\theta}\mathbf{xy}\]</span></p>
+
+<p><span  class="math">\[ \cosh\theta = \frac{e^{\mathbf{x}\theta} + e^{-\mathbf{x}\theta}}{2} \]</span></p>
+
+<p><span  class="math">\[ \sinh\theta = \frac{e^{\mathbf{x}\theta} - e^{-\mathbf{x}\theta}}{2\mathbf{x}} \]</span></p>
 
 <footer class=" footline" >
 	
@@ -349,6 +487,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -364,21 +503,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -396,6 +522,26 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -417,8 +563,10 @@
 
 
         
+            <a class="nav nav-prev" href="/rotations-in-space/eulers-formula/" title="Euler&#39;s Formula"> <i class="fas fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/intro/" title="Intro to Geometric Algebra" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/rotations-in-space/2d-rotations-in-space/" title="2D Rotations in Space" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -450,7 +598,7 @@
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
-  this.page.url = "https://geometry-of-relativity.net/tags/";
+  this.page.url = "https://geometry-of-relativity.net/rotations-in-space/eulers-formula-and-geometric-algebra/";
 
 };
 (function() { 

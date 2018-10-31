@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Intro to Geometric Algebra"
 date: 2018-10-29T13:31:38+11:00
 draft: false
 weight: 1
@@ -7,12 +7,19 @@ pre: "<b>1. </b>"
 ---
 
 Geometric Algebra is a line of Mathematics which treats vectors as first-class
-citizens, rather than as a concept represented by arrows on a coordinate
-systems or tuples of numbers like $$\begin{pmatrix}3 \\ 4\end{pmatrix}$$.
+citizens, rather than arrows defined by coordinates on a coordinate
+system.
 
 For a flat Euclidean space, Geometric Algebra can be derived from a single rule that
 the square of the magnitude of any vector $$\mathbf{a}$$ is equal to the
-square of the vector itself:
+square of the vector itself.
+
+With this one rule we can introduce addition and multiplication of two-dimensional vectors, as well as a simple rotation.
+
+<!--more-->
+
+## One rule
+The square of the magnitude is equal to the square of the new vector
 
 $$ |\mathbf{a}|^2 = \mathbf{a}^2  $$
 
@@ -22,7 +29,7 @@ defining the Euclidean magnitude-squared of a vector, but as we will see, much m
 ## Normal basis vectors
 
 Starting with a single dimension, we define a normal basis vector
-$$\mathbf{x}$$ (bold will indicate a vector) as a vector with a magnitude
+$$\mathbf{x}$$ (bold will indicate a vector) as having a magnitude
 of one:
 
 $$ \mathbf{x}^2 = 1$$

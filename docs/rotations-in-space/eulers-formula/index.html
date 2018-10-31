@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Intro to Geometric Algebra :: Geometry of Relativity</title>
+    <title>Euler&#39;s Formula :: Geometry of Relativity</title>
 
     
     <link href="/css/nucleus.css?1540947150" rel="stylesheet">
@@ -43,7 +43,7 @@
 
 
   </head>
-  <body class="" data-url="/intro/">
+  <body class="" data-url="/rotations-in-space/eulers-formula/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -84,8 +84,8 @@
   
     
     <li data-nav-id="/intro/" title="Intro to Geometric Algebra" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/intro/">
@@ -108,7 +108,7 @@
   
     
     <li data-nav-id="/rotations-in-space/" title="Rotations in Space" class="dd-item 
-        
+        parent
         
         
         ">
@@ -137,8 +137,8 @@
   
     
     <li data-nav-id="/rotations-in-space/eulers-formula/" title="Euler&#39;s Formula" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/rotations-in-space/eulers-formula/">
@@ -257,7 +257,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity/edit/master/content/intro/_index.mmark" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity/edit/master/content/rotations-in-space/eulers-formula/_index.mmark" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -282,7 +282,13 @@
             
           
           
-            <a href='/'>The Geometry of Relativity</a> > Intro to Geometric Algebra
+            
+            
+          
+          
+            <a href='/'>The Geometry of Relativity</a> > <a href='/rotations-in-space/'>Rotations in Space</a> > Euler's Formula
+          
+         
           
          
           
@@ -304,207 +310,203 @@
         
         <div id="body-inner">
           
-            <h1>Intro to Geometric Algebra</h1>
+            <h1>Euler&#39;s Formula</h1>
           
 
         
 
 
-<p>Geometric Algebra is a line of Mathematics which treats vectors as first-class
-citizens, rather than arrows defined by coordinates on a coordinate
-system.</p>
+<p><a href="https://en.wikipedia.org/wiki/Euler's_formula">Euler's formula</a>, the most remarkable formula in mathematics according to Richard Feynman, states that for any real number <span  class="math">\(x\)</span>,</p>
 
-<p>For a flat Euclidean space, Geometric Algebra can be derived from a single rule that
-the square of the magnitude of any vector <span  class="math">\(\mathbf{a}\)</span> is equal to the
-square of the vector itself.</p>
+<p><span  class="math">\[ e^{ix} = \cos x + i \sin x \]</span></p>
 
-<p>With this one rule we can introduce addition and multiplication of two-dimensional vectors, as well as a simple rotation.</p>
+<p>To appreciate Euler's formula and it's application to geometric algebra, and
+ultimately relativity, we need to understand <em>why</em> the imaginary exponent of this special number <span  class="math">\(e\)</span> results in the trigonometric functions.</p>
 
-<p></p>
+<p>If you already understand how to derive Euler's formula, you may want to
+skip over to <a href="../eulers-formula-and-geometric-algebra/">Euler's formula and Geometric Algebra</a>.
+</p>
 
-<h2 id="one-rule">One rule</h2>
+<h2 id="finding-a-function-whose-derivative-is-the-function-itself">Finding a function whose derivative is the function itself</h2>
 
-<p>The square of the magnitude is equal to the square of the new vector</p>
+<p>Euler's formula comes about by first considering a function of <span  class="math">\( x \)</span>, for
+which the derivative of the function for any value of <span  class="math">\(x\)</span> has the same value
+as function itself. That is:</p>
 
-<p><span  class="math">\[ |\mathbf{a}|^2 = \mathbf{a}^2  \]</span></p>
+<p><span  class="math">\[ \frac{d}{dx}f(x) = f(x) \]</span></p>
 
-<p>This is similar to the more familiar <a href="https://en.wikipedia.org/wiki/Dot_product#Geometric_definition">dot-product</a> of a vector with itself
-defining the Euclidean magnitude-squared of a vector, but as we will see, much more powerful.</p>
+<p>If we start with a guess of <span  class="math">\( f(x) = 1 + x \)</span> then we see it is not quite right as</p>
 
-<h2 id="normal-basis-vectors">Normal basis vectors</h2>
+<p><span  class="math">\[ \frac{d}{dx}(1 + x) = 1 \ne (1 + x) \]</span></p>
 
-<p>Starting with a single dimension, we define a normal basis vector
-<span  class="math">\(\mathbf{x}\)</span> (bold will indicate a vector) as having a magnitude
-of one:</p>
+<p>but we can improve it by adding another term</p>
 
-<p><span  class="math">\[ \mathbf{x}^2 = 1\]</span></p>
+<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} \]</span></p>
 
-<p>Any other vector <span  class="math">\(\mathbf{a}\)</span> within this single dimension can be represented as some multiple
-of <span  class="math">\(\mathbf{x}\)</span>, such as <span  class="math">\(5\mathbf{x}\)</span> or
-<span  class="math">\(-3.141579\mathbf{x}\)</span> or, more generally,</p>
+<p>which is a little closer in that</p>
 
-<p><span  class="math">\[\mathbf{a} = x\mathbf{x}\]</span></p>
+<p><span  class="math">\[ \frac{d}{dx}(1 + x + \frac{x^2}{2}) = 1 + x \ne f(x) \]</span></p>
 
-<p>Evaluating the magnitude-squared of <span  class="math">\(\mathbf{a}\)</span> results in:</p>
+<p>but still not the same. So we improve it again with</p>
 
-<p><span  class="math">\[
-\mathbf{a}^2 = (x\mathbf{x})^2 = x\mathbf{x}x\mathbf{x} = x^2\mathbf{x}^2 = x^2
-\]</span></p>
+<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{2\times 3}\]</span></p>
 
-<p>as we would expect.</p>
+<p>and so on, until we end up with an infinite sum of terms:</p>
 
-<h2 id="orthogonal-basis-vectors">Orthogonal basis vectors</h2>
+<p><span  class="math">\[ f(x) = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{k=0}^{\infty} \frac{x^k}{k!} \]</span></p>
 
-<p>To describe vectors in two dimensions We need to add a second basis vector <span  class="math">\(y\)</span> with the similar property of unit-magnitude,
-so when multiplied by itself,</p>
+<p>We now have a function satisfying <span  class="math">\( \frac{d}{dx} f(x) = f(x) \)</span> and can
+check our solution with:</p>
 
-<p><span  class="math">\[ \mathbf{y}^2 = 1 \]</span></p>
-
-<p>We also need to ensure that this second vector <span  class="math">\(\mathbf{y}\)</span> is orthogonal
-to <span  class="math">\(\mathbf{x}\)</span>, though we don't yet know how to represent this orthogonality.
-Nonetheless, by defining a general two-dimensional vector <span  class="math">\(\mathbf{a}\)</span> as</p>
-
-<p><span  class="math">\[ \mathbf{a} = x\mathbf{x} + y\mathbf{y} \]</span></p>
-
-<p>we can derive orthogonality by using the rule that the magnitude-squared of any vector is equal to the vector squared,
-to evaluate that:</p>
-
-<p><span  class="math">\[
+<p><span  class="math">\[ 
 \begin{aligned}
-\mathbf{a}^2
-&= (x\mathbf{x} + y\mathbf{y})(x\mathbf{x} + y\mathbf{y}) \\
-&= x\mathbf{x}x\mathbf{x} + x\mathbf{x}y\mathbf{y} + y\mathbf{y}x\mathbf{x} + y\mathbf{y}y\mathbf{y} \\
-&= x^2 + y^2 + xy(\mathbf{xy} + \mathbf{yx})
+\frac{d}{dx} f(x)
+&= \frac{d}{dx} \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
+&= \sum_{k=0}^{\infty} \frac{kx^{k-1}}{k!} \\
+&= \sum_{k=1}^{\infty} \frac{x^{k-1}}{(k - 1)!} \\
+&= \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
+&= f(x)
 \end{aligned}
 \]</span></p>
 
-<p>So we see that the square of the magnitude of the vector <span  class="math">\(\mathbf{a}\)</span>  - a scalar number - will
-only equal the square of the vector if</p>
+<p>Great, but where does <span  class="math">\(e\)</span> fit in?</p>
 
-<p><span  class="math">\[ \mathbf{xy} = -\mathbf{yx} \]</span></p>
+<h2 id="understanding-what-an-exponent-is">Understanding what an exponent is</h2>
 
-<p>This then is the definition of orthogonal vectors - they are anti-commutative.</p>
+<p>We learn in high school that <span  class="math">\( 3^2 \times 3 = 3^3 \)</span> and <span  class="math">\( 2^2 \times 2
+\times 2 = 2^4 \)</span> and later that <span  class="math">\( x^2 \times x^2 = x^4 \)</span> etc., but the
+general definition of <a href="https://en.wikipedia.org/wiki/Exponentiation">exponentiation</a>
+is that when multiplying two numbers with the same base (<span  class="math">\( 3^2 \times 3^1 \)</span>),
+the powers (or exponents) are added (<span  class="math">\( 3^{2+1} = 3^3 \)</span>):</p>
 
-<p>With this definition of orthogonality, we have</p>
+<p><span  class="math">\[ b^m \times b^n = b^{m + n} \]</span></p>
 
-<p><span  class="math">\[ \mathbf{a}^2 = x^2 + y^2 \]</span></p>
+<h2 id="the-definition-of-e">The definition of e</h2>
 
-<p>which is exactly what we are used to - Pythagoras' theorem.</p>
+<p>If we take our function which satisfies the property <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>
+we can show that it behaves just like an exponent should, in that:</p>
 
-<h2 id="adding-two-vectors">Adding two vectors</h2>
+<p><span  class="math">\[ f(m) \times f(n) = f(m+n) \]</span></p>
 
-<p>The algebraic addition of two arbitrary two-dimensional vectors is straight
-forward,</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-\mathbf{a} + \mathbf{b}
-&= (a_x\mathbf{x} + a_y\mathbf{y}) + (b_x\mathbf{x} + b_y\mathbf{y}) \\
-&= (a_x + b_x)\mathbf{x} + (a_y + b_y)\mathbf{y} \\
-&= \mathbf{b} + \mathbf{a}
-\end{aligned}
-\]</span></p>
-
-<p>The order in which the vectors are added is not relevant which means that
-vectors are associative under addition (and subtraction), as <span  class="math">\(\mathbf{a} +
-\mathbf{b} = \mathbf{b} + \mathbf{a}\)</span>.</p>
-
-<div class="notices note" ><p><strong>Activity</strong>: See if you can calculated the magnitude-squared of <span  class="math">\(\mathbf{a} + \mathbf{b}\)</span></p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-        
-        Solution
-        
-        </span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Currently we can only evaluate this as:</p>
+<p>To show this requires quite a bit of re-arranging:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-(\mathbf{a} + \mathbf{b})^2
-&= (\mathbf{a} + \mathbf{b})(\mathbf{a} + \mathbf{b}) \\
-&= \mathbf{a}^2 + \mathbf{ab} + \mathbf{ba} + \mathbf{b}^2
+f(m) \times f(n)
+&= \sum_{k=0}^{\infty} \frac{m^k}{k!} \times \sum_{k=0}^{\infty} \frac{n^k}{k!} \\
+&= (\frac{m^0}{0!} + \frac{m^1}{1!} + \frac{m^2}{2!} + \frac{m^3}{3!} + ...)
+\times
+(\frac{n^0}{0!} + \frac{n^1}{1!} + \frac{n^2}{2!} + \frac{n^3}{3!} + ...) \\
+&= 1 +
+(\frac{m^1}{1!} + \frac{n^1}{1!}) +
+(\frac{m^2}{2!} + \frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
+(\frac{m^3}{3!} + \frac{m^2 n^1}{2! 1!} + \frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
+&= 1 +
+(\frac{m^1}{1!} + \frac{n^1}{1!}) +
+(\frac{m^2}{2!} + \frac{2}{2}\frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
+(\frac{m^3}{3!} + \frac{3}{3}\frac{m^2 n^1}{2! 1!} + \frac{3}{3}\frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
+&= \sum_{k=0}^{\infty} \frac{(m + n)^k}{k!} \\
+&= f(m + n)
 \end{aligned}
 \]</span></p>
 
-<p>but after the following section on multiplying two vectors, we will be able to
-see that this is in fact the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">law of
-cosines</a>.</p>
-
-    </div>
-</div>
-</div>
-
-
-<h2 id="multiplying-two-vectors">Multiplying two vectors</h2>
-
-<p>The geometric product of two vectors may be a little less familiar:</p>
+<p>Also similar to an exponent, we can see that for our function, <span  class="math">\( f(0) = 1\)</span>:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{a} \mathbf{b}
-&= (a_x\mathbf{x} + a_y\mathbf{y})(b_x\mathbf{x} + b_y\mathbf{y}) \\
-&= a_x\mathbf{x}b_x\mathbf{x} + a_x\mathbf{x}b_y\mathbf{y} + a_y\mathbf{y}b_x\mathbf{x} + a_y\mathbf{y}b_y\mathbf{y} \\
-&= a_x b_x + a_y b_y + a_x b_y \mathbf{xy} + a_y b_x \mathbf{yx} \\
-&= a_x b_x + a_y b_y + \mathbf{xy}(a_x b_y - a_y b_x) \\
-\mathbf{ba} &= a_x b_x + a_y b_y - \mathbf{xy}(a_x b_y - a_y b_x)
+f(0)
+&= \sum_{k=0}^{\infty} \frac{0^k}{k!} \\
+&= \frac{0^0}{0!} + \frac{0^1}{1!} + \frac{0^2}{2!} + ... \\
+&= 1 + 0 + 0 + ... \\
+&= 1
 \end{aligned}
 \]</span></p>
 
-<p>The vector product is not commutative, as <span  class="math">\(\mathbf{ab} \neq \mathbf{ba}\)</span>
-nor is it anti-commutative, as <span  class="math">\(\mathbf{ab} \neq -\mathbf{ba}\)</span>.
-If you are familiar with the traditional vector dot and cross products,
-you may recognise <span  class="math">\(\mathbf{ab}\)</span> as some combination of both, but what is
-relevant is that it is a combination of a scalar (a pure number)
-and a pseudo-scalar (the <span  class="math">\(\mathbf{xy}\)</span> term, which is not scalar, nor is
-it a vector).</p>
+<p>Given that our function <span  class="math">\(f(x)\)</span> behaves just like an exponent should behave, we can define our
+function simply as a power of some specific number <span  class="math">\(e\)</span>:</p>
 
-<p>Of particular interest is that the pseudo-scalar <span  class="math">\(\mathbf{xy}\)</span> has the
-property that:</p>
+<p><span  class="math">\[ f(x) = e^x \]</span></p>
 
-<p><span  class="math">\[ (\mathbf{xy})^2 = \mathbf{xyxy} = -\mathbf{xyyx} = -1 \]</span></p>
+<p>and work out what this number <span  class="math">\(e\)</span> is, with</p>
 
-<h2 id="rotating-vectors-in-twodimensions">Rotating vectors in two-dimensions</h2>
+<p><span  class="math">\[ e^1 = f(1) = \sum_{k=0}^{\infty} \frac{1}{k!} \approx 2.71828... \]</span></p>
 
-<p>It is worth noting briefly that the product of two vectors, <span  class="math">\(\mathbf{ab}\)</span>
-appears to define a scale and rotation. We will look at this in more
-detail later, but we can already see that if <span  class="math">\(\mathbf{a}\)</span> and <span  class="math">\(\mathbf{b}\)</span>
-are perpendicular and have a magnitude of 1:</p>
+<p>Now any value of our function can be evaluated simply as a power of <span  class="math">\(e\)</span>:</p>
+
+<p><span  class="math">\[ f(3) = e^3 = 2.71828... ^3 = 20.08534...\]</span></p>
+
+<h2 id="derivatives-of-exponentials">Derivatives of exponentials</h2>
+
+<p>What if we need to work with other exponents of <span  class="math">\(e\)</span>, such as <span  class="math">\(e^{3x}\)</span>? How
+do we work out the derivative - how fast <span  class="math">\(e^{3x}\)</span> is changing as <span  class="math">\(x\)</span> changes? Your memory may (or may not) tell you that:</p>
+
+<p><span  class="math">\[ \frac{d}{dx} e^{3x} = 3e^{3x} \]</span></p>
+
+<p>or more generally, if <span  class="math">\(g\)</span> is another function of <span  class="math">\(x\)</span>, that</p>
+
+<p><span  class="math">\[ \frac{d}{dx} e^{g} = \frac{dg}{dx}e^{g} \]</span></p>
+
+<p>This is all we need for our tooling here, though we can also see why this
+is the case given the
+<a href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a> for derivatives which says that:</p>
+
+<p><span  class="math">\[ \frac{d}{dx}f(g) = \frac{dg}{dx} \times \frac{d}{d g}f(g) \]</span></p>
+
+<p>together with the special property of our function <span  class="math">\(f(x) = e^x\)</span> that
+the derivative at any point is equal to the function itself, <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>.</p>
+
+<h2 id="eulers-formula">Euler's formula</h2>
+
+<p>Now we have enough background to appreciate the beauty of Euler's formula.
+Euler, like <a href="https://en.wikipedia.org/wiki/Roger_Cotes">Roger Cotes</a> before him, noticed that if he evaluated this exponent function with a special type
+of value, an &quot;imaginary&quot; value whose square is negative, the
+result is a combination of the trigonometric functions <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span>.
+That is, if we create an imaginary unit <span  class="math">\(i\)</span> with the property that <span  class="math">\(i^2 =
+-1\)</span>, and evaluate <span  class="math">\(e^{ix}\)</span>:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{a} &= \mathbf{x} \\
-\mathbf{b} &= \mathbf{y}
+e^{ix}
+&= \sum_{k=0}^{\infty} \frac{(ix)^k}{k!} \\
+&= \frac{(ix)^0}{0!} + \frac{(ix)^1}{1!}  + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} ... \\
+&= (1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} ...) +
+i(\frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} ...) \\
+&= \sum_{k=0}^{\infty}(-1)^{k}\frac{x^{2k}}{2k!}  + \sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!} \\
+&= \cos(x) + i\sin(x)
 \end{aligned}
 \]</span></p>
 
-<p>so that</p>
+<p>That is, the two separate summations are the <a href="link">actual definitions of <span  class="math">\(\cos(x)\)</span>
+and <span  class="math">\(\sin(x)\)</span></a>.</p>
 
-<p><span  class="math">\[ \mathbf{ab} = \mathbf{xy}\]</span></p>
+<p>Notice that, with our introduction to Geometric Algebra, we did not need
+to invent an imaginary unit <span  class="math">\(i\)</span> here, as we have already seen that the
+product of basis vectors <span  class="math">\(\mathbf{xy}\)</span> has the same property that <span  class="math">\((\mathbf{xy})^2 =
+-1\)</span>, but we will pick up this thread in <a href="../eulers-formula-and-geometric-algebra">Euler's formula and Geometric
+Algebra</a> next.</p>
 
-<p>then this product will rotate any other vector <span  class="math">\(\mathbf{c}\)</span>:</p>
+<h2 id="derivatives-of-cos-and-sin">Derivatives of cos and sin</h2>
 
-<p><span  class="math">\[ \mathbf{c} = c_x\mathbf{x} + c_y\mathbf{y} \]</span></p>
-
-<p>by a right-angle each time it is applied:</p>
+<p>It's worth noting that we can calculate the derivative of
+<span  class="math">\(e^{ix}\)</span> and as a result work out the standard derivations
+of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> that we may have memorized in our schooling:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{abc} &= \mathbf{xy}(c_x\mathbf{x} + c_y\mathbf{y}) \\
-&= c_y\mathbf{x} - c_x\mathbf{y} \\
-\mathbf{ababc} &= -c_x\mathbf{x} - c_y\mathbf{y} = -\mathbf{c} \\
-\mathbf{abababc} &= -c_y\mathbf{x} + c_x\mathbf{y} \\
-\mathbf{ababababc} &= \mathbf{c}
+\frac{d}{dx}e^{ix}
+&= ie^{ix} \\
+&= i\cos(x) + i^2\sin(x) \\
+&= -\sin(x) + i\cos(x)
 \end{aligned}
 \]</span></p>
 
-<p>But we will first need to understand Euler's formula to
-appreciate this rotation in its general form.</p>
+<p>and so comparing the real parts of <span  class="math">\(e^{ix}\)</span> and <span  class="math">\(\frac{d}{dx}e^{ix}\)</span> show that</p>
+
+<p><span  class="math">\[ \frac{d}{dx}\cos(x) = -\sin(x)\]</span></p>
+
+<p>while comparing the imaginary parts show that</p>
+
+<p><span  class="math">\[ \frac{d}{dx}\sin(x) = \cos(x) \]</span></p>
 
 <footer class=" footline" >
 	
@@ -541,6 +543,41 @@ appreciate this rotation in its general form.</p>
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -566,37 +603,6 @@ appreciate this rotation in its general form.</p>
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -629,10 +635,10 @@ appreciate this rotation in its general form.</p>
 
 
         
-            <a class="nav nav-prev" href="/" title="The Geometry of Relativity"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/rotations-in-space/" title="Rotations in Space"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/rotations-in-space/" title="Rotations in Space" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/rotations-in-space/eulers-formula-and-geometric-algebra/" title="Euler&#39;s Formula and Geometric Algebra" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -664,7 +670,7 @@ appreciate this rotation in its general form.</p>
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
-  this.page.url = "https://geometry-of-relativity.net/intro/";
+  this.page.url = "https://geometry-of-relativity.net/rotations-in-space/eulers-formula/";
 
 };
 (function() { 

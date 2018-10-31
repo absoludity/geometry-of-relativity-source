@@ -1,0 +1,123 @@
+---
+title: "Euler's Formula and Geometric Algebra"
+date: 2018-10-17T23:35:23+11:00
+draft: false
+weight: 30
+---
+
+While working to understand and derive Euler's formula we
+introduced an imaginary unit $$i$$ with the property that $$i^2 = -1$$. But
+we've already seen that the product of the two basis vectors has this same
+property in that $$ (\mathbf{xy})^2 = -1 $$.
+
+In this section we will investigate the properties of various rotations using Euler's formula and Geometric Algebra in two dimensional space.
+
+<!--more-->
+
+## Properties of spatial rotations
+
+Rather than introducing the imaginary unit $$i$$ we could have evaluated the
+exponent function using the value $$\mathbf{xy}\theta$$ instead.
+Doing so leads to a similarly periodic result:
+
+$$ e^{\mathbf{xy}\theta} = \cos \theta + \mathbf{xy}\sin \theta $$
+
+Rather than representing a complex rotation, in this form it represents a
+rotation in the $$\mathbf{xy}$$ plane of our two dimensional space. To see that
+this is the case, consider multiplying an arbitrary vector $$\mathbf{a}$$ by
+this rotation:
+
+$$
+\begin{aligned}
+\mathbf{a}e^{\mathbf{xy}\theta}
+&= (a_x\mathbf{x} + a_y\mathbf{y})(\cos \theta + \mathbf{xy}\sin \theta) \\
+&= a_x \cos\theta \mathbf{x} + a_x\mathbf{xxy}\sin\theta + a_y\cos\theta\mathbf{y} + a_y\mathbf{yxy}\sin\theta \\
+&= (a_x \cos\theta - a_y\sin\theta)\mathbf{x} + (a_x\sin\theta + a_y\cos\theta)\mathbf{y}
+\end{aligned}
+$$
+
+which matches the normal definition for a two-dimensional rotation of a vector with
+components $$(a_x, a_y)$$.
+
+In the following section, [2d rotations in space](../2d-rotations-in-space), we
+will use this rotation to simplify the way we represent arbitrary vectors, but
+for now it will help to note a few properties of this rotation
+$$e^{\mathbf{xy}\theta}$$.
+
+First, the exponent differs in sign depending on
+whether you left or right multiply your vector, so:
+
+$$
+\mathbf{x}e^{\mathbf{xy}\theta} = e^{-\mathbf{xy}\theta} \mathbf{x} \\
+\mathbf{y}e^{\mathbf{xy}\theta} = e^{-\mathbf{xy}\theta} \mathbf{y}
+$$
+
+This can be seen by expanding to the trigonometric values as follows:
+
+$$
+\begin{aligned}
+\mathbf{x}e^{\mathbf{xy}\theta}
+&= \mathbf{x}\cos \theta + \mathbf{xxy}\sin \theta \\
+&= \mathbf{x} \cos \theta -\mathbf{xyx}\sin \theta \\
+&= (\cos \theta -\mathbf{xy}\sin \theta)\mathbf{x}\\
+&= e^{-\mathbf{xy}\theta} \mathbf{x}
+\end{aligned}
+$$
+
+Next, the exponent does not differ in sign when left or right multiplying by the
+pseudo-scalar $$\mathbf{xy}$$:
+
+$$ \mathbf{xy}e^{\mathbf{xy}\theta} = e^{\mathbf{xy}\theta} \mathbf{xy} $$
+
+which can be seen using the same method as the previous example.
+
+Finally, it's worth noting that, based on the above definition of $$e^{\mathbf{xy}\theta}$$,
+both $$\cos\theta$$ and $$\sin\theta$$ can be represented as a combination of exponentials
+as follows:
+
+$$ \cos\theta = \frac{e^{\mathbf{xy}\theta} + e^{-\mathbf{xy}\theta}}{2} $$
+
+$$ \sin\theta = \frac{e^{\mathbf{xy}\theta} - e^{-\mathbf{xy}\theta}}{2\mathbf{xy}} $$
+
+## Properties of hyperbolic rotations
+
+We can also investigate using another exponent, such as $$\mathbf{x}\theta$$, which
+results in something less familiar, but just as significant when looking at the
+geometry of relativity.
+
+In this case, we need to return to the full definition of our exponential function which
+we [derived with Euler's formula](../eulers-formula/), to see how it behaves:
+
+$$
+\begin{aligned}
+e^{\mathbf{x}\theta}
+&= \sum_{k=0}^{\infty} \frac{(\mathbf{x}\theta)^k}{k!} \\
+&= \frac{(\mathbf{x}\theta)^0}{0!} + \frac{(\mathbf{x}\theta)^1}{1!} + \frac{(\mathbf{x}\theta)^2}{2!} + \frac{(\mathbf{x}\theta)^3}{3!} + ... \\
+&= \sum_{k=0}^{\infty} \frac{\theta^{2k}}{2k!} + \mathbf{x}\sum_{k=0}^{\infty} \frac{\theta^{2k + 1}}{(2k +1)!}
+\end{aligned}
+$$
+
+The two summations in the last line are one way to define the hyperbolic functions
+$$\cosh\theta$$ and $$\sinh\theta$$ respectively, so that
+
+$$ e^{\mathbf{x}\theta} = \cosh\theta + \mathbf{x}\sinh\theta $$
+
+We will see later how this hyperbolic rotation becomes important for
+two-dimensional rotations in space-time but for now,
+a few analogous but different properties to note, all of which can be seen by expanding $$e^{\mathbf{x}\theta}$$ to the equivalent trigonometric values:
+
+$$\mathbf{x}e^{\mathbf{x}\theta} = e^{\mathbf{x}\theta}\mathbf{x}$$
+
+$$\mathbf{y}e^{\mathbf{x}\theta} = e^{-\mathbf{x}\theta}\mathbf{y}$$
+
+$$\mathbf{x}e^{\mathbf{y}\theta} = e^{-\mathbf{y}\theta}\mathbf{x}$$
+
+$$\mathbf{y}e^{\mathbf{y}\theta} = e^{\mathbf{y}\theta}\mathbf{y}$$
+
+$$\mathbf{xy}e^{\mathbf{x}\theta} = e^{-\mathbf{x}\theta}\mathbf{xy}$$
+
+$$\mathbf{xy}e^{\mathbf{y}\theta} = e^{-\mathbf{y}\theta}\mathbf{xy}$$
+
+$$ \cosh\theta = \frac{e^{\mathbf{x}\theta} + e^{-\mathbf{x}\theta}}{2} $$
+
+$$ \sinh\theta = \frac{e^{\mathbf{x}\theta} - e^{-\mathbf{x}\theta}}{2\mathbf{x}} $$

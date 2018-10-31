@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Tags :: Geometry of Relativity</title>
+    <title>Rotations in Space :: Geometry of Relativity</title>
 
     
     <link href="/css/nucleus.css?1540947150" rel="stylesheet">
@@ -43,7 +43,7 @@
 
 
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/rotations-in-space/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -108,8 +108,8 @@
   
     
     <li data-nav-id="/rotations-in-space/" title="Rotations in Space" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/rotations-in-space/">
@@ -253,6 +253,17 @@
               <div>
                 <div id="top-bar">
                 
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity/edit/master/content/rotations-in-space/_index.mmark" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -267,7 +278,13 @@
                     
           
           
-            Tags
+            
+            
+          
+          
+            <a href='/'>The Geometry of Relativity</a> > Rotations in Space
+          
+         
           
            
                   </span>
@@ -287,13 +304,141 @@
         
         <div id="body-inner">
           
-            <h1>Tags</h1>
+            <h1>Rotations in Space</h1>
           
 
         
 
 
+<p>At the end of the previous section we saw that we can rotate an arbitrary
+vector by <span  class="math">\(\frac{\pi}{2}\)</span> radians simply by multiplying that vector by
+<span  class="math">\(\mathbf{xy}.\)</span> In this section we will see that this is because <span  class="math">\(\mathbf{xy}
+= e^{\mathbf{xy}\frac{\pi}{2}}\)</span> and that more generally we can rotate the same
+vector by any arbitrary angle <span  class="math">\(\theta\)</span> simply by multiplying by
+<span  class="math">\(e^{\mathbf{xy}\theta}\)</span>.</p>
 
+<p>But to get to that point we'll first need to take a closer look at
+Euler's formula and its application to geometric algebra - where we no longer
+need to define the imaginary unit <span  class="math">\(i\)</span>.</p>
+
+<p></p>
+
+
+
+
+
+
+
+
+<ul class="children children-li">
+	
+    
+	    
+    
+    
+
+	
+		
+	
+		
+  
+
+
+<li>
+<a href="/rotations-in-space/eulers-formula/" >Euler&#39;s Formula</a>
+</li>
+
+
+
+
+
+
+			
+				
+<p><p><a href="https://en.wikipedia.org/wiki/Euler's_formula">Euler's formula</a>, the most remarkable formula in mathematics according to Richard Feynman, states that for any real number <span  class="math">\(x\)</span>,</p>
+
+<p><span  class="math">\[ e^{ix} = \cos x + i \sin x \]</span></p>
+
+<p>To appreciate Euler's formula and it's application to geometric algebra, and
+ultimately relativity, we need to understand <em>why</em> the imaginary exponent of this special number <span  class="math">\(e\)</span> results in the trigonometric functions.</p>
+
+<p>If you already understand how to derive Euler's formula, you may want to
+skip over to <a href="../eulers-formula-and-geometric-algebra/">Euler's formula and Geometric Algebra</a>.
+</p></p>
+				
+			
+		
+
+		
+			
+
+		
+	
+		
+  
+
+
+<li>
+<a href="/rotations-in-space/eulers-formula-and-geometric-algebra/" >Euler&#39;s Formula and Geometric Algebra</a>
+</li>
+
+
+
+
+
+
+			
+				
+<p><p>While working to understand and derive Euler's formula we
+introduced an imaginary unit <span  class="math">\(i\)</span> with the property that <span  class="math">\(i^2 = -1\)</span>. But
+we've already seen that the product of the two basis vectors has this same
+property in that <span  class="math">\( (\mathbf{xy})^2 = -1 \)</span>.</p>
+
+<p>In this section we will investigate the properties of various rotations using Euler's formula and Geometric Algebra in two dimensional space.</p>
+
+<p></p></p>
+				
+			
+		
+
+		
+			
+
+		
+	
+		
+  
+
+
+<li>
+<a href="/rotations-in-space/2d-rotations-in-space/" >2D Rotations in Space</a>
+</li>
+
+
+
+
+
+
+			
+				
+<p><p>Rather than representing an arbitrary vector as a combination of two basis
+vectors: <span  class="math">\(\mathbf{a} = a_x\mathbf{x} + a_y\mathbf{y}\)</span>, in this section we
+will see that we can simplify the algebra by representing an arbitrary vector
+as a scale and rotation of a single basis vector: <span  class="math">\(\mathbf{a} =
+r_a\mathbf{x}e^{\mathbf{xy}\theta_a}\)</span>
+</p></p>
+				
+			
+		
+
+		
+			
+
+		
+	
+
+	
+</ul>
 
 <footer class=" footline" >
 	
@@ -349,6 +494,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -364,21 +510,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -407,6 +540,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -417,8 +566,10 @@
 
 
         
+            <a class="nav nav-prev" href="/intro/" title="Intro to Geometric Algebra"> <i class="fas fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/intro/" title="Intro to Geometric Algebra" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/rotations-in-space/eulers-formula/" title="Euler&#39;s Formula" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -450,7 +601,7 @@
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
-  this.page.url = "https://geometry-of-relativity.net/tags/";
+  this.page.url = "https://geometry-of-relativity.net/rotations-in-space/";
 
 };
 (function() { 

@@ -1,0 +1,22 @@
+---
+title: "Rotations in Space"
+date: 2018-10-29T21:47:40+11:00
+draft: false
+weight: 10
+pre: "<b>2. </b>"
+---
+
+At the end of the previous section we saw that we can rotate an arbitrary
+vector by $$\frac{\pi}{2}$$ radians simply by multiplying that vector by
+$$\mathbf{xy}.$$ In this section we will see that this is because $$\mathbf{xy}
+= e^{\mathbf{xy}\frac{\pi}{2}}$$ and that more generally we can rotate the same
+vector by any arbitrary angle $$\theta$$ simply by multiplying by
+$$e^{\mathbf{xy}\theta}$$.
+
+But to get to that point we'll first need to take a closer look at
+Euler's formula and its application to geometric algebra - where we no longer
+need to define the imaginary unit $$i$$.
+
+<!--more-->
+
+{{% children description="true" depth="1" %}}
