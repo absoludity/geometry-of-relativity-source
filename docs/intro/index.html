@@ -12,17 +12,17 @@
     <title>Intro to Geometric Algebra :: Geometry of Relativity</title>
 
     
-    <link href="/css/nucleus.css?1541313669" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1541313669" rel="stylesheet">
-    <link href="/css/hybrid.css?1541313669" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1541313669" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1541313669" rel="stylesheet">
-    <link href="/css/auto-complete.css?1541313669" rel="stylesheet">
-    <link href="/css/theme.css?1541313669" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1541313669" rel="stylesheet">
+    <link href="/css/nucleus.css?1541330851" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1541330851" rel="stylesheet">
+    <link href="/css/hybrid.css?1541330851" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1541330851" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1541330851" rel="stylesheet">
+    <link href="/css/auto-complete.css?1541330851" rel="stylesheet">
+    <link href="/css/theme.css?1541330851" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1541330851" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1541313669"></script>
+    <script src="/js/jquery-2.x.min.js?1541330851"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -68,14 +68,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1541313669"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1541313669"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1541330851"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1541330851"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/geometry-of-relativity.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1541313669"></script>
+<script type="text/javascript" src="/js/search.js?1541330851"></script>
 
     
   </div>
@@ -397,7 +397,7 @@ square of the vector itself.</p>
 
 <h2 id="one-rule">One rule</h2>
 
-<p>The square of the magnitude is equal to the square of the new vector</p>
+<p>The square of the magnitude of an arbitrary vector <span  class="math">\(\mathbf{a}\)</span> is equal to the square of the vector itself:</p>
 
 <p><span  class="math">\[ |\mathbf{a}|^2 = \mathbf{a}^2  \]</span></p>
 
@@ -416,19 +416,19 @@ of one:</p>
 of <span  class="math">\(\mathbf{x}\)</span>, such as <span  class="math">\(5\mathbf{x}\)</span> or
 <span  class="math">\(-3.141579\mathbf{x}\)</span> or, more generally,</p>
 
-<p><span  class="math">\[\mathbf{a} = x\mathbf{x}\]</span></p>
+<p><span  class="math">\[\mathbf{a} = x_a\mathbf{x}\]</span></p>
 
 <p>Evaluating the magnitude-squared of <span  class="math">\(\mathbf{a}\)</span> results in:</p>
 
 <p><span  class="math">\[
-\mathbf{a}^2 = (x\mathbf{x})^2 = x\mathbf{x}x\mathbf{x} = x^2\mathbf{x}^2 = x^2
+\mathbf{a}^2 = (x_a\mathbf{x})^2 = x_a\mathbf{x}x_a\mathbf{x} = x_a^2\mathbf{x}^2 = x_a^2
 \]</span></p>
 
 <p>as we would expect.</p>
 
 <h2 id="orthogonal-basis-vectors">Orthogonal basis vectors</h2>
 
-<p>To describe vectors in two dimensions We need to add a second basis vector <span  class="math">\(y\)</span> with the similar property of unit-magnitude,
+<p>To describe vectors in two dimensions we need to add a second basis vector <span  class="math">\(y\)</span> with the similar property of unit-magnitude,
 so when multiplied by itself,</p>
 
 <p><span  class="math">\[ \mathbf{y}^2 = 1 \]</span></p>
@@ -437,7 +437,7 @@ so when multiplied by itself,</p>
 to <span  class="math">\(\mathbf{x}\)</span>, though we don't yet know how to represent this orthogonality.
 Nonetheless, by defining a general two-dimensional vector <span  class="math">\(\mathbf{a}\)</span> as</p>
 
-<p><span  class="math">\[ \mathbf{a} = x\mathbf{x} + y\mathbf{y} \]</span></p>
+<p><span  class="math">\[ \mathbf{a} = x_a\mathbf{x} + y_a\mathbf{y} \]</span></p>
 
 <p>we can derive orthogonality by using the rule that the magnitude-squared of any vector is equal to the vector squared,
 to evaluate that:</p>
@@ -445,9 +445,9 @@ to evaluate that:</p>
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{a}^2
-&= (x\mathbf{x} + y\mathbf{y})(x\mathbf{x} + y\mathbf{y}) \\
-&= x\mathbf{x}x\mathbf{x} + x\mathbf{x}y\mathbf{y} + y\mathbf{y}x\mathbf{x} + y\mathbf{y}y\mathbf{y} \\
-&= x^2 + y^2 + xy(\mathbf{xy} + \mathbf{yx})
+&= (x_a\mathbf{x} + y_a\mathbf{y})(x_a\mathbf{x} + y_a\mathbf{y}) \\
+&= x_a\mathbf{x}x_a\mathbf{x} + x_a\mathbf{x}y_a\mathbf{y} + y_a\mathbf{y}x_a\mathbf{x} + y_a\mathbf{y}y_a\mathbf{y} \\
+&= x_a^2 + y_a^2 + x_a y_a(\mathbf{xy} + \mathbf{yx})
 \end{aligned}
 \]</span></p>
 
@@ -542,7 +542,7 @@ it a vector).</p>
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{ab} + \mathbf{ba} &= 2(a_x b_x + a_y b_y) \\
-\mathbf{ab} - \mathbf{ba} &= 2\mathbf{xy}(a_x b_y - a_y by_x)
+\mathbf{ab} - \mathbf{ba} &= 2\mathbf{xy}(a_x b_y - a_y b_x)
 \end{aligned}
 \]</span></p>
 
@@ -773,20 +773,20 @@ appreciate this rotation in its general form.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1541313669"></script>
-    <script src="/js/perfect-scrollbar.min.js?1541313669"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1541313669"></script>
-    <script src="/js/jquery.sticky.js?1541313669"></script>
-    <script src="/js/featherlight.min.js?1541313669"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1541313669"></script>
-    <script src="/js/highlight.pack.js?1541313669"></script>
+    <script src="/js/clipboard.min.js?1541330851"></script>
+    <script src="/js/perfect-scrollbar.min.js?1541330851"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1541330851"></script>
+    <script src="/js/jquery.sticky.js?1541330851"></script>
+    <script src="/js/featherlight.min.js?1541330851"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1541330851"></script>
+    <script src="/js/highlight.pack.js?1541330851"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1541313669"></script>
-    <script src="/js/learn.js?1541313669"></script>
-    <script src="/js/hugo-learn.js?1541313669"></script>
+    <script src="/js/modernizr.custom.71422.js?1541330851"></script>
+    <script src="/js/learn.js?1541330851"></script>
+    <script src="/js/hugo-learn.js?1541330851"></script>
 
-    <link href="/mermaid/mermaid.css?1541313669" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1541313669"></script>
+    <link href="/mermaid/mermaid.css?1541330851" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1541330851"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

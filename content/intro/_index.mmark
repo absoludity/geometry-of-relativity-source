@@ -19,7 +19,7 @@ With this one rule we can introduce addition and multiplication of two-dimension
 <!--more-->
 
 ## One rule
-The square of the magnitude is equal to the square of the new vector
+The square of the magnitude of an arbitrary vector $$\mathbf{a}$$ is equal to the square of the vector itself:
 
 $$ |\mathbf{a}|^2 = \mathbf{a}^2  $$
 
@@ -38,18 +38,18 @@ Any other vector $$\mathbf{a}$$ within this single dimension can be represented 
 of $$\mathbf{x}$$, such as $$5\mathbf{x}$$ or
 $$-3.141579\mathbf{x}$$ or, more generally,
 
-$$\mathbf{a} = x\mathbf{x}$$
+$$\mathbf{a} = x_a\mathbf{x}$$
 
 Evaluating the magnitude-squared of $$\mathbf{a}$$ results in:
 
 $$
-\mathbf{a}^2 = (x\mathbf{x})^2 = x\mathbf{x}x\mathbf{x} = x^2\mathbf{x}^2 = x^2
+\mathbf{a}^2 = (x_a\mathbf{x})^2 = x_a\mathbf{x}x_a\mathbf{x} = x_a^2\mathbf{x}^2 = x_a^2
 $$
 
 as we would expect.
 
 ## Orthogonal basis vectors
-To describe vectors in two dimensions We need to add a second basis vector $$y$$ with the similar property of unit-magnitude,
+To describe vectors in two dimensions we need to add a second basis vector $$y$$ with the similar property of unit-magnitude,
 so when multiplied by itself,
 
 $$ \mathbf{y}^2 = 1 $$
@@ -58,7 +58,7 @@ We also need to ensure that this second vector $$\mathbf{y}$$ is orthogonal
 to $$\mathbf{x}$$, though we don't yet know how to represent this orthogonality.
 Nonetheless, by defining a general two-dimensional vector $$\mathbf{a}$$ as
 
-$$ \mathbf{a} = x\mathbf{x} + y\mathbf{y} $$
+$$ \mathbf{a} = x_a\mathbf{x} + y_a\mathbf{y} $$
 
 we can derive orthogonality by using the rule that the magnitude-squared of any vector is equal to the vector squared,
 to evaluate that:
@@ -66,9 +66,9 @@ to evaluate that:
 $$
 \begin{aligned}
 \mathbf{a}^2
-&= (x\mathbf{x} + y\mathbf{y})(x\mathbf{x} + y\mathbf{y}) \\
-&= x\mathbf{x}x\mathbf{x} + x\mathbf{x}y\mathbf{y} + y\mathbf{y}x\mathbf{x} + y\mathbf{y}y\mathbf{y} \\
-&= x^2 + y^2 + xy(\mathbf{xy} + \mathbf{yx})
+&= (x_a\mathbf{x} + y_a\mathbf{y})(x_a\mathbf{x} + y_a\mathbf{y}) \\
+&= x_a\mathbf{x}x_a\mathbf{x} + x_a\mathbf{x}y_a\mathbf{y} + y_a\mathbf{y}x_a\mathbf{x} + y_a\mathbf{y}y_a\mathbf{y} \\
+&= x_a^2 + y_a^2 + x_a y_a(\mathbf{xy} + \mathbf{yx})
 \end{aligned}
 $$
 
@@ -151,7 +151,7 @@ Based on the above, we can add or subtract the two products to end up with eithe
 $$
 \begin{aligned}
 \mathbf{ab} + \mathbf{ba} &= 2(a_x b_x + a_y b_y) \\
-\mathbf{ab} - \mathbf{ba} &= 2\mathbf{xy}(a_x b_y - a_y by_x)
+\mathbf{ab} - \mathbf{ba} &= 2\mathbf{xy}(a_x b_y - a_y b_x)
 \end{aligned}
 $$
 
