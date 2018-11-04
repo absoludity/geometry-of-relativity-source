@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Euler&#39;s Formula :: Geometry of Relativity</title>
+    <title>Rotations in Space-Time :: Geometry of Relativity</title>
 
     
     <link href="/css/nucleus.css?1541307447" rel="stylesheet">
@@ -43,7 +43,7 @@
 
 
   </head>
-  <body class="" data-url="/rotations-in-space/eulers-formula/">
+  <body class="" data-url="/rotations-in-spacetime/">
     <nav id="sidebar" class="">
 
 
@@ -106,7 +106,7 @@
   
     
     <li data-nav-id="/rotations-in-space/" title="Rotations in Space" class="dd-item 
-        parent
+        
         
         
         ">
@@ -133,8 +133,8 @@
   
     
     <li data-nav-id="/rotations-in-space/eulers-formula/" title="Euler&#39;s Formula" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/rotations-in-space/eulers-formula/">
@@ -212,8 +212,8 @@
   
     
     <li data-nav-id="/rotations-in-spacetime/" title="Rotations in Space-Time" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/rotations-in-spacetime/">
@@ -322,7 +322,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity/edit/master/content/rotations-in-space/eulers-formula/_index.mmark" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity/edit/master/content/rotations-in-spacetime/_index.mmark" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -347,13 +347,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>The Geometry of Relativity</a> > <a href='/rotations-in-space/'>Rotations in Space</a> > Euler's Formula
-          
-         
+            <a href='/'>The Geometry of Relativity</a> > Rotations in Space-Time
           
          
           
@@ -375,203 +369,107 @@
         
         <div id="body-inner">
           
-            <h1>Euler&#39;s Formula</h1>
+            <h1>Rotations in Space-Time</h1>
           
 
         
 
 
-<p><a href="https://en.wikipedia.org/wiki/Euler's_formula">Euler's formula</a>, the most remarkable formula in mathematics according to Richard Feynman, states that for any real number <span  class="math">\(x\)</span>,</p>
-
-<p><span  class="math">\[ e^{ix} = \cos x + i \sin x \]</span></p>
-
-<p>To appreciate Euler's formula and it's application to geometric algebra, and
-ultimately relativity, we need to understand <em>why</em> the imaginary exponent of this special number <span  class="math">\(e\)</span> results in the trigonometric functions.</p>
-
-<p>If you already understand how to derive Euler's formula, you may want to
-skip over to <a href="../eulers-formula-and-geometric-algebra/">Euler's formula and Geometric Algebra</a>.
+<p>Building on rotations using geometric algebra, in this section we define a
+two-dimensional space-time multivector and then investigate a rotation in space
+as well as a rotation in space-time, the result of which is equivalent to the
+Lorentz transformation.
 </p>
 
-<h2 id="finding-a-function-whose-derivative-is-the-function-itself">Finding a function whose derivative is the function itself</h2>
 
-<p>Euler's formula comes about by first considering a function of <span  class="math">\( x \)</span>, for
-which the derivative of the function for any value of <span  class="math">\(x\)</span> has the same value
-as function itself. That is:</p>
 
-<p><span  class="math">\[ \frac{d}{dx}f(x) = f(x) \]</span></p>
 
-<p>If we start with a guess of <span  class="math">\( f(x) = 1 + x \)</span> then we see it is not quite right as</p>
 
-<p><span  class="math">\[ \frac{d}{dx}(1 + x) = 1 \ne (1 + x) \]</span></p>
 
-<p>but we can improve it by adding another term</p>
 
-<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} \]</span></p>
 
-<p>which is a little closer in that</p>
+<ul class="children children-li">
+	
+    
+	    
+    
+    
 
-<p><span  class="math">\[ \frac{d}{dx}(1 + x + \frac{x^2}{2}) = 1 + x \ne f(x) \]</span></p>
+	
+		
+	
+		
+  
 
-<p>but still not the same. So we improve it again with</p>
 
-<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{2\times 3}\]</span></p>
+<li>
+<a href="/rotations-in-spacetime/a-vector-in-spacetime/" >A Vector in Spacetime</a>
+</li>
 
-<p>and so on, until we end up with an infinite sum of terms:</p>
 
-<p><span  class="math">\[ f(x) = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{k=0}^{\infty} \frac{x^k}{k!} \]</span></p>
 
-<p>We now have a function satisfying <span  class="math">\( \frac{d}{dx} f(x) = f(x) \)</span> and can
-check our solution with:</p>
 
-<p><span  class="math">\[ 
-\begin{aligned}
-\frac{d}{dx} f(x)
-&= \frac{d}{dx} \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
-&= \sum_{k=0}^{\infty} \frac{kx^{k-1}}{k!} \\
-&= \sum_{k=1}^{\infty} \frac{x^{k-1}}{(k - 1)!} \\
-&= \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
-&= f(x)
-\end{aligned}
-\]</span></p>
 
-<p>Great, but where does <span  class="math">\(e\)</span> fit in?</p>
 
-<h2 id="understanding-what-an-exponent-is">Understanding what an exponent is</h2>
+			
+				
+<p><p>So far we have considered operations on vectors only - linear combinations of
+the two basis vectors, <span  class="math">\(\mathbf{x}\)</span> and <span  class="math">\(\mathbf{y}\)</span>. Here we will consider
+a more general combination of a vector together with an <span  class="math">\(\mathbf{xy}\)</span>
+component to form a &quot;multivector&quot;. Furthermore, we will see that this extra
+component behaves geometrically as we expect time to behave in the space-time
+of Special Relativity and, by extension, in our every day experience. We will
+then see that we can rotate these space-time multivectors in space without
+affecting the <span  class="math">\(\mathbf{xy}\)</span> component, corresponding to changing your frame
+of reference within a single inertial frame.</p>
 
-<p>We learn in high school that <span  class="math">\( 3^2 \times 3 = 3^3 \)</span> and <span  class="math">\( 2^2 \times 2
-\times 2 = 2^4 \)</span> and later that <span  class="math">\( x^2 \times x^2 = x^4 \)</span> etc., but the
-general definition of <a href="https://en.wikipedia.org/wiki/Exponentiation">exponentiation</a>
-is that when multiplying two numbers with the same base (<span  class="math">\( 3^2 \times 3^1 \)</span>),
-the powers (or exponents) are added (<span  class="math">\( 3^{2+1} = 3^3 \)</span>):</p>
+<p></p></p>
+				
+			
+		
 
-<p><span  class="math">\[ b^m \times b^n = b^{m + n} \]</span></p>
+		
+			
 
-<h2 id="the-definition-of-e">The definition of e</h2>
+		
+	
+		
+  
 
-<p>If we take our function which satisfies the property <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>
-we can show that it behaves just like an exponent should, in that:</p>
 
-<p><span  class="math">\[ f(m) \times f(n) = f(m+n) \]</span></p>
+<li>
+<a href="/rotations-in-spacetime/2d-rotations-in-spacetime/" >The Lorentz Transformation</a>
+</li>
 
-<p>To show this requires quite a bit of re-arranging:</p>
 
-<p><span  class="math">\[
-\begin{aligned}
-f(m) \times f(n)
-&= \sum_{k=0}^{\infty} \frac{m^k}{k!} \times \sum_{k=0}^{\infty} \frac{n^k}{k!} \\
-&= (\frac{m^0}{0!} + \frac{m^1}{1!} + \frac{m^2}{2!} + \frac{m^3}{3!} + ...)
-\times
-(\frac{n^0}{0!} + \frac{n^1}{1!} + \frac{n^2}{2!} + \frac{n^3}{3!} + ...) \\
-&= 1 +
-(\frac{m^1}{1!} + \frac{n^1}{1!}) +
-(\frac{m^2}{2!} + \frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
-(\frac{m^3}{3!} + \frac{m^2 n^1}{2! 1!} + \frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
-&= 1 +
-(\frac{m^1}{1!} + \frac{n^1}{1!}) +
-(\frac{m^2}{2!} + \frac{2}{2}\frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
-(\frac{m^3}{3!} + \frac{3}{3}\frac{m^2 n^1}{2! 1!} + \frac{3}{3}\frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
-&= \sum_{k=0}^{\infty} \frac{(m + n)^k}{k!} \\
-&= f(m + n)
-\end{aligned}
-\]</span></p>
 
-<p>Also similar to an exponent, we can see that for our function, <span  class="math">\( f(0) = 1\)</span>:</p>
 
-<p><span  class="math">\[
-\begin{aligned}
-f(0)
-&= \sum_{k=0}^{\infty} \frac{0^k}{k!} \\
-&= \frac{0^0}{0!} + \frac{0^1}{1!} + \frac{0^2}{2!} + ... \\
-&= 1 + 0 + 0 + ... \\
-&= 1
-\end{aligned}
-\]</span></p>
 
-<p>Given that our function <span  class="math">\(f(x)\)</span> behaves just like an exponent should behave, we can define our
-function simply as a power of some specific number <span  class="math">\(e\)</span>:</p>
 
-<p><span  class="math">\[ f(x) = e^x \]</span></p>
+			
+				
+<p><p>In the previous section we saw that we can rotate a space-time multivector <span  class="math">\(\mathbf{A}\)</span> in
+space - using a rotation from one normal vector <span  class="math">\(\mathbf{b}\)</span> to another
+normal vector <span  class="math">\(\mathbf{c}\)</span> to form the rotation <span  class="math">\(\mathbf{bc} =
+e^{\mathbf{xy}\frac{\theta}{2}}\)</span>. We also saw that we can define a normal
+space-time multivector as <span  class="math">\(\mathbf{B} = \mathbf{b}e^{\mathbf{bxy}\phi}\)</span>, where <span  class="math">\(\mathbf{b}^2 = 1\)</span>. In this section we will consider a space-time multivector <span  class="math">\(\mathbf{A}\)</span> being
+rotated in <strong>space-time</strong> - using a rotation from one normal multivector
+<span  class="math">\(\mathbf{B}\)</span> to another normal multivector <span  class="math">\(\mathbf{C}\)</span>, and see that
+the result is the standard Lorentz transformation.</p>
 
-<p>and work out what this number <span  class="math">\(e\)</span> is, with</p>
+<p></p></p>
+				
+			
+		
 
-<p><span  class="math">\[ e^1 = f(1) = \sum_{k=0}^{\infty} \frac{1}{k!} \approx 2.71828... \]</span></p>
+		
+			
 
-<p>Now any value of our function can be evaluated simply as a power of <span  class="math">\(e\)</span>:</p>
+		
+	
 
-<p><span  class="math">\[ f(3) = e^3 = 2.71828... ^3 = 20.08534...\]</span></p>
-
-<h2 id="derivatives-of-exponentials">Derivatives of exponentials</h2>
-
-<p>What if we need to work with other exponents of <span  class="math">\(e\)</span>, such as <span  class="math">\(e^{3x}\)</span>? How
-do we work out the derivative - how fast <span  class="math">\(e^{3x}\)</span> is changing as <span  class="math">\(x\)</span> changes? Your memory may (or may not) tell you that:</p>
-
-<p><span  class="math">\[ \frac{d}{dx} e^{3x} = 3e^{3x} \]</span></p>
-
-<p>or more generally, if <span  class="math">\(g\)</span> is another function of <span  class="math">\(x\)</span>, that</p>
-
-<p><span  class="math">\[ \frac{d}{dx} e^{g} = \frac{dg}{dx}e^{g} \]</span></p>
-
-<p>This is all we need for our tooling here, though we can also see why this
-is the case given the
-<a href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a> for derivatives which says that:</p>
-
-<p><span  class="math">\[ \frac{d}{dx}f(g) = \frac{dg}{dx} \times \frac{d}{d g}f(g) \]</span></p>
-
-<p>together with the special property of our function <span  class="math">\(f(x) = e^x\)</span> that
-the derivative at any point is equal to the function itself, <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>.</p>
-
-<h2 id="eulers-formula">Euler's formula</h2>
-
-<p>Now we have enough background to appreciate the beauty of Euler's formula.
-Euler, like <a href="https://en.wikipedia.org/wiki/Roger_Cotes">Roger Cotes</a> before him, noticed that if he evaluated this exponent function with a special type
-of value, an &quot;imaginary&quot; value whose square is negative, the
-result is a combination of the trigonometric functions <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span>.
-That is, if we create an imaginary unit <span  class="math">\(i\)</span> with the property that <span  class="math">\(i^2 =
--1\)</span>, and evaluate <span  class="math">\(e^{ix}\)</span>:</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-e^{ix}
-&= \sum_{k=0}^{\infty} \frac{(ix)^k}{k!} \\
-&= \frac{(ix)^0}{0!} + \frac{(ix)^1}{1!}  + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} ... \\
-&= (1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} ...) +
-i(\frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} ...) \\
-&= \sum_{k=0}^{\infty}(-1)^{k}\frac{x^{2k}}{2k!}  + \sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!} \\
-&= \cos(x) + i\sin(x)
-\end{aligned}
-\]</span></p>
-
-<p>That is, the two separate summations are the <a href="link">actual definitions of <span  class="math">\(\cos(x)\)</span>
-and <span  class="math">\(\sin(x)\)</span></a>.</p>
-
-<p>Notice that, with our introduction to Geometric Algebra, we did not need
-to invent an imaginary unit <span  class="math">\(i\)</span> here, as we have already seen that the
-product of basis vectors <span  class="math">\(\mathbf{xy}\)</span> has the same property that <span  class="math">\((\mathbf{xy})^2 =
--1\)</span>, but we will pick up this thread in <a href="../eulers-formula-and-geometric-algebra">Euler's formula and Geometric
-Algebra</a> next.</p>
-
-<h2 id="derivatives-of-cos-and-sin">Derivatives of cos and sin</h2>
-
-<p>It's worth noting that we can calculate the derivative of
-<span  class="math">\(e^{ix}\)</span> and as a result work out the standard derivations
-of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> that we may have memorized in our schooling:</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-\frac{d}{dx}e^{ix}
-&= ie^{ix} \\
-&= i\cos(x) + i^2\sin(x) \\
-&= -\sin(x) + i\cos(x)
-\end{aligned}
-\]</span></p>
-
-<p>and so comparing the real parts of <span  class="math">\(e^{ix}\)</span> and <span  class="math">\(\frac{d}{dx}e^{ix}\)</span> show that</p>
-
-<p><span  class="math">\[ \frac{d}{dx}\cos(x) = -\sin(x)\]</span></p>
-
-<p>while comparing the imaginary parts show that</p>
-
-<p><span  class="math">\[ \frac{d}{dx}\sin(x) = \cos(x) \]</span></p>
+	
+</ul>
 
 <footer class=" footline" >
 	
@@ -627,77 +525,6 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -740,6 +567,76 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -750,10 +647,10 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
 
 
         
-            <a class="nav nav-prev" href="/rotations-in-space/" title="Rotations in Space"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/rotations-in-space/2d-rotations-in-space/" title="2D Rotations in Space"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/rotations-in-space/eulers-formula-and-geometric-algebra/" title="Euler&#39;s Formula and Geometric Algebra" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/rotations-in-spacetime/a-vector-in-spacetime/" title="A Vector in Spacetime" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -785,7 +682,7 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
-  this.page.url = "https://geometry-of-relativity.net/rotations-in-space/eulers-formula/";
+  this.page.url = "https://geometry-of-relativity.net/rotations-in-spacetime/";
 
 };
 (function() { 

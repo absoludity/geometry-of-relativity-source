@@ -5,7 +5,7 @@ theme = "learn"
 publishDir = "docs"
 
 [params]
-showVisitedLinks = true
+showVisitedLinks = false
 editURL = "https://github.com/absoludity/geometry-of-relativity/edit/master/content/"
 author = "Michael Nelson"
 description = "Investigating Special Relativity through geometry using a branch of mathematics called Geometric Algebra"

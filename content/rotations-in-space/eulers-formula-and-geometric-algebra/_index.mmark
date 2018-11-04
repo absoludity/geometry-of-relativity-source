@@ -52,6 +52,10 @@ $$
 \mathbf{y}e^{\mathbf{xy}\theta} = e^{-\mathbf{xy}\theta} \mathbf{y}
 $$
 
+and therefore more generally
+
+$$ \mathbf{a}e^{\mathbf{xy}\theta} = -e^{\mathbf{xy}\theta}\mathbf{a} $$
+
 This can be seen by expanding to the trigonometric values as follows:
 
 $$

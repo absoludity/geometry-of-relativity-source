@@ -1,0 +1,15 @@
+---
+title: "Rotations in Space-Time"
+date: 2018-10-31T14:33:26+11:00
+draft: false
+weight: 20
+pre: "<b>3. </b>"
+---
+
+Building on rotations using geometric algebra, in this section we define a
+two-dimensional space-time multivector and then investigate a rotation in space
+as well as a rotation in space-time, the result of which is equivalent to the
+Lorentz transformation.
+<!--more-->
+
+{{% children description="true" depth="1" %}}

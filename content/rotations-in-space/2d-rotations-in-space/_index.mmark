@@ -88,14 +88,7 @@ $$
 \end{aligned}
 $$
 
-This product of two vectors can still be recognised as the dot product
-plus $$\mathbf{x}\mathbf{y}$$ times the cross-product, if expanded with the trigonometric identities:
-
-$$
-r_a r_b e^{\mathbf{x}\mathbf{y}(\theta_b -\theta_a)} = r_a r_b \cos(\theta_b - \theta_a) + r_a r_b \sin(\theta_b - \theta_a) \mathbf{x}\mathbf{y}
-$$
-
-but is more intuitively recognised, without expanding, as a scale ($$r_a r_b$$) and rotation in the
+This product of two vectors is now more intuitively recognised, without expanding, as a scale ($$r_a r_b$$) and rotation in the
 $$\mathbf{x}\mathbf{y}$$ plane by $$\theta_b - \theta_a$$ which we will apply in the next section.
 
 This also makes other properties more intuitive, such as
@@ -169,4 +162,4 @@ $$ \mathbf{abc} = r_a r_b r_c \mathbf{x}e^{\mathbf{xy}(\theta_a - (\theta_b - \t
 
 So we can represent a vector in two dimensional space. We can add, scale and
 rotate such vectors. But is there a way to inherently represent a vector in
-space-time? (TODO)
+space-time?

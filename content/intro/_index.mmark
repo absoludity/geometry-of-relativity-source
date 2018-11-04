@@ -146,6 +146,15 @@ relevant is that it is a combination of a scalar (a pure number)
 and a pseudo-scalar (the $$\mathbf{xy}$$ term, which is not scalar, nor is
 it a vector).
 
+Based on the above, we can add or subtract the two products to end up with either a scalar or pseudo-scalar respectively:
+
+$$
+\begin{aligned}
+\mathbf{ab} + \mathbf{ba} &= 2(a_x b_x + a_y b_y) \\
+\mathbf{ab} - \mathbf{ba} &= 2\mathbf{xy}(a_x b_y - a_y by_x)
+\end{aligned}
+$$
+
 Of particular interest is that the pseudo-scalar $$\mathbf{xy}$$ has the
 property that:
 

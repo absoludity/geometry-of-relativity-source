@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Euler&#39;s Formula :: Geometry of Relativity</title>
+    <title>A Vector in Spacetime :: Geometry of Relativity</title>
 
     
     <link href="/css/nucleus.css?1541307447" rel="stylesheet">
@@ -43,7 +43,7 @@
 
 
   </head>
-  <body class="" data-url="/rotations-in-space/eulers-formula/">
+  <body class="" data-url="/rotations-in-spacetime/a-vector-in-spacetime/">
     <nav id="sidebar" class="">
 
 
@@ -106,7 +106,7 @@
   
     
     <li data-nav-id="/rotations-in-space/" title="Rotations in Space" class="dd-item 
-        parent
+        
         
         
         ">
@@ -133,8 +133,8 @@
   
     
     <li data-nav-id="/rotations-in-space/eulers-formula/" title="Euler&#39;s Formula" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/rotations-in-space/eulers-formula/">
@@ -212,7 +212,7 @@
   
     
     <li data-nav-id="/rotations-in-spacetime/" title="Rotations in Space-Time" class="dd-item 
-        
+        parent
         
         
         ">
@@ -239,8 +239,8 @@
   
     
     <li data-nav-id="/rotations-in-spacetime/a-vector-in-spacetime/" title="A Vector in Spacetime" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/rotations-in-spacetime/a-vector-in-spacetime/">
@@ -322,7 +322,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity/edit/master/content/rotations-in-space/eulers-formula/_index.mmark" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity/edit/master/content/rotations-in-spacetime/a-vector-in-spacetime/_index.mmark" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -351,7 +351,7 @@
             
           
           
-            <a href='/'>The Geometry of Relativity</a> > <a href='/rotations-in-space/'>Rotations in Space</a> > Euler's Formula
+            <a href='/'>The Geometry of Relativity</a> > <a href='/rotations-in-spacetime/'>Rotations in Space-Time</a> > A Vector in Spacetime
           
          
           
@@ -375,203 +375,191 @@
         
         <div id="body-inner">
           
-            <h1>Euler&#39;s Formula</h1>
+            <h1>A Vector in Spacetime</h1>
           
 
         
 
 
-<p><a href="https://en.wikipedia.org/wiki/Euler's_formula">Euler's formula</a>, the most remarkable formula in mathematics according to Richard Feynman, states that for any real number <span  class="math">\(x\)</span>,</p>
+<p>So far we have considered operations on vectors only - linear combinations of
+the two basis vectors, <span  class="math">\(\mathbf{x}\)</span> and <span  class="math">\(\mathbf{y}\)</span>. Here we will consider
+a more general combination of a vector together with an <span  class="math">\(\mathbf{xy}\)</span>
+component to form a &quot;multivector&quot;. Furthermore, we will see that this extra
+component behaves geometrically as we expect time to behave in the space-time
+of Special Relativity and, by extension, in our every day experience. We will
+then see that we can rotate these space-time multivectors in space without
+affecting the <span  class="math">\(\mathbf{xy}\)</span> component, corresponding to changing your frame
+of reference within a single inertial frame.</p>
 
-<p><span  class="math">\[ e^{ix} = \cos x + i \sin x \]</span></p>
+<p></p>
 
-<p>To appreciate Euler's formula and it's application to geometric algebra, and
-ultimately relativity, we need to understand <em>why</em> the imaginary exponent of this special number <span  class="math">\(e\)</span> results in the trigonometric functions.</p>
-
-<p>If you already understand how to derive Euler's formula, you may want to
-skip over to <a href="../eulers-formula-and-geometric-algebra/">Euler's formula and Geometric Algebra</a>.
-</p>
-
-<h2 id="finding-a-function-whose-derivative-is-the-function-itself">Finding a function whose derivative is the function itself</h2>
-
-<p>Euler's formula comes about by first considering a function of <span  class="math">\( x \)</span>, for
-which the derivative of the function for any value of <span  class="math">\(x\)</span> has the same value
-as function itself. That is:</p>
-
-<p><span  class="math">\[ \frac{d}{dx}f(x) = f(x) \]</span></p>
-
-<p>If we start with a guess of <span  class="math">\( f(x) = 1 + x \)</span> then we see it is not quite right as</p>
-
-<p><span  class="math">\[ \frac{d}{dx}(1 + x) = 1 \ne (1 + x) \]</span></p>
-
-<p>but we can improve it by adding another term</p>
-
-<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} \]</span></p>
-
-<p>which is a little closer in that</p>
-
-<p><span  class="math">\[ \frac{d}{dx}(1 + x + \frac{x^2}{2}) = 1 + x \ne f(x) \]</span></p>
-
-<p>but still not the same. So we improve it again with</p>
-
-<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{2\times 3}\]</span></p>
-
-<p>and so on, until we end up with an infinite sum of terms:</p>
-
-<p><span  class="math">\[ f(x) = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{k=0}^{\infty} \frac{x^k}{k!} \]</span></p>
-
-<p>We now have a function satisfying <span  class="math">\( \frac{d}{dx} f(x) = f(x) \)</span> and can
-check our solution with:</p>
-
-<p><span  class="math">\[ 
-\begin{aligned}
-\frac{d}{dx} f(x)
-&= \frac{d}{dx} \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
-&= \sum_{k=0}^{\infty} \frac{kx^{k-1}}{k!} \\
-&= \sum_{k=1}^{\infty} \frac{x^{k-1}}{(k - 1)!} \\
-&= \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
-&= f(x)
-\end{aligned}
-\]</span></p>
-
-<p>Great, but where does <span  class="math">\(e\)</span> fit in?</p>
-
-<h2 id="understanding-what-an-exponent-is">Understanding what an exponent is</h2>
-
-<p>We learn in high school that <span  class="math">\( 3^2 \times 3 = 3^3 \)</span> and <span  class="math">\( 2^2 \times 2
-\times 2 = 2^4 \)</span> and later that <span  class="math">\( x^2 \times x^2 = x^4 \)</span> etc., but the
-general definition of <a href="https://en.wikipedia.org/wiki/Exponentiation">exponentiation</a>
-is that when multiplying two numbers with the same base (<span  class="math">\( 3^2 \times 3^1 \)</span>),
-the powers (or exponents) are added (<span  class="math">\( 3^{2+1} = 3^3 \)</span>):</p>
-
-<p><span  class="math">\[ b^m \times b^n = b^{m + n} \]</span></p>
-
-<h2 id="the-definition-of-e">The definition of e</h2>
-
-<p>If we take our function which satisfies the property <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>
-we can show that it behaves just like an exponent should, in that:</p>
-
-<p><span  class="math">\[ f(m) \times f(n) = f(m+n) \]</span></p>
-
-<p>To show this requires quite a bit of re-arranging:</p>
+<p>To begin with, let's define an arbitrary space-time multivector as</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-f(m) \times f(n)
-&= \sum_{k=0}^{\infty} \frac{m^k}{k!} \times \sum_{k=0}^{\infty} \frac{n^k}{k!} \\
-&= (\frac{m^0}{0!} + \frac{m^1}{1!} + \frac{m^2}{2!} + \frac{m^3}{3!} + ...)
-\times
-(\frac{n^0}{0!} + \frac{n^1}{1!} + \frac{n^2}{2!} + \frac{n^3}{3!} + ...) \\
-&= 1 +
-(\frac{m^1}{1!} + \frac{n^1}{1!}) +
-(\frac{m^2}{2!} + \frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
-(\frac{m^3}{3!} + \frac{m^2 n^1}{2! 1!} + \frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
-&= 1 +
-(\frac{m^1}{1!} + \frac{n^1}{1!}) +
-(\frac{m^2}{2!} + \frac{2}{2}\frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
-(\frac{m^3}{3!} + \frac{3}{3}\frac{m^2 n^1}{2! 1!} + \frac{3}{3}\frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
-&= \sum_{k=0}^{\infty} \frac{(m + n)^k}{k!} \\
-&= f(m + n)
+\mathbf{A}
+&= \mathbf{a} + t_a\mathbf{xy} \\
+&= r_a \mathbf{x}e^{\mathbf{xy}\theta_a} + t_a\mathbf{xy}
 \end{aligned}
 \]</span></p>
 
-<p>Also similar to an exponent, we can see that for our function, <span  class="math">\( f(0) = 1\)</span>:</p>
+<h2 id="the-magnitudesquared-of-a-spacetime-multivector">The magnitude-squared of a space-time multivector</h2>
+
+<p>Multiplying this multivector by itself, we see:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-f(0)
-&= \sum_{k=0}^{\infty} \frac{0^k}{k!} \\
-&= \frac{0^0}{0!} + \frac{0^1}{1!} + \frac{0^2}{2!} + ... \\
-&= 1 + 0 + 0 + ... \\
+\mathbf{A}^2
+&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a} + t_a\mathbf{xy}) \\
+&= \mathbf{a}^2 + t_a\mathbf{axy} + t_a\mathbf{xya} + t_a^2\mathbf{xyxy} \\
+&= \mathbf{a}^2 + t_a\mathbf{axy} - t_a\mathbf{axy} - t_a^2 \\
+&= \mathbf{a}^2 - t_a^2 \\
+&= r_a^2 - t_a^2
+\end{aligned}
+\]</span></p>
+
+<p>If you are familiar with Special Relativity, you will recognise this as the
+Minkowski space-time metric. Note, we have used above some of the earlier
+<a href="/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations">properties of
+rotations</a>
+to equate <span  class="math">\(\mathbf{xya} = -\mathbf{axy}\)</span>, but in full for clarity:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+\mathbf{xya}
+&= \mathbf{xy}r_a \mathbf{x} e^{\mathbf{xy}\theta_a} \\
+&= - r_a \mathbf{xxy} e^{\mathbf{xy}\theta_a} \\
+&= -r_a \mathbf{x}e^{\mathbf{xy}\theta_a}\mathbf{xy} \\
+&= -\mathbf{axy}
+\end{aligned}
+\]</span></p>
+
+<p>So the square of a space-time multivector results in a
+scalar value, a value which matches the Minkowski space-time metric.</p>
+
+<p><span  class="math">\[ |\mathbf{A}|^2 = \mathbf{A}^2 = r_a^2 - t_a^2 \]</span></p>
+
+<h2 id="normalised-spacetime-multivectors">Normalised Space-Time Multivectors</h2>
+
+<p>An arbitrary space-time multivector <span  class="math">\(\mathbf{A}\)</span> is normal if</p>
+
+<p><span  class="math">\[\mathbf{A}^2 = 1\]</span></p>
+
+<p>Using the trigonometric identity that</p>
+
+<p><span  class="math">\[\cosh^2\phi - \sinh^2\phi = 1\]</span></p>
+
+<p>then <span  class="math">\(\mathbf{A}\)</span> will be a normalised multivector if <span  class="math">\(\mathbf{a}^2 = 1\)</span> and:</p>
+
+<p><span  class="math">\[ \mathbf{A} = \mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi \]</span></p>
+
+<p>We can verify this by expanding:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+\mathbf{A}^2
+&= (\mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi)(\mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi) \\
+&= \mathbf{a}^2\cosh^2\phi + \mathbf{axy}\cosh\phi\sinh\phi + \mathbf{xya}\cosh\phi\sinh\phi + \mathbf{xyxy}\sinh^2\phi \\
+&= \cosh^2\phi + \mathbf{axy}\cosh\phi\sinh\phi - \mathbf{axy}\cosh\phi\sinh\phi - \sinh^2\phi \\
 &= 1
 \end{aligned}
 \]</span></p>
 
-<p>Given that our function <span  class="math">\(f(x)\)</span> behaves just like an exponent should behave, we can define our
-function simply as a power of some specific number <span  class="math">\(e\)</span>:</p>
+<p>We can simplify our definition of a normal space-time multivector by looking
+back to <a href="/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-hyperbolic-rotations">Euler's formula and geometric
+algebra</a>
+where we saw that if <span  class="math">\( \mathbf{a}^2 = 1 \)</span>, then</p>
 
-<p><span  class="math">\[ f(x) = e^x \]</span></p>
+<p><span  class="math">\[ e^{\mathbf{a}\phi} = \cosh\phi + \mathbf{a}\sinh\phi \]</span></p>
 
-<p>and work out what this number <span  class="math">\(e\)</span> is, with</p>
-
-<p><span  class="math">\[ e^1 = f(1) = \sum_{k=0}^{\infty} \frac{1}{k!} \approx 2.71828... \]</span></p>
-
-<p>Now any value of our function can be evaluated simply as a power of <span  class="math">\(e\)</span>:</p>
-
-<p><span  class="math">\[ f(3) = e^3 = 2.71828... ^3 = 20.08534...\]</span></p>
-
-<h2 id="derivatives-of-exponentials">Derivatives of exponentials</h2>
-
-<p>What if we need to work with other exponents of <span  class="math">\(e\)</span>, such as <span  class="math">\(e^{3x}\)</span>? How
-do we work out the derivative - how fast <span  class="math">\(e^{3x}\)</span> is changing as <span  class="math">\(x\)</span> changes? Your memory may (or may not) tell you that:</p>
-
-<p><span  class="math">\[ \frac{d}{dx} e^{3x} = 3e^{3x} \]</span></p>
-
-<p>or more generally, if <span  class="math">\(g\)</span> is another function of <span  class="math">\(x\)</span>, that</p>
-
-<p><span  class="math">\[ \frac{d}{dx} e^{g} = \frac{dg}{dx}e^{g} \]</span></p>
-
-<p>This is all we need for our tooling here, though we can also see why this
-is the case given the
-<a href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a> for derivatives which says that:</p>
-
-<p><span  class="math">\[ \frac{d}{dx}f(g) = \frac{dg}{dx} \times \frac{d}{d g}f(g) \]</span></p>
-
-<p>together with the special property of our function <span  class="math">\(f(x) = e^x\)</span> that
-the derivative at any point is equal to the function itself, <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>.</p>
-
-<h2 id="eulers-formula">Euler's formula</h2>
-
-<p>Now we have enough background to appreciate the beauty of Euler's formula.
-Euler, like <a href="https://en.wikipedia.org/wiki/Roger_Cotes">Roger Cotes</a> before him, noticed that if he evaluated this exponent function with a special type
-of value, an &quot;imaginary&quot; value whose square is negative, the
-result is a combination of the trigonometric functions <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span>.
-That is, if we create an imaginary unit <span  class="math">\(i\)</span> with the property that <span  class="math">\(i^2 =
--1\)</span>, and evaluate <span  class="math">\(e^{ix}\)</span>:</p>
+<p>This allows us to simplify <span  class="math">\(\mathbf{A}\)</span> as follows:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-e^{ix}
-&= \sum_{k=0}^{\infty} \frac{(ix)^k}{k!} \\
-&= \frac{(ix)^0}{0!} + \frac{(ix)^1}{1!}  + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} ... \\
-&= (1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} ...) +
-i(\frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} ...) \\
-&= \sum_{k=0}^{\infty}(-1)^{k}\frac{x^{2k}}{2k!}  + \sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!} \\
-&= \cos(x) + i\sin(x)
+\mathbf{A}
+&= \mathbf{a}\cosh\phi + \mathbf{xy}\sinh\phi \\
+&= \mathbf{a}(\cosh\phi + \mathbf{axy}\sinh\phi) & \text{, since }\mathbf{a}^2 = 1\\
+&= \mathbf{a}e^{\mathbf{axy}\phi}
 \end{aligned}
 \]</span></p>
 
-<p>That is, the two separate summations are the <a href="link">actual definitions of <span  class="math">\(\cos(x)\)</span>
-and <span  class="math">\(\sin(x)\)</span></a>.</p>
-
-<p>Notice that, with our introduction to Geometric Algebra, we did not need
-to invent an imaginary unit <span  class="math">\(i\)</span> here, as we have already seen that the
-product of basis vectors <span  class="math">\(\mathbf{xy}\)</span> has the same property that <span  class="math">\((\mathbf{xy})^2 =
--1\)</span>, but we will pick up this thread in <a href="../eulers-formula-and-geometric-algebra">Euler's formula and Geometric
-Algebra</a> next.</p>
-
-<h2 id="derivatives-of-cos-and-sin">Derivatives of cos and sin</h2>
-
-<p>It's worth noting that we can calculate the derivative of
-<span  class="math">\(e^{ix}\)</span> and as a result work out the standard derivations
-of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> that we may have memorized in our schooling:</p>
+<p>since <span  class="math">\(\mathbf{axy}\)</span> is just the vector <span  class="math">\(\mathbf{a}\)</span> rotated by 90 degrees. With this simpler definition of a normal space-time multivector, seeing
+that it is indeed normal is trivial:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\frac{d}{dx}e^{ix}
-&= ie^{ix} \\
-&= i\cos(x) + i^2\sin(x) \\
-&= -\sin(x) + i\cos(x)
+\mathbf{A}^2
+&= \mathbf{a}e^{\mathbf{axy}\phi}\mathbf{a}e^{\mathbf{axy}\phi}\\
+&= \mathbf{a}e^{\mathbf{axy}\phi}e^{-\mathbf{axy}\phi}\mathbf{a} \\
+&= 1
 \end{aligned}
 \]</span></p>
 
-<p>and so comparing the real parts of <span  class="math">\(e^{ix}\)</span> and <span  class="math">\(\frac{d}{dx}e^{ix}\)</span> show that</p>
+<h2 id="time-is-unchanged-under-spatial-rotations">Time is unchanged under spatial rotations</h2>
 
-<p><span  class="math">\[ \frac{d}{dx}\cos(x) = -\sin(x)\]</span></p>
+<p>If we define a rotation using two normalised vectors, <span  class="math">\(\mathbf{b}\)</span> and
+<span  class="math">\(\mathbf{c}\)</span>, where the difference in orientation between the two is <span  class="math">\(\theta\)</span>, so that:</p>
 
-<p>while comparing the imaginary parts show that</p>
+<p><span  class="math">\[ \mathbf{bc} = e^{\mathbf{xy}\theta} \]</span></p>
 
-<p><span  class="math">\[ \frac{d}{dx}\sin(x) = \cos(x) \]</span></p>
+<p>we find that it no longer defines a rotation when simply applied to an
+arbitrary multivector, because the magnitude-squared after the multiplication
+is not the same as before:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+(\mathbf{Abc})^2
+&= \mathbf{AbcAbc} \\
+&= (\mathbf{a} + t_a\mathbf{xy})\mathbf{bc}(\mathbf{a} + t_a\mathbf{xy})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a}\mathbf{cb} + t_a\mathbf{xy}\mathbf{bc})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a}\mathbf{cbbc} + t_a\mathbf{xy}\mathbf{bcbc}) \\
+&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a} + t_a\mathbf{xy}e^{\mathbf{xy}2\theta}) \\
+&\neq \mathbf{A}^2
+\end{aligned}
+\]</span></p>
+
+<p>So instead we halve the angle of rotation, defining:</p>
+
+<p><span  class="math">\[ \mathbf{bc} = e^{\mathbf{xy}\frac{\theta}{2}} \]</span></p>
+
+<p>and apply it twice - once from the left and once from the right: <span  class="math">\(\mathbf{cbAbc}\)</span>.</p>
+
+<p>The fact that <span  class="math">\(\mathbf{cbAbc}\)</span> is a rotation can be verified simply by
+confirming the magnitude-squared is now unchanged:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+(\mathbf{cbAbc})^2
+&= \mathbf{cbAbccbAbc} &\\
+&= \mathbf{cb}\mathbf{A}^2\mathbf{bc} \\
+&= \mathbf{A}^2\mathbf{cbbc} &\text{, as }\mathbf{A}^2\text{is scalar}\\
+&= \mathbf{A}^2
+\end{aligned}
+\]</span></p>
+
+<p>Now, evaluating the actual rotation, we find:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+\mathbf{cbAbc}
+&= \mathbf{cb}(\mathbf{a} + t_a\mathbf{xy})\mathbf{bc} \\
+&= \mathbf{cbabc} + t_a\mathbf{cbxybc} \\
+&= \mathbf{abcbc} + t_a\mathbf{xycbbc} \\
+&= \mathbf{a}e^{\mathbf{xy}\theta} + t_a\mathbf{xy}
+\end{aligned}
+\]</span></p>
+
+<p>That is, when applying the spatial rotation in this way, the vector component of <span  class="math">\(\mathbf{A}\)</span> is rotated by <span  class="math">\(\theta\)</span>, while the time component of the multi-vector is not affected at all.
+We can change position and orientation within the one inertial frame without
+affecting the measured time. Note, we have again used above some of the earlier
+<a href="/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations">properties of
+rotations</a>
+to equate <span  class="math">\(\mathbf{cba} = \mathbf{abc}\)</span> and <span  class="math">\(\mathbf{cbxy} =
+\mathbf{xycb}\)</span>.</p>
+
+<p>But what if, rather than defining a rotation between two spatial vectors, we
+instead define a rotation between a spatial vector and the pseudo-scalar
+component <span  class="math">\(\mathbf{xy}\)</span> - a <a href="../2d-rotations-in-spacetime/">two-dimensional rotation in space-time</a>?</p>
 
 <footer class=" footline" >
 	
@@ -627,6 +615,72 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
             
                 
                     
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -674,72 +728,6 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -750,10 +738,10 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
 
 
         
-            <a class="nav nav-prev" href="/rotations-in-space/" title="Rotations in Space"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/rotations-in-spacetime/" title="Rotations in Space-Time"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/rotations-in-space/eulers-formula-and-geometric-algebra/" title="Euler&#39;s Formula and Geometric Algebra" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/rotations-in-spacetime/2d-rotations-in-spacetime/" title="The Lorentz Transformation" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -785,7 +773,7 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
-  this.page.url = "https://geometry-of-relativity.net/rotations-in-space/eulers-formula/";
+  this.page.url = "https://geometry-of-relativity.net/rotations-in-spacetime/a-vector-in-spacetime/";
 
 };
 (function() { 

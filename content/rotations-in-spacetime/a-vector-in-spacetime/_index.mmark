@@ -1,0 +1,186 @@
+---
+title: "A Vector in Spacetime"
+date: 2018-10-18T22:29:56+11:00
+draft: false
+weight: 10
+---
+
+So far we have considered operations on vectors only - linear combinations of
+the two basis vectors, $$\mathbf{x}$$ and $$\mathbf{y}$$. Here we will consider
+a more general combination of a vector together with an $$\mathbf{xy}$$
+component to form a "multivector". Furthermore, we will see that this extra
+component behaves geometrically as we expect time to behave in the space-time
+of Special Relativity and, by extension, in our every day experience. We will
+then see that we can rotate these space-time multivectors in space without
+affecting the $$\mathbf{xy}$$ component, corresponding to changing your frame
+of reference within a single inertial frame.
+
+<!--more-->
+
+To begin with, let's define an arbitrary space-time multivector as
+
+$$
+\begin{aligned}
+\mathbf{A}
+&= \mathbf{a} + t_a\mathbf{xy} \\
+&= r_a \mathbf{x}e^{\mathbf{xy}\theta_a} + t_a\mathbf{xy}
+\end{aligned}
+$$
+
+## The magnitude-squared of a space-time multivector
+
+Multiplying this multivector by itself, we see:
+
+$$
+\begin{aligned}
+\mathbf{A}^2
+&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a} + t_a\mathbf{xy}) \\
+&= \mathbf{a}^2 + t_a\mathbf{axy} + t_a\mathbf{xya} + t_a^2\mathbf{xyxy} \\
+&= \mathbf{a}^2 + t_a\mathbf{axy} - t_a\mathbf{axy} - t_a^2 \\
+&= \mathbf{a}^2 - t_a^2 \\
+&= r_a^2 - t_a^2
+\end{aligned}
+$$
+
+If you are familiar with Special Relativity, you will recognise this as the
+Minkowski space-time metric. Note, we have used above some of the earlier
+[properties of
+rotations](/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations)
+to equate $$\mathbf{xya} = -\mathbf{axy}$$, but in full for clarity:
+
+$$
+\begin{aligned}
+\mathbf{xya}
+&= \mathbf{xy}r_a \mathbf{x} e^{\mathbf{xy}\theta_a} \\
+&= - r_a \mathbf{xxy} e^{\mathbf{xy}\theta_a} \\
+&= -r_a \mathbf{x}e^{\mathbf{xy}\theta_a}\mathbf{xy} \\
+&= -\mathbf{axy}
+\end{aligned}
+$$
+
+So the square of a space-time multivector results in a
+scalar value, a value which matches the Minkowski space-time metric.
+
+$$ |\mathbf{A}|^2 = \mathbf{A}^2 = r_a^2 - t_a^2 $$
+
+## Normalised Space-Time Multivectors
+
+An arbitrary space-time multivector $$\mathbf{A}$$ is normal if
+
+$$\mathbf{A}^2 = 1$$
+
+Using the trigonometric identity that
+
+$$\cosh^2\phi - \sinh^2\phi = 1$$
+
+then $$\mathbf{A}$$ will be a normalised multivector if $$\mathbf{a}^2 = 1$$ and:
+
+$$ \mathbf{A} = \mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi $$
+
+We can verify this by expanding:
+
+$$
+\begin{aligned}
+\mathbf{A}^2
+&= (\mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi)(\mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi) \\
+&= \mathbf{a}^2\cosh^2\phi + \mathbf{axy}\cosh\phi\sinh\phi + \mathbf{xya}\cosh\phi\sinh\phi + \mathbf{xyxy}\sinh^2\phi \\
+&= \cosh^2\phi + \mathbf{axy}\cosh\phi\sinh\phi - \mathbf{axy}\cosh\phi\sinh\phi - \sinh^2\phi \\
+&= 1
+\end{aligned}
+$$
+
+We can simplify our definition of a normal space-time multivector by looking
+back to [Euler's formula and geometric
+algebra](/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-hyperbolic-rotations)
+where we saw that if $$ \mathbf{a}^2 = 1 $$, then
+
+$$ e^{\mathbf{a}\phi} = \cosh\phi + \mathbf{a}\sinh\phi $$
+
+This allows us to simplify $$\mathbf{A}$$ as follows:
+
+$$
+\begin{aligned}
+\mathbf{A}
+&= \mathbf{a}\cosh\phi + \mathbf{xy}\sinh\phi \\
+&= \mathbf{a}(\cosh\phi + \mathbf{axy}\sinh\phi) & \text{, since }\mathbf{a}^2 = 1\\
+&= \mathbf{a}e^{\mathbf{axy}\phi}
+\end{aligned}
+$$
+
+since $$\mathbf{axy}$$ is just the vector $$\mathbf{a}$$ rotated by 90 degrees. With this simpler definition of a normal space-time multivector, seeing
+that it is indeed normal is trivial:
+
+$$
+\begin{aligned}
+\mathbf{A}^2
+&= \mathbf{a}e^{\mathbf{axy}\phi}\mathbf{a}e^{\mathbf{axy}\phi}\\
+&= \mathbf{a}e^{\mathbf{axy}\phi}e^{-\mathbf{axy}\phi}\mathbf{a} \\
+&= 1
+\end{aligned}
+$$
+
+## Time is unchanged under spatial rotations
+
+If we define a rotation using two normalised vectors, $$\mathbf{b}$$ and
+$$\mathbf{c}$$, where the difference in orientation between the two is $$\theta$$, so that:
+
+$$ \mathbf{bc} = e^{\mathbf{xy}\theta} $$
+
+we find that it no longer defines a rotation when simply applied to an
+arbitrary multivector, because the magnitude-squared after the multiplication
+is not the same as before:
+
+$$
+\begin{aligned}
+(\mathbf{Abc})^2
+&= \mathbf{AbcAbc} \\
+&= (\mathbf{a} + t_a\mathbf{xy})\mathbf{bc}(\mathbf{a} + t_a\mathbf{xy})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a}\mathbf{cb} + t_a\mathbf{xy}\mathbf{bc})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a}\mathbf{cbbc} + t_a\mathbf{xy}\mathbf{bcbc}) \\
+&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a} + t_a\mathbf{xy}e^{\mathbf{xy}2\theta}) \\
+&\neq \mathbf{A}^2
+\end{aligned}
+$$
+
+So instead we halve the angle of rotation, defining:
+
+$$ \mathbf{bc} = e^{\mathbf{xy}\frac{\theta}{2}} $$
+
+and apply it twice - once from the left and once from the right: $$\mathbf{cbAbc}$$.
+
+The fact that $$\mathbf{cbAbc}$$ is a rotation can be verified simply by
+confirming the magnitude-squared is now unchanged:
+
+$$
+\begin{aligned}
+(\mathbf{cbAbc})^2
+&= \mathbf{cbAbccbAbc} &\\
+&= \mathbf{cb}\mathbf{A}^2\mathbf{bc} \\
+&= \mathbf{A}^2\mathbf{cbbc} &\text{, as }\mathbf{A}^2\text{is scalar}\\
+&= \mathbf{A}^2
+\end{aligned}
+$$
+
+Now, evaluating the actual rotation, we find:
+
+$$
+\begin{aligned}
+\mathbf{cbAbc}
+&= \mathbf{cb}(\mathbf{a} + t_a\mathbf{xy})\mathbf{bc} \\
+&= \mathbf{cbabc} + t_a\mathbf{cbxybc} \\
+&= \mathbf{abcbc} + t_a\mathbf{xycbbc} \\
+&= \mathbf{a}e^{\mathbf{xy}\theta} + t_a\mathbf{xy}
+\end{aligned}
+$$
+
+That is, when applying the spatial rotation in this way, the vector component of $$\mathbf{A}$$ is rotated by $$\theta$$, while the time component of the multi-vector is not affected at all.
+We can change position and orientation within the one inertial frame without
+affecting the measured time. Note, we have again used above some of the earlier
+[properties of
+rotations](/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations)
+to equate $$\mathbf{cba} = \mathbf{abc}$$ and $$\mathbf{cbxy} =
+\mathbf{xycb}$$.
+
+But what if, rather than defining a rotation between two spatial vectors, we
+instead define a rotation between a spatial vector and the pseudo-scalar
+component $$\mathbf{xy}$$ - a [two-dimensional rotation in space-time](../2d-rotations-in-spacetime/)?

@@ -1,0 +1,11 @@
+---
+title: "Credits"
+draft: false
+hidden: true
+---
+## Contributors
+
+Thanks to them <i class="fas fa-heart"></i> for helping to spread the love of Geometric Algebra by having fun playing with its application in physics. Help others learn and get your contributions listed here! We need help creating visualisations, correcting and improving the text, adding activities where helpful, extending the text with testable implications, ...
+
+{{% ghcontributors "https://api.github.com/repos/absoludity/geometry-of-relativity/contributors?per_page=100" %}}
+
