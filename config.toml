@@ -9,3 +9,14 @@ showVisitedLinks = false
 editURL = "https://github.com/absoludity/geometry-of-relativity/edit/master/content/"
 author = "Michael Nelson"
 description = "Investigating Special Relativity through geometry using a branch of mathematics called Geometric Algebra"
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/absoludity/geometry-of-relativity"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-bullhorn'></i> Credits"
+url = "/credits"
+weight = 20

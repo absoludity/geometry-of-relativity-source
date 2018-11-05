@@ -92,9 +92,10 @@ $$
 &= \cosh\phi(x_a - t_a\tanh\phi)\mathbf{x} + \cosh\phi(t_a - x_a\tanh\phi)\mathbf{xy}
 \end{aligned}
 $$
+{{<figure class="inline" src="/sinh_cosh_tanh.svg.png" title="Plotting sinh, cosh and tanh" attr="Wikimedia Commons" attrlink="https://en.wikipedia.org/wiki/File:Sinh_cosh_tanh.svg" width="300px" >}}
 
 Noting that $$\tanh\phi$$ has the property of ranging from -1 to 1 (graph) and that $$\cosh\phi$$
-and $$\tanh\phi$$ can be related by the trigonometric identity:
+and $$\tanh\phi$$ can be [related by](https://en.wikipedia.org/wiki/Hyperbolic_function#Useful_relations):
 
 $$ \cosh\phi = \frac{1}{\sqrt{1-\tan^2\phi}} $$
 

@@ -17,15 +17,10 @@ of reference within a single inertial frame.
 
 <!--more-->
 
-To begin with, let's define an arbitrary space-time multivector as
+To begin with, let's define an arbitrary space-time multivector as a vector
+plus a component of $$\mathbf{xy}$$:
 
-$$
-\begin{aligned}
-\mathbf{A}
-&= \mathbf{a} + t_a\mathbf{xy} \\
-&= r_a \mathbf{x}e^{\mathbf{xy}\theta_a} + t_a\mathbf{xy}
-\end{aligned}
-$$
+$$ \mathbf{A} = \mathbf{a} + t_a\mathbf{xy} $$
 
 ## The magnitude-squared of a space-time multivector
 
@@ -121,7 +116,7 @@ $$
 
 ## Time is unchanged under spatial rotations
 
-If we define a rotation using two normalised vectors, $$\mathbf{b}$$ and
+If we define a spatial rotation using two normalised vectors, $$\mathbf{b}$$ and
 $$\mathbf{c}$$, where the difference in orientation between the two is $$\theta$$, so that:
 
 $$ \mathbf{bc} = e^{\mathbf{xy}\theta} $$

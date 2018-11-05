@@ -54,7 +54,7 @@ $$
 
 and therefore more generally
 
-$$ \mathbf{a}e^{\mathbf{xy}\theta} = -e^{\mathbf{xy}\theta}\mathbf{a} $$
+$$ \mathbf{a}e^{\mathbf{xy}\theta} = e^{-\mathbf{xy}\theta}\mathbf{a} $$
 
 This can be seen by expanding to the trigonometric values as follows:
 
@@ -73,7 +73,7 @@ pseudo-scalar $$\mathbf{xy}$$:
 
 $$ \mathbf{xy}e^{\mathbf{xy}\theta} = e^{\mathbf{xy}\theta} \mathbf{xy} $$
 
-which can be seen using the same method as the previous example.
+which can be seen again by expanding as per the previous example.
 
 Finally, it's worth noting that, based on the above definition of $$e^{\mathbf{xy}\theta}$$,
 both $$\cos\theta$$ and $$\sin\theta$$ can be represented as a combination of exponentials
