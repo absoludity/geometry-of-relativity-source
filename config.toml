@@ -4,6 +4,9 @@ title = "Geometry of Relativity"
 theme = "learn"
 publishDir = "docs"
 
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
 [params]
 showVisitedLinks = false
 editURL = "https://github.com/absoludity/geometry-of-relativity/edit/master/content/"
