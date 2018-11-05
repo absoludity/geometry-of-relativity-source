@@ -16,9 +16,16 @@ affecting the $$\mathbf{xy}$$ component, corresponding to changing your frame
 of reference within a single inertial frame.
 
 <!--more-->
+{{% notice warning %}}
+At this point we are deviating significantly from the normal understanding of
+[a space-time algebra using Geometric
+Algebra](https://en.wikipedia.org/wiki/Spacetime_algebra), where a separate
+basis vector is normally defined for the time dimension. You have been warned,
+you may be entering crack-pot territory <i class="fas fa-user-astronaut"></i>
+{{% /notice %}}
 
-To begin with, let's define an arbitrary space-time multivector as a vector
-plus a component of $$\mathbf{xy}$$:
+To begin with, let's define an arbitrary two-dimensional space-time multivector
+as a vector plus a component of $$\mathbf{xy}$$:
 
 $$ \mathbf{A} = \mathbf{a} + t_a\mathbf{xy} $$
 
