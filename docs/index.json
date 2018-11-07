@@ -74,7 +74,7 @@
 	"title": "Credits",
 	"tags": [],
 	"description": "",
-	"content": "Contributors Thanks to them  for helping to spread the love of Geometric Algebra by having fun playing with its application in physics. Help others learn and get your contributions listed here! We need help creating visualisations, correcting and improving the text, adding activities where helpful, extending the text with testable implications, ...\n.ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @absoludity 5 commits   "
+	"content": "Contributors Thanks to them  for helping to spread the love of Geometric Algebra by having fun playing with its application in physics. Help others learn and get your contributions listed here! We need help creating visualisations, correcting and improving the text, adding activities where helpful, extending the text with testable implications, ...\n.ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @absoludity 12 commits   "
 },
 {
 	"uri": "https://geometry-of-relativity.net/tags/",

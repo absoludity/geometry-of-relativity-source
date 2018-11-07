@@ -165,7 +165,7 @@ i(\frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} ...) \\
 $$
 
 That is, the two separate summations are the [actual definitions of $$\cos(x)$$
-and $$\sin(x)$$](link).
+and $$\sin(x)$$](https://en.wikipedia.org/wiki/Trigonometric_functions#Series_definitions).
 
 Notice that, with our introduction to Geometric Algebra, we did not need
 to invent an imaginary unit $$i$$ here, as we have already seen that the
