@@ -159,7 +159,7 @@ e^{ix}
 &= \frac{(ix)^0}{0!} + \frac{(ix)^1}{1!}  + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} ... \\
 &= (1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} ...) +
 i(\frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} ...) \\
-&= \sum_{k=0}^{\infty}(-1)^{k}\frac{x^{2k}}{2k!}  + \sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!} \\
+&= \sum_{k=0}^{\infty}(-1)^{k}\frac{x^{2k}}{2k!}  + i \sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!} \\
 &= \cos(x) + i\sin(x)
 \end{aligned}
 $$
