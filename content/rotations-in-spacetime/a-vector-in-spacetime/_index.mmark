@@ -12,22 +12,32 @@ component to form a "multivector". Furthermore, we will see that this extra
 component behaves geometrically as we expect time to behave in the space-time
 of Special Relativity and, by extension, in our every day experience. We will
 then see that we can rotate these space-time multivectors in space without
-affecting the $$\mathbf{xy}$$ component, corresponding to changing your frame
+affecting the temporal component, corresponding to changing your frame
 of reference within a single inertial frame.
 
 <!--more-->
-{{% notice warning %}}
-At this point we are deviating significantly from the normal understanding of
-[a space-time algebra using Geometric
-Algebra](https://en.wikipedia.org/wiki/Spacetime_algebra), where a separate
-basis vector is normally defined for the time dimension. You have been warned,
-you may be entering crack-pot territory <i class="fas fa-user-astronaut"></i>
-{{% /notice %}}
 
-To begin with, let's define an arbitrary two-dimensional space-time multivector
-as a vector plus a component of $$\mathbf{xy}$$:
+For clarity, let's define $$\mathbf{t}$$ as
 
-$$ \mathbf{A} = \mathbf{a} + t_a\mathbf{xy} $$
+$$\mathbf{t} = \mathbf{xy}$$
+
+noting that
+
+$$
+\mathbf{t}^2 = \mathbf{xyxy} = -1
+$$
+
+and
+
+$$
+\mathbf{xt} = \mathbf{xxy} = -\mathbf{xyx} = -\mathbf{tx} \\
+\mathbf{yt} = -\mathbf{ty}
+$$
+
+We can then define an arbitrary two-dimensional space-time multivector
+as a vector plus a component of $$\mathbf{t}$$:
+
+$$ \mathbf{A} = \mathbf{a} + t_a\mathbf{t} $$
 
 ## The magnitude-squared of a space-time multivector
 
@@ -36,9 +46,9 @@ Multiplying this multivector by itself, we see:
 $$
 \begin{aligned}
 \mathbf{A}^2
-&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a} + t_a\mathbf{xy}) \\
-&= \mathbf{a}^2 + t_a\mathbf{axy} + t_a\mathbf{xya} + t_a^2\mathbf{xyxy} \\
-&= \mathbf{a}^2 + t_a\mathbf{axy} - t_a\mathbf{axy} - t_a^2 \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{a} + t_a\mathbf{t}) \\
+&= \mathbf{a}^2 + t_a\mathbf{at} + t_a\mathbf{ta} + t_a^2\mathbf{tt} \\
+&= \mathbf{a}^2 + t_a\mathbf{at} - t_a\mathbf{at} - t_a^2 \\
 &= \mathbf{a}^2 - t_a^2 \\
 &= r_a^2 - t_a^2
 \end{aligned}
@@ -48,15 +58,15 @@ If you are familiar with Special Relativity, you will recognise this as the
 Minkowski space-time metric. Note, we have used above some of the earlier
 [properties of
 rotations](/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations)
-to equate $$\mathbf{xya} = -\mathbf{axy}$$, but in full for clarity:
+to equate $$\mathbf{ta} = -\mathbf{at}$$, but in full for clarity:
 
 $$
 \begin{aligned}
-\mathbf{xya}
-&= \mathbf{xy}r_a \mathbf{x} e^{\mathbf{xy}\theta_a} \\
-&= - r_a \mathbf{xxy} e^{\mathbf{xy}\theta_a} \\
-&= -r_a \mathbf{x}e^{\mathbf{xy}\theta_a}\mathbf{xy} \\
-&= -\mathbf{axy}
+\mathbf{ta}
+&= \mathbf{t}r_a \mathbf{x} e^{\mathbf{xy}\theta_a} \\
+&= - r_a \mathbf{xt} e^{\mathbf{xy}\theta_a} \\
+&= -r_a \mathbf{x}e^{\mathbf{xy}\theta_a}\mathbf{t} \\
+&= -\mathbf{at}
 \end{aligned}
 $$
 
@@ -77,16 +87,16 @@ $$\cosh^2\phi - \sinh^2\phi = 1$$
 
 then $$\mathbf{A}$$ will be a normalised multivector if $$\mathbf{a}^2 = 1$$ and:
 
-$$ \mathbf{A} = \mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi $$
+$$ \mathbf{A} = \mathbf{a}\cosh \phi + \mathbf{t}\sinh \phi $$
 
 We can verify this by expanding:
 
 $$
 \begin{aligned}
 \mathbf{A}^2
-&= (\mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi)(\mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi) \\
-&= \mathbf{a}^2\cosh^2\phi + \mathbf{axy}\cosh\phi\sinh\phi + \mathbf{xya}\cosh\phi\sinh\phi + \mathbf{xyxy}\sinh^2\phi \\
-&= \cosh^2\phi + \mathbf{axy}\cosh\phi\sinh\phi - \mathbf{axy}\cosh\phi\sinh\phi - \sinh^2\phi \\
+&= (\mathbf{a}\cosh \phi + \mathbf{t}\sinh \phi)(\mathbf{a}\cosh \phi + \mathbf{t}\sinh \phi) \\
+&= \mathbf{a}^2\cosh^2\phi + \mathbf{at}\cosh\phi\sinh\phi + \mathbf{ta}\cosh\phi\sinh\phi + \mathbf{tt}\sinh^2\phi \\
+&= \cosh^2\phi + \mathbf{at}\cosh\phi\sinh\phi - \mathbf{at}\cosh\phi\sinh\phi - \sinh^2\phi \\
 &= 1
 \end{aligned}
 $$
@@ -103,20 +113,20 @@ This allows us to simplify $$\mathbf{A}$$ as follows:
 $$
 \begin{aligned}
 \mathbf{A}
-&= \mathbf{a}\cosh\phi + \mathbf{xy}\sinh\phi \\
-&= \mathbf{a}(\cosh\phi + \mathbf{axy}\sinh\phi) & \text{, since }\mathbf{a}^2 = 1\\
-&= \mathbf{a}e^{\mathbf{axy}\phi}
+&= \mathbf{a}\cosh\phi + \mathbf{t}\sinh\phi \\
+&= \mathbf{a}(\cosh\phi + \mathbf{at}\sinh\phi) & \text{, since }\mathbf{a}^2 = 1\\
+&= \mathbf{a}e^{\mathbf{at}\phi}
 \end{aligned}
 $$
 
-since $$\mathbf{axy}$$ is just the vector $$\mathbf{a}$$ rotated by 90 degrees. With this simpler definition of a normal space-time multivector, seeing
+With this simpler definition of a normal space-time multivector, seeing
 that it is indeed normal is trivial:
 
 $$
 \begin{aligned}
 \mathbf{A}^2
-&= \mathbf{a}e^{\mathbf{axy}\phi}\mathbf{a}e^{\mathbf{axy}\phi}\\
-&= \mathbf{a}e^{\mathbf{axy}\phi}e^{-\mathbf{axy}\phi}\mathbf{a} \\
+&= \mathbf{a}e^{\mathbf{at}\phi}\mathbf{a}e^{\mathbf{at}\phi}\\
+&= \mathbf{a}e^{\mathbf{at}\phi}e^{-\mathbf{at}\phi}\mathbf{a} \\
 &= 1
 \end{aligned}
 $$
@@ -130,16 +140,20 @@ $$ \mathbf{bc} = e^{\mathbf{xy}\theta} $$
 
 we find that it no longer defines a rotation when simply applied to an
 arbitrary multivector, because the magnitude-squared after the multiplication
-is not the same as before:
+is not the same as before (Note, in the following section we will again use
+the earlier [properties of
+rotations](/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations)
+to equate $$\mathbf{cba} = \mathbf{abc}$$):
 
 $$
 \begin{aligned}
 (\mathbf{Abc})^2
 &= \mathbf{AbcAbc} \\
-&= (\mathbf{a} + t_a\mathbf{xy})\mathbf{bc}(\mathbf{a} + t_a\mathbf{xy})\mathbf{bc} \\
-&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a}\mathbf{cb} + t_a\mathbf{xy}\mathbf{bc})\mathbf{bc} \\
-&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a}\mathbf{cbbc} + t_a\mathbf{xy}\mathbf{bcbc}) \\
-&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a} + t_a\mathbf{xy}e^{\mathbf{xy}2\theta}) \\
+&= (\mathbf{a} + t_a\mathbf{t})\mathbf{bc}(\mathbf{a} + t_a\mathbf{t})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{bca} + t_a\mathbf{bct})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{acb} + t_a\mathbf{tbc})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{a}\mathbf{cbbc} + t_a\mathbf{t}\mathbf{bcbc}) \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{a} + t_a\mathbf{t}e^{\mathbf{xy}2\theta}) \\
 &\neq \mathbf{A}^2
 \end{aligned}
 $$
@@ -168,21 +182,17 @@ Now, evaluating the actual rotation, we find:
 $$
 \begin{aligned}
 \mathbf{cbAbc}
-&= \mathbf{cb}(\mathbf{a} + t_a\mathbf{xy})\mathbf{bc} \\
-&= \mathbf{cbabc} + t_a\mathbf{cbxybc} \\
-&= \mathbf{abcbc} + t_a\mathbf{xycbbc} \\
-&= \mathbf{a}e^{\mathbf{xy}\theta} + t_a\mathbf{xy}
+&= \mathbf{cb}(\mathbf{a} + t_a\mathbf{t})\mathbf{bc} \\
+&= \mathbf{cbabc} + t_a\mathbf{cbtbc} \\
+&= \mathbf{abcbc} + t_a\mathbf{tcbbc} \\
+&= \mathbf{a}e^{\mathbf{xy}\theta} + t_a\mathbf{t}
 \end{aligned}
 $$
 
 That is, when applying the spatial rotation in this way, the vector component of $$\mathbf{A}$$ is rotated by $$\theta$$, while the time component of the multi-vector is not affected at all.
 We can change position and orientation within the one inertial frame without
-affecting the measured time. Note, we have again used above some of the earlier
-[properties of
-rotations](/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations)
-to equate $$\mathbf{cba} = \mathbf{abc}$$ and $$\mathbf{cbxy} =
-\mathbf{xycb}$$.
+affecting the measured time.
 
 But what if, rather than defining a rotation between two spatial vectors, we
 instead define a rotation between a spatial vector and the pseudo-scalar
-component $$\mathbf{xy}$$ - a [two-dimensional rotation in space-time](../2d-rotations-in-spacetime/)?
+temporal component $$\mathbf{t}$$ - a [two-dimensional rotation in space-time](../2d-rotations-in-spacetime/)?

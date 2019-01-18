@@ -9,7 +9,7 @@ In the previous section we saw that we can rotate a space-time multivector $$\ma
 space - using a rotation from one normal vector $$\mathbf{b}$$ to another
 normal vector $$\mathbf{c}$$ to form the rotation $$\mathbf{bc} =
 e^{\mathbf{xy}\frac{\theta}{2}}$$. We also saw that we can define a normal
-space-time multivector as $$\mathbf{B} = \mathbf{b}e^{\mathbf{bxy}\phi}$$, where $$\mathbf{b}^2 = 1$$. In this section we will consider a space-time multivector $$\mathbf{A}$$ being
+space-time multivector as $$\mathbf{B} = \mathbf{b}e^{\mathbf{bt}\phi}$$, where $$\mathbf{b}^2 = 1$$. In this section we will consider a space-time multivector $$\mathbf{A}$$ being
 rotated in **space-time** - using a rotation from one normal multivector
 $$\mathbf{B}$$ to another normal multivector $$\mathbf{C}$$, and see that
 the result is the standard Lorentz transformation.
@@ -23,7 +23,7 @@ If we were to do a generic space-time multivector rotation, the rotation would b
 $$
 \begin{aligned}
 \mathbf{BC}
-&= \mathbf{b}e^{\mathbf{bxy}\phi_B}\mathbf{c}e^{\mathbf{cxy}\phi_C} \\
+&= \mathbf{b}e^{\mathbf{bt}\phi_B}\mathbf{c}e^{\mathbf{ct}\phi_C} \\
 \end{aligned}
 $$
 
@@ -35,10 +35,10 @@ case we get a much simplified rotation:
 $$
 \begin{aligned}
 \mathbf{BC}
-&= \mathbf{x}e^{\mathbf{xxy}\phi_B}\mathbf{x}e^{\mathbf{xxy}\phi_C} \\
-&= e^{-\mathbf{y}\phi_B}\mathbf{xx}e^{\mathbf{y}\phi_C} \\
-&= e^{\mathbf{y}(\phi_C-\phi_B)} \\
-&= e^{-\mathbf{y}\phi}
+&= \mathbf{x}e^{\mathbf{xt}\phi_B}\mathbf{x}e^{\mathbf{xt}\phi_C} \\
+&= e^{-\mathbf{xt}\phi_B}\mathbf{xx}e^{\mathbf{xt}\phi_C} \\
+&= e^{\mathbf{xt}(\phi_C-\phi_B)} \\
+&= e^{-\mathbf{xt}\phi}
 \end{aligned}
 $$
 
@@ -62,16 +62,16 @@ $$
 
 Given that we are now applying tho rotation twice, we define $$\phi$$ as double the angle between $$\mathbf{B}$$ and $$\mathbf{C}$$:
 
-$$ \mathbf{BC} = e^{-\mathbf{y}\frac{\phi}{2}} $$
+$$ \mathbf{BC} = e^{-\mathbf{xt}\frac{\phi}{2}} $$
 
 with the result that:
 
 $$
 \begin{aligned}
 \mathbf{CBABC}
-&= e^{\mathbf{y}\frac{\phi}{2}}(\mathbf{a} + t_a\mathbf{xy})e^{-\mathbf{y}\frac{\phi}{2}} \\
-&= e^{\mathbf{y}\frac{\phi}{2}}\mathbf{a}e^{-\mathbf{y}\frac{\phi}{2}} + e^{\mathbf{y}\frac{\phi}{2}}t_a\mathbf{xy}e^{-\mathbf{y}\frac{\phi}{2}} \\
-&= e^{\mathbf{y}\frac{\phi}{2}}\mathbf{a}e^{-\mathbf{y}\frac{\phi}{2}} + t_a\mathbf{xy}e^{-\mathbf{y}\phi}
+&= e^{\mathbf{xt}\frac{\phi}{2}}(\mathbf{a} + t_a\mathbf{t})e^{-\mathbf{xt}\frac{\phi}{2}} \\
+&= e^{\mathbf{xt}\frac{\phi}{2}}\mathbf{a}e^{-\mathbf{xt}\frac{\phi}{2}} + e^{\mathbf{xt}\frac{\phi}{2}}t_a\mathbf{t}e^{-\mathbf{xt}\frac{\phi}{2}} \\
+&= e^{\mathbf{xt}\frac{\phi}{2}}\mathbf{a}e^{-\mathbf{xt}\frac{\phi}{2}} + t_a\mathbf{t}e^{-\mathbf{xt}\phi}
 \end{aligned}
 $$
 
@@ -80,16 +80,16 @@ $$
 ### A vector in the direction of rotation
 
 If we first look at the case where the vector being rotated is in the same direction as the
-rotation itself, ie. $$\mathbf{a} = x_a\mathbf{x}$$, we can further simplify the rotation:
+rotation itself, ie. $$\mathbf{A} = x_a\mathbf{x} + t_a\mathbf{t}$$, we can further simplify the rotation:
 
 $$
 \begin{aligned}
 \mathbf{CBABC}
-&= e^{\mathbf{y}\frac{\phi}{2}}x_a\mathbf{x}e^{-\mathbf{y}\frac{\phi}{2}} + t_a\mathbf{xy}e^{-\mathbf{y}\phi} \\
-&= x_a\mathbf{x}e^{-\mathbf{y}\phi} + t_a\mathbf{xy}e^{-\mathbf{y}\phi} \\
-&= x_a\mathbf{x}(\cosh\phi - \mathbf{y}\sinh\phi) + t_a\mathbf{xy}(\cosh\phi - \mathbf{y}\sinh\phi) \\
-&= \mathbf{x}(x_a\cosh\phi - t_a\sinh\phi) + \mathbf{xy}(t_a\cosh\phi - x_a\sinh\phi) \\
-&= \cosh\phi(x_a - t_a\tanh\phi)\mathbf{x} + \cosh\phi(t_a - x_a\tanh\phi)\mathbf{xy}
+&= e^{\mathbf{xt}\frac{\phi}{2}}x_a\mathbf{x}e^{-\mathbf{xt}\frac{\phi}{2}} + t_a\mathbf{t}e^{-\mathbf{xt}\phi} \\
+&= x_a\mathbf{x}e^{-\mathbf{xt}\phi} + t_a\mathbf{t}e^{-\mathbf{xt}\phi} \\
+&= x_a\mathbf{x}(\cosh\phi - \mathbf{y}\sinh\phi) + t_a\mathbf{t}(\cosh\phi - \mathbf{y}\sinh\phi) \\
+&= \mathbf{x}(x_a\cosh\phi - t_a\sinh\phi) + \mathbf{t}(t_a\cosh\phi - x_a\sinh\phi) \\
+&= \cosh\phi(x_a - t_a\tanh\phi)\mathbf{x} + \cosh\phi(t_a - x_a\tanh\phi)\mathbf{t}
 \end{aligned}
 $$
 {{<figure class="inline" src="/sinh_cosh_tanh.svg.png" title="Plotting sinh, cosh and tanh" attr="Wikimedia Commons" attrlink="https://en.wikipedia.org/wiki/File:Sinh_cosh_tanh.svg" width="300px" >}}
@@ -100,23 +100,35 @@ and $$\tanh\phi$$ can be [related by](https://en.wikipedia.org/wiki/Hyperbolic_f
 $$ \cosh\phi = \frac{1}{\sqrt{1-\tan^2\phi}} $$
 
 So with the substitution of $$v = \tanh\phi$$, we're left with the Lorentz
-transformation (with the speed of light ratio normalized to 1):
+transformation of $$\mathbf{A} = x_a\mathbf{x} + t_a\mathbf{t}$$ (with the speed of light ratio normalized to 1):
 
-$$ \mathbf{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\mathbf{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\mathbf{xy} $$
+$$ \mathbf{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\mathbf{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\mathbf{t} $$
 
 ### A vector perpendicular to the direction of rotation
 Next let us look at the case where the vector being rotated is perpendicular to
-the rotation, ie. $$\mathbf{a} = y_a\mathbf{y}$$. In this case:
+the rotation, ie. $$\mathbf{A} = y_a\mathbf{y} + t_a\mathbf{t}$$. In this case:
 
 $$
 \begin{aligned}
 \mathbf{CBABC}
-&= y_a\mathbf{y}e^{\mathbf{y}\frac{\phi}{2}}e^{-\mathbf{y}\frac{\phi}{2}} + t_a\mathbf{xy}e^{-\mathbf{y}\phi} \\
-&= y_a\mathbf{y} + t_a\mathbf{xy}(\cosh\phi - \mathbf{y}\sinh\phi) \\
-&= y_a\mathbf{y} + t_a\mathbf{xy}\cosh\phi - t_a\mathbf{x}\sinh\phi \\
-&= y_a\mathbf{y} + \frac{t_a}{\sqrt{1-v^2}}\mathbf{xy} - \frac{v t_a}{\sqrt{1-v^2}}\mathbf{x} \\
+&= y_a\mathbf{y}e^{\mathbf{xt}\frac{\phi}{2}}e^{-\mathbf{xt}\frac{\phi}{2}} + t_a\mathbf{t}e^{-\mathbf{xt}\phi} \\
+&= y_a\mathbf{y} + t_a\mathbf{t}(\cosh\phi - \mathbf{xt}\sinh\phi) \\
+&= y_a\mathbf{y} + t_a\mathbf{t}\cosh\phi - t_a\mathbf{x}\sinh\phi \\
+&= y_a\mathbf{y} + \frac{t_a}{\sqrt{1-v^2}}\mathbf{t} - \frac{v t_a}{\sqrt{1-v^2}}\mathbf{x} \\
 \end{aligned}
 $$
 
 So the component perpendicular to the direction of the rotation is not affected by the transformation, just as with the Lorentz transformation.
+
+### A general 2-dimensional space-time vector
+
+The space-time rotation between $$\mathbf{xt} of a general 2-dimensional multivector:
+
+$$ \mathbf{A} = x_a\mathbf{x} + y_a\mathbf{y} + t_a\mathbf{t}$$
+
+is then
+
+$$
+\mathbf{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\mathbf{x} + y_a\mathbf{y} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\mathbf{t}
+$$
 
