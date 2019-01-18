@@ -12,17 +12,17 @@
     <title>The Lorentz Transformation :: Geometry of Relativity</title>
 
     
-    <link href="/css/nucleus.css?1541927001" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1541927001" rel="stylesheet">
-    <link href="/css/hybrid.css?1541927001" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1541927001" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1541927001" rel="stylesheet">
-    <link href="/css/auto-complete.css?1541927001" rel="stylesheet">
-    <link href="/css/theme.css?1541927001" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1541927001" rel="stylesheet">
+    <link href="/css/nucleus.css?1547846751" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1547846751" rel="stylesheet">
+    <link href="/css/hybrid.css?1547846751" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1547846751" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1547846751" rel="stylesheet">
+    <link href="/css/auto-complete.css?1547846751" rel="stylesheet">
+    <link href="/css/theme.css?1547846751" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1547846751" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1541927001"></script>
+    <script src="/js/jquery-2.x.min.js?1547846751"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -79,14 +79,14 @@ figure.inline h4 {
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1541927001"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1541927001"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1547846751"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1547846751"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/geometry-of-relativity.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1541927001"></script>
+<script type="text/javascript" src="/js/search.js?1547846751"></script>
 
     
   </div>
@@ -419,7 +419,7 @@ figure.inline h4 {
 space - using a rotation from one normal vector <span  class="math">\(\mathbf{b}\)</span> to another
 normal vector <span  class="math">\(\mathbf{c}\)</span> to form the rotation <span  class="math">\(\mathbf{bc} =
 e^{\mathbf{xy}\frac{\theta}{2}}\)</span>. We also saw that we can define a normal
-space-time multivector as <span  class="math">\(\mathbf{B} = \mathbf{b}e^{\mathbf{bxy}\phi}\)</span>, where <span  class="math">\(\mathbf{b}^2 = 1\)</span>. In this section we will consider a space-time multivector <span  class="math">\(\mathbf{A}\)</span> being
+space-time multivector as <span  class="math">\(\mathbf{B} = \mathbf{b}e^{\mathbf{bt}\phi}\)</span>, where <span  class="math">\(\mathbf{b}^2 = 1\)</span>. In this section we will consider a space-time multivector <span  class="math">\(\mathbf{A}\)</span> being
 rotated in <strong>space-time</strong> - using a rotation from one normal multivector
 <span  class="math">\(\mathbf{B}\)</span> to another normal multivector <span  class="math">\(\mathbf{C}\)</span>, and see that
 the result is the standard Lorentz transformation.</p>
@@ -433,7 +433,7 @@ the result is the standard Lorentz transformation.</p>
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{BC}
-&= \mathbf{b}e^{\mathbf{bxy}\phi_B}\mathbf{c}e^{\mathbf{cxy}\phi_C} \\
+&= \mathbf{b}e^{\mathbf{bt}\phi_B}\mathbf{c}e^{\mathbf{ct}\phi_C} \\
 \end{aligned}
 \]</span></p>
 
@@ -445,10 +445,10 @@ case we get a much simplified rotation:</p>
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{BC}
-&= \mathbf{x}e^{\mathbf{xxy}\phi_B}\mathbf{x}e^{\mathbf{xxy}\phi_C} \\
-&= e^{-\mathbf{y}\phi_B}\mathbf{xx}e^{\mathbf{y}\phi_C} \\
-&= e^{\mathbf{y}(\phi_C-\phi_B)} \\
-&= e^{-\mathbf{y}\phi}
+&= \mathbf{x}e^{\mathbf{xt}\phi_B}\mathbf{x}e^{\mathbf{xt}\phi_C} \\
+&= e^{-\mathbf{xt}\phi_B}\mathbf{xx}e^{\mathbf{xt}\phi_C} \\
+&= e^{\mathbf{xt}(\phi_C-\phi_B)} \\
+&= e^{-\mathbf{xt}\phi}
 \end{aligned}
 \]</span></p>
 
@@ -472,16 +472,16 @@ case we get a much simplified rotation:</p>
 
 <p>Given that we are now applying tho rotation twice, we define <span  class="math">\(\phi\)</span> as double the angle between <span  class="math">\(\mathbf{B}\)</span> and <span  class="math">\(\mathbf{C}\)</span>:</p>
 
-<p><span  class="math">\[ \mathbf{BC} = e^{-\mathbf{y}\frac{\phi}{2}} \]</span></p>
+<p><span  class="math">\[ \mathbf{BC} = e^{-\mathbf{xt}\frac{\phi}{2}} \]</span></p>
 
 <p>with the result that:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{CBABC}
-&= e^{\mathbf{y}\frac{\phi}{2}}(\mathbf{a} + t_a\mathbf{xy})e^{-\mathbf{y}\frac{\phi}{2}} \\
-&= e^{\mathbf{y}\frac{\phi}{2}}\mathbf{a}e^{-\mathbf{y}\frac{\phi}{2}} + e^{\mathbf{y}\frac{\phi}{2}}t_a\mathbf{xy}e^{-\mathbf{y}\frac{\phi}{2}} \\
-&= e^{\mathbf{y}\frac{\phi}{2}}\mathbf{a}e^{-\mathbf{y}\frac{\phi}{2}} + t_a\mathbf{xy}e^{-\mathbf{y}\phi}
+&= e^{\mathbf{xt}\frac{\phi}{2}}(\mathbf{a} + t_a\mathbf{t})e^{-\mathbf{xt}\frac{\phi}{2}} \\
+&= e^{\mathbf{xt}\frac{\phi}{2}}\mathbf{a}e^{-\mathbf{xt}\frac{\phi}{2}} + e^{\mathbf{xt}\frac{\phi}{2}}t_a\mathbf{t}e^{-\mathbf{xt}\frac{\phi}{2}} \\
+&= e^{\mathbf{xt}\frac{\phi}{2}}\mathbf{a}e^{-\mathbf{xt}\frac{\phi}{2}} + t_a\mathbf{t}e^{-\mathbf{xt}\phi}
 \end{aligned}
 \]</span></p>
 
@@ -490,16 +490,16 @@ case we get a much simplified rotation:</p>
 <h3 id="a-vector-in-the-direction-of-rotation">A vector in the direction of rotation</h3>
 
 <p>If we first look at the case where the vector being rotated is in the same direction as the
-rotation itself, ie. <span  class="math">\(\mathbf{a} = x_a\mathbf{x}\)</span>, we can further simplify the rotation:</p>
+rotation itself, ie. <span  class="math">\(\mathbf{A} = x_a\mathbf{x} + t_a\mathbf{t}\)</span>, we can further simplify the rotation:</p>
 
 <p><span  class="math">\(
 \begin{aligned}
 \mathbf{CBABC}
-&= e^{\mathbf{y}\frac{\phi}{2}}x_a\mathbf{x}e^{-\mathbf{y}\frac{\phi}{2}} + t_a\mathbf{xy}e^{-\mathbf{y}\phi} \\
-&= x_a\mathbf{x}e^{-\mathbf{y}\phi} + t_a\mathbf{xy}e^{-\mathbf{y}\phi} \\
-&= x_a\mathbf{x}(\cosh\phi - \mathbf{y}\sinh\phi) + t_a\mathbf{xy}(\cosh\phi - \mathbf{y}\sinh\phi) \\
-&= \mathbf{x}(x_a\cosh\phi - t_a\sinh\phi) + \mathbf{xy}(t_a\cosh\phi - x_a\sinh\phi) \\
-&= \cosh\phi(x_a - t_a\tanh\phi)\mathbf{x} + \cosh\phi(t_a - x_a\tanh\phi)\mathbf{xy}
+&= e^{\mathbf{xt}\frac{\phi}{2}}x_a\mathbf{x}e^{-\mathbf{xt}\frac{\phi}{2}} + t_a\mathbf{t}e^{-\mathbf{xt}\phi} \\
+&= x_a\mathbf{x}e^{-\mathbf{xt}\phi} + t_a\mathbf{t}e^{-\mathbf{xt}\phi} \\
+&= x_a\mathbf{x}(\cosh\phi - \mathbf{y}\sinh\phi) + t_a\mathbf{t}(\cosh\phi - \mathbf{y}\sinh\phi) \\
+&= \mathbf{x}(x_a\cosh\phi - t_a\sinh\phi) + \mathbf{t}(t_a\cosh\phi - x_a\sinh\phi) \\
+&= \cosh\phi(x_a - t_a\tanh\phi)\mathbf{x} + \cosh\phi(t_a - x_a\tanh\phi)\mathbf{t}
 \end{aligned}
 \)</span>
 
@@ -527,26 +527,38 @@ and <span  class="math">\(\tanh\phi\)</span> can be <a href="https://en.wikipedi
 <p><span  class="math">\[ \cosh\phi = \frac{1}{\sqrt{1-\tan^2\phi}} \]</span></p>
 
 <p>So with the substitution of <span  class="math">\(v = \tanh\phi\)</span>, we're left with the Lorentz
-transformation (with the speed of light ratio normalized to 1):</p>
+transformation of <span  class="math">\(\mathbf{A} = x_a\mathbf{x} + t_a\mathbf{t}\)</span> (with the speed of light ratio normalized to 1):</p>
 
-<p><span  class="math">\[ \mathbf{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\mathbf{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\mathbf{xy} \]</span></p>
+<p><span  class="math">\[ \mathbf{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\mathbf{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\mathbf{t} \]</span></p>
 
 <h3 id="a-vector-perpendicular-to-the-direction-of-rotation">A vector perpendicular to the direction of rotation</h3>
 
 <p>Next let us look at the case where the vector being rotated is perpendicular to
-the rotation, ie. <span  class="math">\(\mathbf{a} = y_a\mathbf{y}\)</span>. In this case:</p>
+the rotation, ie. <span  class="math">\(\mathbf{A} = y_a\mathbf{y} + t_a\mathbf{t}\)</span>. In this case:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{CBABC}
-&= y_a\mathbf{y}e^{\mathbf{y}\frac{\phi}{2}}e^{-\mathbf{y}\frac{\phi}{2}} + t_a\mathbf{xy}e^{-\mathbf{y}\phi} \\
-&= y_a\mathbf{y} + t_a\mathbf{xy}(\cosh\phi - \mathbf{y}\sinh\phi) \\
-&= y_a\mathbf{y} + t_a\mathbf{xy}\cosh\phi - t_a\mathbf{x}\sinh\phi \\
-&= y_a\mathbf{y} + \frac{t_a}{\sqrt{1-v^2}}\mathbf{xy} - \frac{v t_a}{\sqrt{1-v^2}}\mathbf{x} \\
+&= y_a\mathbf{y}e^{\mathbf{xt}\frac{\phi}{2}}e^{-\mathbf{xt}\frac{\phi}{2}} + t_a\mathbf{t}e^{-\mathbf{xt}\phi} \\
+&= y_a\mathbf{y} + t_a\mathbf{t}(\cosh\phi - \mathbf{xt}\sinh\phi) \\
+&= y_a\mathbf{y} + t_a\mathbf{t}\cosh\phi - t_a\mathbf{x}\sinh\phi \\
+&= y_a\mathbf{y} + \frac{t_a}{\sqrt{1-v^2}}\mathbf{t} - \frac{v t_a}{\sqrt{1-v^2}}\mathbf{x} \\
 \end{aligned}
 \]</span></p>
 
 <p>So the component perpendicular to the direction of the rotation is not affected by the transformation, just as with the Lorentz transformation.</p>
+
+<h3 id="a-general-2dimensional-spacetime-vector">A general 2-dimensional space-time vector</h3>
+
+<p>The space-time rotation between $$\mathbf{xt} of a general 2-dimensional multivector:</p>
+
+<p><span  class="math">\[ \mathbf{A} = x_a\mathbf{x} + y_a\mathbf{y} + t_a\mathbf{t}\]</span></p>
+
+<p>is then</p>
+
+<p><span  class="math">\[
+\mathbf{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\mathbf{x} + y_a\mathbf{y} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\mathbf{t}
+\]</span></p>
 
 <footer class=" footline" >
 	
@@ -750,20 +762,20 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1541927001"></script>
-    <script src="/js/perfect-scrollbar.min.js?1541927001"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1541927001"></script>
-    <script src="/js/jquery.sticky.js?1541927001"></script>
-    <script src="/js/featherlight.min.js?1541927001"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1541927001"></script>
-    <script src="/js/highlight.pack.js?1541927001"></script>
+    <script src="/js/clipboard.min.js?1547846751"></script>
+    <script src="/js/perfect-scrollbar.min.js?1547846751"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1547846751"></script>
+    <script src="/js/jquery.sticky.js?1547846751"></script>
+    <script src="/js/featherlight.min.js?1547846751"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1547846751"></script>
+    <script src="/js/highlight.pack.js?1547846751"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1541927001"></script>
-    <script src="/js/learn.js?1541927001"></script>
-    <script src="/js/hugo-learn.js?1541927001"></script>
+    <script src="/js/modernizr.custom.71422.js?1547846751"></script>
+    <script src="/js/learn.js?1547846751"></script>
+    <script src="/js/hugo-learn.js?1547846751"></script>
 
-    <link href="/mermaid/mermaid.css?1541927001" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1541927001"></script>
+    <link href="/mermaid/mermaid.css?1547846751" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1547846751"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

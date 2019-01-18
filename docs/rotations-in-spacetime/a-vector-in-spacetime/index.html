@@ -12,17 +12,17 @@
     <title>A Vector in Spacetime :: Geometry of Relativity</title>
 
     
-    <link href="/css/nucleus.css?1541927001" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1541927001" rel="stylesheet">
-    <link href="/css/hybrid.css?1541927001" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1541927001" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1541927001" rel="stylesheet">
-    <link href="/css/auto-complete.css?1541927001" rel="stylesheet">
-    <link href="/css/theme.css?1541927001" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1541927001" rel="stylesheet">
+    <link href="/css/nucleus.css?1547846751" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1547846751" rel="stylesheet">
+    <link href="/css/hybrid.css?1547846751" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1547846751" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1547846751" rel="stylesheet">
+    <link href="/css/auto-complete.css?1547846751" rel="stylesheet">
+    <link href="/css/theme.css?1547846751" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1547846751" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1541927001"></script>
+    <script src="/js/jquery-2.x.min.js?1547846751"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -79,14 +79,14 @@ figure.inline h4 {
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1541927001"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1541927001"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1547846751"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1547846751"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/geometry-of-relativity.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1541927001"></script>
+<script type="text/javascript" src="/js/search.js?1547846751"></script>
 
     
   </div>
@@ -422,22 +422,32 @@ component to form a &quot;multivector&quot;. Furthermore, we will see that this 
 component behaves geometrically as we expect time to behave in the space-time
 of Special Relativity and, by extension, in our every day experience. We will
 then see that we can rotate these space-time multivectors in space without
-affecting the <span  class="math">\(\mathbf{xy}\)</span> component, corresponding to changing your frame
+affecting the temporal component, corresponding to changing your frame
 of reference within a single inertial frame.</p>
 
-<p>
-<div class="notices warning" ><p>At this point we are deviating significantly from the normal understanding of
-<a href="https://en.wikipedia.org/wiki/Spacetime_algebra">a space-time algebra using Geometric
-Algebra</a>, where a separate
-basis vector is normally defined for the time dimension. You have been warned,
-you may be entering crack-pot territory <i class="fas fa-user-astronaut"></i></p>
-</div>
-</p>
+<p></p>
 
-<p>To begin with, let's define an arbitrary two-dimensional space-time multivector
-as a vector plus a component of <span  class="math">\(\mathbf{xy}\)</span>:</p>
+<p>For clarity, let's define <span  class="math">\(\mathbf{t}\)</span> as</p>
 
-<p><span  class="math">\[ \mathbf{A} = \mathbf{a} + t_a\mathbf{xy} \]</span></p>
+<p><span  class="math">\[\mathbf{t} = \mathbf{xy}\]</span></p>
+
+<p>noting that</p>
+
+<p><span  class="math">\[
+\mathbf{t}^2 = \mathbf{xyxy} = -1
+\]</span></p>
+
+<p>and</p>
+
+<p><span  class="math">\[
+\mathbf{xt} = \mathbf{xxy} = -\mathbf{xyx} = -\mathbf{tx} \\
+\mathbf{yt} = -\mathbf{ty}
+\]</span></p>
+
+<p>We can then define an arbitrary two-dimensional space-time multivector
+as a vector plus a component of <span  class="math">\(\mathbf{t}\)</span>:</p>
+
+<p><span  class="math">\[ \mathbf{A} = \mathbf{a} + t_a\mathbf{t} \]</span></p>
 
 <h2 id="the-magnitudesquared-of-a-spacetime-multivector">The magnitude-squared of a space-time multivector</h2>
 
@@ -446,9 +456,9 @@ as a vector plus a component of <span  class="math">\(\mathbf{xy}\)</span>:</p>
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{A}^2
-&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a} + t_a\mathbf{xy}) \\
-&= \mathbf{a}^2 + t_a\mathbf{axy} + t_a\mathbf{xya} + t_a^2\mathbf{xyxy} \\
-&= \mathbf{a}^2 + t_a\mathbf{axy} - t_a\mathbf{axy} - t_a^2 \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{a} + t_a\mathbf{t}) \\
+&= \mathbf{a}^2 + t_a\mathbf{at} + t_a\mathbf{ta} + t_a^2\mathbf{tt} \\
+&= \mathbf{a}^2 + t_a\mathbf{at} - t_a\mathbf{at} - t_a^2 \\
 &= \mathbf{a}^2 - t_a^2 \\
 &= r_a^2 - t_a^2
 \end{aligned}
@@ -458,15 +468,15 @@ as a vector plus a component of <span  class="math">\(\mathbf{xy}\)</span>:</p>
 Minkowski space-time metric. Note, we have used above some of the earlier
 <a href="/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations">properties of
 rotations</a>
-to equate <span  class="math">\(\mathbf{xya} = -\mathbf{axy}\)</span>, but in full for clarity:</p>
+to equate <span  class="math">\(\mathbf{ta} = -\mathbf{at}\)</span>, but in full for clarity:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{xya}
-&= \mathbf{xy}r_a \mathbf{x} e^{\mathbf{xy}\theta_a} \\
-&= - r_a \mathbf{xxy} e^{\mathbf{xy}\theta_a} \\
-&= -r_a \mathbf{x}e^{\mathbf{xy}\theta_a}\mathbf{xy} \\
-&= -\mathbf{axy}
+\mathbf{ta}
+&= \mathbf{t}r_a \mathbf{x} e^{\mathbf{xy}\theta_a} \\
+&= - r_a \mathbf{xt} e^{\mathbf{xy}\theta_a} \\
+&= -r_a \mathbf{x}e^{\mathbf{xy}\theta_a}\mathbf{t} \\
+&= -\mathbf{at}
 \end{aligned}
 \]</span></p>
 
@@ -487,16 +497,16 @@ scalar value, a value which matches the Minkowski space-time metric.</p>
 
 <p>then <span  class="math">\(\mathbf{A}\)</span> will be a normalised multivector if <span  class="math">\(\mathbf{a}^2 = 1\)</span> and:</p>
 
-<p><span  class="math">\[ \mathbf{A} = \mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi \]</span></p>
+<p><span  class="math">\[ \mathbf{A} = \mathbf{a}\cosh \phi + \mathbf{t}\sinh \phi \]</span></p>
 
 <p>We can verify this by expanding:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{A}^2
-&= (\mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi)(\mathbf{a}\cosh \phi + \mathbf{xy}\sinh \phi) \\
-&= \mathbf{a}^2\cosh^2\phi + \mathbf{axy}\cosh\phi\sinh\phi + \mathbf{xya}\cosh\phi\sinh\phi + \mathbf{xyxy}\sinh^2\phi \\
-&= \cosh^2\phi + \mathbf{axy}\cosh\phi\sinh\phi - \mathbf{axy}\cosh\phi\sinh\phi - \sinh^2\phi \\
+&= (\mathbf{a}\cosh \phi + \mathbf{t}\sinh \phi)(\mathbf{a}\cosh \phi + \mathbf{t}\sinh \phi) \\
+&= \mathbf{a}^2\cosh^2\phi + \mathbf{at}\cosh\phi\sinh\phi + \mathbf{ta}\cosh\phi\sinh\phi + \mathbf{tt}\sinh^2\phi \\
+&= \cosh^2\phi + \mathbf{at}\cosh\phi\sinh\phi - \mathbf{at}\cosh\phi\sinh\phi - \sinh^2\phi \\
 &= 1
 \end{aligned}
 \]</span></p>
@@ -513,20 +523,20 @@ where we saw that if <span  class="math">\( \mathbf{a}^2 = 1 \)</span>, then</p>
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{A}
-&= \mathbf{a}\cosh\phi + \mathbf{xy}\sinh\phi \\
-&= \mathbf{a}(\cosh\phi + \mathbf{axy}\sinh\phi) & \text{, since }\mathbf{a}^2 = 1\\
-&= \mathbf{a}e^{\mathbf{axy}\phi}
+&= \mathbf{a}\cosh\phi + \mathbf{t}\sinh\phi \\
+&= \mathbf{a}(\cosh\phi + \mathbf{at}\sinh\phi) & \text{, since }\mathbf{a}^2 = 1\\
+&= \mathbf{a}e^{\mathbf{at}\phi}
 \end{aligned}
 \]</span></p>
 
-<p>since <span  class="math">\(\mathbf{axy}\)</span> is just the vector <span  class="math">\(\mathbf{a}\)</span> rotated by 90 degrees. With this simpler definition of a normal space-time multivector, seeing
+<p>With this simpler definition of a normal space-time multivector, seeing
 that it is indeed normal is trivial:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{A}^2
-&= \mathbf{a}e^{\mathbf{axy}\phi}\mathbf{a}e^{\mathbf{axy}\phi}\\
-&= \mathbf{a}e^{\mathbf{axy}\phi}e^{-\mathbf{axy}\phi}\mathbf{a} \\
+&= \mathbf{a}e^{\mathbf{at}\phi}\mathbf{a}e^{\mathbf{at}\phi}\\
+&= \mathbf{a}e^{\mathbf{at}\phi}e^{-\mathbf{at}\phi}\mathbf{a} \\
 &= 1
 \end{aligned}
 \]</span></p>
@@ -540,16 +550,20 @@ that it is indeed normal is trivial:</p>
 
 <p>we find that it no longer defines a rotation when simply applied to an
 arbitrary multivector, because the magnitude-squared after the multiplication
-is not the same as before:</p>
+is not the same as before (Note, in the following section we will again use
+the earlier <a href="/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations">properties of
+rotations</a>
+to equate <span  class="math">\(\mathbf{cba} = \mathbf{abc}\)</span>):</p>
 
 <p><span  class="math">\[
 \begin{aligned}
 (\mathbf{Abc})^2
 &= \mathbf{AbcAbc} \\
-&= (\mathbf{a} + t_a\mathbf{xy})\mathbf{bc}(\mathbf{a} + t_a\mathbf{xy})\mathbf{bc} \\
-&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a}\mathbf{cb} + t_a\mathbf{xy}\mathbf{bc})\mathbf{bc} \\
-&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a}\mathbf{cbbc} + t_a\mathbf{xy}\mathbf{bcbc}) \\
-&= (\mathbf{a} + t_a\mathbf{xy})(\mathbf{a} + t_a\mathbf{xy}e^{\mathbf{xy}2\theta}) \\
+&= (\mathbf{a} + t_a\mathbf{t})\mathbf{bc}(\mathbf{a} + t_a\mathbf{t})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{bca} + t_a\mathbf{bct})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{acb} + t_a\mathbf{tbc})\mathbf{bc} \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{a}\mathbf{cbbc} + t_a\mathbf{t}\mathbf{bcbc}) \\
+&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{a} + t_a\mathbf{t}e^{\mathbf{xy}2\theta}) \\
 &\neq \mathbf{A}^2
 \end{aligned}
 \]</span></p>
@@ -578,24 +592,20 @@ confirming the magnitude-squared is now unchanged:</p>
 <p><span  class="math">\[
 \begin{aligned}
 \mathbf{cbAbc}
-&= \mathbf{cb}(\mathbf{a} + t_a\mathbf{xy})\mathbf{bc} \\
-&= \mathbf{cbabc} + t_a\mathbf{cbxybc} \\
-&= \mathbf{abcbc} + t_a\mathbf{xycbbc} \\
-&= \mathbf{a}e^{\mathbf{xy}\theta} + t_a\mathbf{xy}
+&= \mathbf{cb}(\mathbf{a} + t_a\mathbf{t})\mathbf{bc} \\
+&= \mathbf{cbabc} + t_a\mathbf{cbtbc} \\
+&= \mathbf{abcbc} + t_a\mathbf{tcbbc} \\
+&= \mathbf{a}e^{\mathbf{xy}\theta} + t_a\mathbf{t}
 \end{aligned}
 \]</span></p>
 
 <p>That is, when applying the spatial rotation in this way, the vector component of <span  class="math">\(\mathbf{A}\)</span> is rotated by <span  class="math">\(\theta\)</span>, while the time component of the multi-vector is not affected at all.
 We can change position and orientation within the one inertial frame without
-affecting the measured time. Note, we have again used above some of the earlier
-<a href="/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations">properties of
-rotations</a>
-to equate <span  class="math">\(\mathbf{cba} = \mathbf{abc}\)</span> and <span  class="math">\(\mathbf{cbxy} =
-\mathbf{xycb}\)</span>.</p>
+affecting the measured time.</p>
 
 <p>But what if, rather than defining a rotation between two spatial vectors, we
 instead define a rotation between a spatial vector and the pseudo-scalar
-component <span  class="math">\(\mathbf{xy}\)</span> - a <a href="../2d-rotations-in-spacetime/">two-dimensional rotation in space-time</a>?</p>
+temporal component <span  class="math">\(\mathbf{t}\)</span> - a <a href="../2d-rotations-in-spacetime/">two-dimensional rotation in space-time</a>?</p>
 
 <footer class=" footline" >
 	
@@ -799,20 +809,20 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1541927001"></script>
-    <script src="/js/perfect-scrollbar.min.js?1541927001"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1541927001"></script>
-    <script src="/js/jquery.sticky.js?1541927001"></script>
-    <script src="/js/featherlight.min.js?1541927001"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1541927001"></script>
-    <script src="/js/highlight.pack.js?1541927001"></script>
+    <script src="/js/clipboard.min.js?1547846751"></script>
+    <script src="/js/perfect-scrollbar.min.js?1547846751"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1547846751"></script>
+    <script src="/js/jquery.sticky.js?1547846751"></script>
+    <script src="/js/featherlight.min.js?1547846751"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1547846751"></script>
+    <script src="/js/highlight.pack.js?1547846751"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1541927001"></script>
-    <script src="/js/learn.js?1541927001"></script>
-    <script src="/js/hugo-learn.js?1541927001"></script>
+    <script src="/js/modernizr.custom.71422.js?1547846751"></script>
+    <script src="/js/learn.js?1547846751"></script>
+    <script src="/js/hugo-learn.js?1547846751"></script>
 
-    <link href="/mermaid/mermaid.css?1541927001" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1541927001"></script>
+    <link href="/mermaid/mermaid.css?1547846751" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1547846751"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
