@@ -5,16 +5,23 @@ weight: 20
 draft: false
 ---
 
-[Euler's formula](https://en.wikipedia.org/wiki/Euler's_formula), the most remarkable formula in mathematics according to Richard Feynman, states that for any real number $$x$$,
+[Euler's formula](https://en.wikipedia.org/wiki/Euler's_formula), the most
+remarkable formula in mathematics, according to [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)
+and many others, states that for any real number $$x$$,
 
 $$ e^{ix} = \cos x + i \sin x $$
 
-To appreciate Euler's formula and it's application to geometric algebra, and
-ultimately relativity, we need to understand *why* the imaginary exponent of this special number $$e$$ results in the trigonometric functions.
-
-If you already understand how to derive Euler's formula, you may want to
-skip over to [Euler's formula and Geometric Algebra](../eulers-formula-and-geometric-algebra/).
+In this section we will derive Euler's formula to get a better understanding of
+how Euler's formula can be used to describe rotations in space and time,
+eventually including the Lorentz transformation.
 <!--more-->
+
+{{% notice tip "Skip if you prefer..." %}}
+The derivation of Euler's formula may be a little complicated if you've not touched calculus in a while.
+Feel free to skip this section for now and go straight to [Euler's formula and Geometric Algebra](../eulers-formula-and-geometric-algebra/),
+coming back later as you need.
+{{% /notice %}}
+
 
 ## Finding a function whose derivative is the function itself
 
@@ -44,19 +51,50 @@ and so on, until we end up with an infinite sum of terms:
 
 $$ f(x) = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{k=0}^{\infty} \frac{x^k}{k!} $$
 
-We now have a function satisfying $$ \frac{d}{dx} f(x) = f(x) $$ and can
-check our solution with:
+We now have a function satisfying $$ \frac{d}{dx} f(x) = f(x) $$.
 
-$$ 
+{{% notice activity "The derivative equals the function" %}}
+Take a couple of minutes to see if you can show that the derivative of
+our function:
+
+$$
+f(x) = \sum_{k=0}^{\infty} \frac{x^k}{k!}
+$$
+
+is itself.
+
+{{% details %}}
+{{< summary >}}
+Solution
+{{< /summary >}}
+
+We can work out the derivative of each term in the infinite sum of terms,
+
+$$
 \begin{aligned}
 \frac{d}{dx} f(x)
 &= \frac{d}{dx} \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
 &= \sum_{k=0}^{\infty} \frac{kx^{k-1}}{k!} \\
+\end{aligned}
+$$
+
+so we can completely remove the term for $$k=0$$ (as zero times anything
+is still zero), and continue:
+
+$$
+\begin{aligned}
+\frac{d}{dx} f(x)
+&= \sum_{k=1}^{\infty} k\frac{x^{k-1}}{k!} \\
 &= \sum_{k=1}^{\infty} \frac{x^{k-1}}{(k - 1)!} \\
 &= \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
 &= f(x)
 \end{aligned}
 $$
+
+Done!
+
+{{% /details %}}
+{{% /notice %}}
 
 Great, but where does $$e$$ fit in?
 
@@ -69,12 +107,15 @@ the powers (or exponents) are added ($$ 3^{2+1} = 3^3 $$):
 
 $$ b^m \times b^n = b^{m + n} $$
 
-## The definition of e
+## Our function is an exponential
 
 If we take our function which satisfies the property $$\frac{d}{dx}f(x) = f(x)$$
 we can show that it behaves just like an exponent should, in that:
 
+{{% details %}}
+{{< summary >}}
 $$ f(m) \times f(n) = f(m+n) $$
+{{< /summary >}}
 
 To show this requires quite a bit of re-arranging:
 
@@ -98,7 +139,24 @@ f(m) \times f(n)
 \end{aligned}
 $$
 
-Also similar to an exponent, we can see that for our function, $$ f(0) = 1$$:
+{{% /details %}}
+
+Also similar to an exponent, we can show for our function $$ f(x) $$, that
+$$f(0) = 1$$.
+
+{{% notice activity "Identity of f(0)" %}}
+Show that $$f(0) = 1$$ for our function:
+
+$$
+f(x) = \sum_{k=0}^{\infty} \frac{x^k}{k!}
+$$
+
+{{% details %}}
+{{% summary %}}
+Solution:
+{{% /summary %}}
+
+Substituting $$x=0$$,
 
 $$
 \begin{aligned}
@@ -110,12 +168,39 @@ f(0)
 \end{aligned}
 $$
 
-Given that our function $$f(x)$$ behaves just like an exponent should behave, we can define our
-function simply as a power of some specific number $$e$$:
+Done!
 
-$$ f(x) = e^x $$
+{{% /details %}}
+{{% /notice %}}
 
-and work out what this number $$e$$ is, with
+Given that our function $$f(x)$$ behaves just like an exponent should behave, it must be equivalent
+to some number to the power of $$x$$. We can find that number by working out $$f(1)$$.
+
+{{% notice activity "Find f(1)" %}}
+Show that $$f(1) \approx 2.717$$
+
+{{% details %}}
+{{% summary %}}
+Solution:
+{{% /summary %}}
+Evaluating,
+
+$$
+\begin{aligned}
+f(1) &= \sum_{k=0}^{\infty} \frac{1!}{k!} \\
+&= \sum_{k=0}^{\infty} \frac{1}{k!} \\
+&= \frac{1}{0!} + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \frac{1}{5!} + ... \\
+&= 1 + 1 + 0.5 + 0.1667 + 0.0417 + 0.0083... \\
+&= 2.717
+\end{aligned}
+$$
+
+The exact value (if we summed to infinity) is assigned a special name in maths, e.
+
+{{% /details %}}
+{{% /notice %}}
+
+So,
 
 $$ e^1 = f(1) = \sum_{k=0}^{\infty} \frac{1}{k!} \approx 2.71828... $$
 
@@ -149,8 +234,9 @@ Now we have enough background to appreciate the beauty of Euler's formula.
 Euler, like [Roger Cotes](https://en.wikipedia.org/wiki/Roger_Cotes) before him, noticed that if he evaluated this exponent function with a special type
 of value, an "imaginary" value whose square is negative, the
 result is a combination of the trigonometric functions $$\cos$$ and $$sin$$.
-That is, if we create an imaginary unit $$i$$ with the property that $$i^2 =
--1$$, and evaluate $$e^{ix}$$:
+That is, if we define $$i$$ such that $$i^2 = -1$$, and evaluate $$e^{ix}$$,
+it conveniently splits into two sums, one of the odd powers and one of the even
+powers:
 
 $$
 \begin{aligned}
@@ -177,7 +263,7 @@ Algebra](../eulers-formula-and-geometric-algebra) next.
 
 It's worth noting that we can calculate the derivative of
 $$e^{ix}$$ and as a result work out the standard derivations
-of $$\cos$$ and $$sin$$ that we may have memorized in our schooling:
+of $$\cos$$ and $$sin$$ that we may have memorized in school or otherwise:
 
 $$
 \begin{aligned}

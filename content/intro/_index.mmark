@@ -11,7 +11,7 @@ citizens, rather than arrows defined by coordinates on a coordinate
 system.
 
 For a flat Euclidean space, Geometric Algebra can be derived from a single rule that
-the square of the magnitude of any vector $$\mathbf{a}$$ is equal to the
+the square of the magnitude of any vector $$\v{a}$$ is equal to the
 square of the vector itself.
 
 With this one rule we can introduce addition and multiplication of two-dimensional vectors, as well as a simple rotation.
@@ -19,9 +19,9 @@ With this one rule we can introduce addition and multiplication of two-dimension
 <!--more-->
 
 ## One rule
-The square of the magnitude of an arbitrary vector $$\mathbf{a}$$ is equal to the square of the vector itself:
+The square of the magnitude of an arbitrary vector $$\v{a}$$ is equal to the square of the vector itself:
 
-$$ |\mathbf{a}|^2 = \mathbf{a}^2  $$
+$$ |\v{a}|^2 = \v{a}^2  $$
 
 This is similar to the more familiar [dot-product](https://en.wikipedia.org/wiki/Dot_product#Geometric_definition) of a vector with itself
 defining the Euclidean magnitude-squared of a vector, but as we will see, much more powerful.
@@ -29,21 +29,21 @@ defining the Euclidean magnitude-squared of a vector, but as we will see, much m
 ## Normal basis vectors
 
 Starting with a single dimension, we define a normal basis vector
-$$\mathbf{x}$$ (bold will indicate a vector) as having a magnitude
+$$\v{x}$$ (bold will indicate a vector) as having a magnitude
 of one:
 
-$$ \mathbf{x}^2 = 1$$
+$$ \v{x}^2 = 1$$
 
-Any other vector $$\mathbf{a}$$ within this single dimension can be represented as some multiple
-of $$\mathbf{x}$$, such as $$5\mathbf{x}$$ or
-$$-3.141579\mathbf{x}$$ or, more generally,
+Any other vector $$\v{a}$$ within this single dimension can be represented as some multiple
+of $$\v{x}$$, such as $$5\v{x}$$ or
+$$-3.141579\v{x}$$ or, more generally,
 
-$$\mathbf{a} = x_a\mathbf{x}$$
+$$\v{a} = \vcOne{a}$$
 
-Evaluating the magnitude-squared of $$\mathbf{a}$$ results in:
+Evaluating the magnitude-squared of $$\v{a}$$ results in:
 
 $$
-\mathbf{a}^2 = (x_a\mathbf{x})^2 = x_a\mathbf{x}x_a\mathbf{x} = x_a^2\mathbf{x}^2 = x_a^2
+\v{a}^2 = (\vcOne{a})^2 = \vcOne{a}\vcOne{a} = a_x^2\v{x}^2 = a_x^2
 $$
 
 as we would expect.
@@ -52,36 +52,36 @@ as we would expect.
 To describe vectors in two dimensions we need to add a second basis vector $$y$$ with the similar property of unit-magnitude,
 so when multiplied by itself,
 
-$$ \mathbf{y}^2 = 1 $$
+$$ \v{y}^2 = 1 $$
 
-We also need to ensure that this second vector $$\mathbf{y}$$ is orthogonal
-to $$\mathbf{x}$$, though we don't yet know how to represent this orthogonality.
-Nonetheless, by defining a general two-dimensional vector $$\mathbf{a}$$ as
+We also need to ensure that this second vector $$\v{y}$$ is orthogonal
+to $$\v{x}$$, though we don't yet know how to represent this orthogonality.
+Nonetheless, by defining a general two-dimensional vector $$\v{a}$$ as
 
-$$ \mathbf{a} = x_a\mathbf{x} + y_a\mathbf{y} $$
+$$ \v{a} = \vcTwo{a} $$
 
 we can derive orthogonality by using the rule that the magnitude-squared of any vector is equal to the vector squared,
 to evaluate that:
 
 $$
 \begin{aligned}
-\mathbf{a}^2
-&= (x_a\mathbf{x} + y_a\mathbf{y})(x_a\mathbf{x} + y_a\mathbf{y}) \\
-&= x_a\mathbf{x}x_a\mathbf{x} + x_a\mathbf{x}y_a\mathbf{y} + y_a\mathbf{y}x_a\mathbf{x} + y_a\mathbf{y}y_a\mathbf{y} \\
-&= x_a^2 + y_a^2 + x_a y_a(\mathbf{xy} + \mathbf{yx})
+\v{a}^2
+&= (\vcTwo{a})(\vcTwo{a}) \\
+&= a_x\v{x}a_x\v{x} + a_x\v{x}a_y\v{y} + a_y\v{y}a_x\v{x} + a_y\v{y}a_y\v{y} \\
+&= a_x^2 + a_y^2 + a_x a_y(\v{xy} + \v{yx})
 \end{aligned}
 $$
 
-So we see that the square of the magnitude of the vector $$\mathbf{a}$$  - a scalar number - will
+So we see that the square of the magnitude of the vector $$\v{a}$$  - a scalar number - will
 only equal the square of the vector if
 
-$$ \mathbf{xy} = -\mathbf{yx} $$
+$$ \v{xy} = -\v{yx} $$
 
 This then is the definition of orthogonal vectors - they are anti-commutative.
 
 With this definition of orthogonality, we have
 
-$$ \mathbf{a}^2 = x^2 + y^2 $$
+$$ \v{a}^2 = x^2 + y^2 $$
 
 which is exactly what we are used to - Pythagoras' theorem.
 
@@ -92,36 +92,40 @@ forward,
 
 $$
 \begin{aligned}
-\mathbf{a} + \mathbf{b}
-&= (a_x\mathbf{x} + a_y\mathbf{y}) + (b_x\mathbf{x} + b_y\mathbf{y}) \\
-&= (a_x + b_x)\mathbf{x} + (a_y + b_y)\mathbf{y} \\
-&= \mathbf{b} + \mathbf{a}
+\v{a} + \v{b}
+&= (\vcTwo{a}) + (\vcTwo{b}) \\
+&= (a_x + b_x)\v{x} + (a_y + b_y)\v{y} \\
+&= \v{b} + \v{a}
 \end{aligned}
 $$
 
 The order in which the vectors are added is not relevant which means that
-vectors are associative under addition (and subtraction), as $$\mathbf{a} +
-\mathbf{b} = \mathbf{b} + \mathbf{a}$$.
+vectors are associative under addition (and subtraction), as $$\v{a} +
+\v{b} = \v{b} + \v{a}$$.
 
-{{% notice note %}}
-**Activity**: See if you can calculated the magnitude-squared of $$\mathbf{a} + \mathbf{b}$$
+{{% notice activity "Magnitude squared of two vectors" %}}
+See if you can calculate the magnitude-squared of
 
-{{% expand "Solution" %}}
-Currently we can only evaluate this as:
+$$\v{a} + \v{b}$$
+
+{{% details %}}
+{{< summary >}}
+Solution
+{{< /summary >}}
 
 $$
 \begin{aligned}
-(\mathbf{a} + \mathbf{b})^2
-&= (\mathbf{a} + \mathbf{b})(\mathbf{a} + \mathbf{b}) \\
-&= \mathbf{a}^2 + \mathbf{ab} + \mathbf{ba} + \mathbf{b}^2
+(\v{a} + \v{b})^2
+&= (\v{a} + \v{b})(\v{a} + \v{b}) \\
+&= \v{a}^2 + \v{ab} + \v{ba} + \v{b}^2
 \end{aligned}
 $$
 
-but after the following section on multiplying two vectors, we will be able to
-see that this is in fact the [law of
-cosines](https://en.wikipedia.org/wiki/Law_of_cosines).
-{{% /expand %}}
+We can't yet go any further as we haven't yet defined what a multiple of two
+general vectors means. But soon we'll see that our
+solution here is actually the [law of cosines](https://en.wikipedia.org/wiki/Law_of_cosines).
 
+{{% /details %}}
 {{% /notice %}}
 
 ## Multiplying two vectors
@@ -129,71 +133,75 @@ The geometric product of two vectors may be a little less familiar:
 
 $$
 \begin{aligned}
-\mathbf{a} \mathbf{b}
-&= (a_x\mathbf{x} + a_y\mathbf{y})(b_x\mathbf{x} + b_y\mathbf{y}) \\
-&= a_x\mathbf{x}b_x\mathbf{x} + a_x\mathbf{x}b_y\mathbf{y} + a_y\mathbf{y}b_x\mathbf{x} + a_y\mathbf{y}b_y\mathbf{y} \\
-&= a_x b_x + a_y b_y + a_x b_y \mathbf{xy} + a_y b_x \mathbf{yx} \\
-&= a_x b_x + a_y b_y + \mathbf{xy}(a_x b_y - a_y b_x) \\
-\mathbf{ba} &= a_x b_x + a_y b_y - \mathbf{xy}(a_x b_y - a_y b_x)
+\v{a} \v{b}
+&= (\vcTwo{a})(\vcTwo{b}) \\
+&= a_x\v{x}b_x\v{x} + a_x\v{x}b_y\v{y} + a_y\v{y}b_x\v{x} + a_y\v{y}b_y\v{y} \\
+&= a_x b_x + a_y b_y + a_x b_y \v{xy} + a_y b_x \v{yx} \\
+&= a_x b_x + a_y b_y + \v{xy}(a_x b_y - a_y b_x) \\
 \end{aligned}
 $$
 
-The vector product is not commutative, as $$\mathbf{ab} \neq \mathbf{ba}$$
-nor is it anti-commutative, as $$\mathbf{ab} \neq -\mathbf{ba}$$.
+While the reverse is,
+
+$$
+\v{ba} = a_x b_x + a_y b_y - \v{xy}(a_x b_y - a_y b_x)
+$$
+
+The general vector product is not commutative, as $$\v{ab} \neq \v{ba}$$
+nor is it anti-commutative, as $$\v{ab} \neq -\v{ba}$$.
 If you are familiar with the traditional vector dot and cross products,
-you may recognise $$\mathbf{ab}$$ as some combination of both, but what is
+you may recognise $$\v{ab}$$ as some combination of both, but what is
 relevant is that it is a combination of a scalar (a pure number)
-and a pseudo-scalar (the $$\mathbf{xy}$$ term, which is not scalar, nor is
+and a pseudo-scalar (the $$\v{xy}$$ term, which is not scalar, nor is
 it a vector).
 
 Based on the above, we can add or subtract the two products to end up with either a scalar or pseudo-scalar respectively:
 
 $$
 \begin{aligned}
-\mathbf{ab} + \mathbf{ba} &= 2(a_x b_x + a_y b_y) \\
-\mathbf{ab} - \mathbf{ba} &= 2\mathbf{xy}(a_x b_y - a_y b_x)
+\v{ab} + \v{ba} &= 2(a_x b_x + a_y b_y) \\
+\v{ab} - \v{ba} &= 2\v{xy}(a_x b_y - a_y b_x)
 \end{aligned}
 $$
 
-Of particular interest is that the pseudo-scalar $$\mathbf{xy}$$ has the
+Of particular interest is that the pseudo-scalar $$\v{xy}$$ has the
 property that:
 
-$$ (\mathbf{xy})^2 = \mathbf{xyxy} = -\mathbf{xyyx} = -1 $$
+$$ (\v{xy})^2 = \v{xyxy} = -\v{xyyx} = -1 $$
 
 ## Rotating vectors in two-dimensions
 
-It is worth noting briefly that the product of two vectors, $$\mathbf{ab}$$
+It is worth noting briefly that the product of two vectors, $$\v{ab}$$
 appears to define a scale and rotation. We will look at this in more
-detail later, but we can already see that if $$\mathbf{a}$$ and $$\mathbf{b}$$
+detail later, but we can already see that if $$\v{a}$$ and $$\v{b}$$
 are perpendicular and have a magnitude of 1:
 
 $$
 \begin{aligned}
-\mathbf{a} &= \mathbf{x} \\
-\mathbf{b} &= \mathbf{y}
+\v{a} &= \v{x} \\
+\v{b} &= \v{y}
 \end{aligned}
 $$
 
 so that
 
-$$ \mathbf{ab} = \mathbf{xy}$$
+$$ \v{ab} = \v{xy}$$
 
-then this product will rotate any other vector $$\mathbf{c}$$:
-
-$$ \mathbf{c} = c_x\mathbf{x} + c_y\mathbf{y} $$
-
-by a right-angle each time it is applied:
+then this vector product will rotate any other vector $$\v{c}$$. To simplify things, let's
+multiply the unit vector $$\v{x}$$:
 
 $$
 \begin{aligned}
-\mathbf{abc} &= \mathbf{xy}(c_x\mathbf{x} + c_y\mathbf{y}) \\
-&= c_y\mathbf{x} - c_x\mathbf{y} \\
-\mathbf{ababc} &= -c_x\mathbf{x} - c_y\mathbf{y} = -\mathbf{c} \\
-\mathbf{abababc} &= -c_y\mathbf{x} + c_x\mathbf{y} \\
-\mathbf{ababababc} &= \mathbf{c}
+\v{abx} &= \v{xyx} \\
+&= -\v{xxy} \\
+&= -\v{y} \\
+\v{xy}(-\v{y}) &= -\v{x} \\
+\v{xy}(-\v{x}) &= -\v{xyx} \\
+&= \v{xxy} \\
+&= \v{y} \\
+\v{xy(y)} &= \v{x} \\
 \end{aligned}
 $$
 
 But we will first need to understand Euler's formula to
 appreciate this rotation in its general form.
-

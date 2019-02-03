@@ -7,8 +7,8 @@ pre: "<b>2. </b>"
 ---
 
 At the end of the previous section we saw that we can rotate an arbitrary
-vector by $$\frac{\pi}{2}$$ radians simply by multiplying that vector by
-$$\mathbf{xy}.$$ In this section we will see that this is because $$\mathbf{xy}
+vector by 90 degrees, $$\frac{\pi}{2}$$ radians, simply by multiplying that vector by
+$$\mathbf{xy}$$. In this section we will see that this is because $$\mathbf{xy}
 = e^{\mathbf{xy}\frac{\pi}{2}}$$ and that more generally we can rotate the same
 vector by any arbitrary angle $$\theta$$ simply by multiplying by
 $$e^{\mathbf{xy}\theta}$$.
