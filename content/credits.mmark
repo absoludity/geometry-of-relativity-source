@@ -5,7 +5,19 @@ hidden: true
 ---
 ## Contributors
 
-Thanks to them <i class="fas fa-heart"></i> for helping to spread the love of Geometric Algebra by having fun playing with its application in physics. Help others learn and get your contributions listed here! We need help creating visualisations, correcting and improving the text, adding activities where helpful, extending the text with testable implications, ...
+In addition to the contributors, I would never have heard of Geometric
+Algebra without the tireless work of [David
+Hestines](http://geocalc.clas.asu.edu/) to promote it during his whole career,
+followed by the work of Dr Chris Doran and Professor Anthony Lasenby at the
+[Cambridge Geometric Algebra
+group](http://geometry.mrao.cam.ac.uk/home/about-us/).
+
+Thanks to them <i class="fas fa-heart"></i> for helping to spread the love of
+Geometric Algebra and having fun playing with its application in physics. If
+you are interested you can help others learn by submitting a Github pull
+request and your contributions will be listed here automatically! I need help
+creating visualisations, correcting and improving the text, as well as adding
+activities where helpful.
 
 {{% ghcontributors "https://api.github.com/repos/absoludity/geometry-of-relativity/contributors?per_page=100" %}}
 
