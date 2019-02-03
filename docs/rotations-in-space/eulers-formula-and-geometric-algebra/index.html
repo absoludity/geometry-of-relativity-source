@@ -12,17 +12,17 @@
     <title>Euler&#39;s Formula and Geometric Algebra :: Geometry of Relativity</title>
 
     
-    <link href="/css/nucleus.css?1547846751" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1547846751" rel="stylesheet">
-    <link href="/css/hybrid.css?1547846751" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1547846751" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1547846751" rel="stylesheet">
-    <link href="/css/auto-complete.css?1547846751" rel="stylesheet">
-    <link href="/css/theme.css?1547846751" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1547846751" rel="stylesheet">
+    <link href="/css/nucleus.css?1549175850" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1549175850" rel="stylesheet">
+    <link href="/css/hybrid.css?1549175850" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1549175850" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1549175850" rel="stylesheet">
+    <link href="/css/auto-complete.css?1549175850" rel="stylesheet">
+    <link href="/css/theme.css?1549175850" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1549175850" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1547846751"></script>
+    <script src="/js/jquery-2.x.min.js?1549175850"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -38,7 +38,7 @@
 
   gtag('config', 'UA-47051063-2');
 </script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
 <style>
 #header h1 {
   font-size: 2rem;
@@ -57,6 +57,80 @@ figure.inline p {
 }
 figure.inline h4 {
   margin-bottom: 0;
+}
+
+ 
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+summary {
+    margin: -.5em -.5em 0;
+    padding: 0 2em;
+    cursor: pointer;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+summary:before {
+  border-radius: 5px;
+  content: "▶"; 
+  color: #00bdf3; 
+  font-weight: bold; 
+  position: absolute;
+  margin: 0 -1.5em;
+}
+details[open] summary:before {
+  content: "▼";
+}
+
+ 
+div.notice {
+  margin: 2rem 0;
+  padding: 0 0 0.5rem 0;
+  position: relative;
+}
+div.notice h5 {
+  padding: 0.5rem 0 0.5rem 7rem;
+  color: #fff;
+  font-weight: bold;
+}
+div.notice p {
+  padding: 0 1rem;
+}
+div.notice h5:before {
+  position: absolute;
+  top: 0.5rem;
+  color: #fff;
+  font-family: "Font Awesome 5 Free";
+  left: 10px;
+}
+
+div.notice.activity {
+  background: #fff2db;
+}
+div.notice.activity h5 {
+  background: #f0b37e;
+}
+div.notice.activity h5:before {
+  content: "\f303  Activity: ";
+}
+div.notice.tip {
+  background: #E6F9E6;
+}
+div.notice.tip h5 {
+  background: rgba(92, 184, 92, 0.8);
+}
+div.notice.tip h5:before {
+  content: "\f075  Info: ";
 }
 </style>
 
@@ -79,14 +153,14 @@ figure.inline h4 {
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1547846751"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1547846751"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1549175850"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1549175850"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/geometry-of-relativity.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1547846751"></script>
+<script type="text/javascript" src="/js/search.js?1549175850"></script>
 
     
   </div>
@@ -418,84 +492,98 @@ figure.inline h4 {
 <p>While working to understand and derive Euler's formula we
 introduced an imaginary unit <span  class="math">\(i\)</span> with the property that <span  class="math">\(i^2 = -1\)</span>. But
 we've already seen that the product of the two basis vectors has this same
-property in that <span  class="math">\( (\mathbf{xy})^2 = -1 \)</span>.</p>
+property in that <span  class="math">\( (\v{xy})^2 = -1 \)</span>.</p>
 
 <p>In this section we will investigate the properties of various rotations using Euler's formula and Geometric Algebra in two dimensional space.</p>
 
 <p></p>
 
-<h2 id="properties-of-spatial-rotations">Properties of spatial rotations</h2>
+<h2 id="a-rotation-in-space">A rotation in space</h2>
 
 <p>Rather than introducing the imaginary unit <span  class="math">\(i\)</span> we could have evaluated the
-exponent function using the value <span  class="math">\(\mathbf{xy}\theta\)</span> instead.
+exponent function using the value <span  class="math">\(\v{xy}\theta\)</span> instead.
 Doing so leads to a similarly periodic result:</p>
 
-<p><span  class="math">\[ e^{\mathbf{xy}\theta} = \cos \theta + \mathbf{xy}\sin \theta \]</span></p>
+<p><span  class="math">\[ e^{\v{xy}\theta} = \cos \theta + \v{xy}\sin \theta \]</span></p>
 
 <p>Rather than representing a complex rotation, in this form it represents a
-rotation in the <span  class="math">\(\mathbf{xy}\)</span> plane of our two dimensional space. To see that
-this is the case, consider multiplying an arbitrary vector <span  class="math">\(\mathbf{a}\)</span> by
+rotation in the <span  class="math">\(\v{xy}\)</span> plane of our two dimensional space. To see that
+this is the case, consider multiplying an arbitrary vector <span  class="math">\(\v{a}\)</span> by
 this rotation:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{a}e^{\mathbf{xy}\theta}
-&= (a_x\mathbf{x} + a_y\mathbf{y})(\cos \theta + \mathbf{xy}\sin \theta) \\
-&= a_x \cos\theta \mathbf{x} + a_x\mathbf{xxy}\sin\theta + a_y\cos\theta\mathbf{y} + a_y\mathbf{yxy}\sin\theta \\
-&= (a_x \cos\theta - a_y\sin\theta)\mathbf{x} + (a_x\sin\theta + a_y\cos\theta)\mathbf{y}
+\v{a}e^{\v{xy}\theta}
+&= (\vcTwo{a})(\cos \theta + \v{xy}\sin \theta) \\
+&= a_x \cos\theta \v{x} + a_x\v{xxy}\sin\theta + a_y\cos\theta\v{y} + a_y\v{yxy}\sin\theta \\
+&= (a_x \cos\theta - a_y\sin\theta)\v{x} + (a_x\sin\theta + a_y\cos\theta)\v{y}
 \end{aligned}
 \]</span></p>
 
-<p>which matches the normal definition for a two-dimensional rotation of a vector with
-components <span  class="math">\((a_x, a_y)\)</span>.</p>
+<p>which matches the normal definition for a two-dimensional rotation around the
+origin of a point with coordinates <span  class="math">\((a_x, a_y)\)</span>.</p>
 
-<p>In the following section, <a href="../2d-rotations-in-space">2d rotations in space</a>, we
+<p>In fact, the rotor <span  class="math">\(e^{\v{xy}\theta}\)</span> is itself formed by multiplying
+two normal vectors separated by an angle <span  class="math">\(\theta\)</span>. We already saw
+when <a href="../intro/#multiplying-two-vectors">multiplying two vectors</a>, that:</p>
+
+<p><span  class="math">\[
+\v{ab} = a_x b_x + a_y b_y + \v{xy}(a_x b_y - a_y b_x)
+\]</span></p>
+
+<p>which, if <span  class="math">\(\v{a}^2 = \v{b}^2 = 1\)</span>, is equivalent to</p>
+
+<p><span  class="math">\[ \cos \theta + \v{xy}\sin \theta = e^{\v{xy}\theta}\]</span></p>
+
+<p>This will be clearer in the following section, <a href="../2d-rotations-in-space">2d rotations in space</a>, where we
 will use this rotation to simplify the way we represent arbitrary vectors, but
-for now it will help to note a few properties of this rotation
-<span  class="math">\(e^{\mathbf{xy}\theta}\)</span>.</p>
+for now we need to pause and note a few properties of this rotation
+<span  class="math">\(e^{\v{xy}\theta}\)</span>.</p>
+
+<h2 id="properties-of-spatial-rotations">Properties of spatial rotations</h2>
 
 <p>First, the exponent differs in sign depending on
 whether you left or right multiply your vector, so:</p>
 
 <p><span  class="math">\[
-\mathbf{x}e^{\mathbf{xy}\theta} = e^{-\mathbf{xy}\theta} \mathbf{x} \\
-\mathbf{y}e^{\mathbf{xy}\theta} = e^{-\mathbf{xy}\theta} \mathbf{y}
+\v{x}e^{\v{xy}\theta} = e^{-\v{xy}\theta} \v{x} \\
+\v{y}e^{\v{xy}\theta} = e^{-\v{xy}\theta} \v{y}
 \]</span></p>
 
 <p>and therefore more generally</p>
 
-<p><span  class="math">\[ \mathbf{a}e^{\mathbf{xy}\theta} = e^{-\mathbf{xy}\theta}\mathbf{a} \]</span></p>
+<p><span  class="math">\[ \v{a}e^{\v{xy}\theta} = e^{-\v{xy}\theta}\v{a} \]</span></p>
 
 <p>This can be seen by expanding to the trigonometric values as follows:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{x}e^{\mathbf{xy}\theta}
-&= \mathbf{x}\cos \theta + \mathbf{xxy}\sin \theta \\
-&= \mathbf{x} \cos \theta -\mathbf{xyx}\sin \theta \\
-&= (\cos \theta -\mathbf{xy}\sin \theta)\mathbf{x}\\
-&= e^{-\mathbf{xy}\theta} \mathbf{x}
+\v{x}e^{\v{xy}\theta}
+&= \v{x}\cos \theta + \v{xxy}\sin \theta \\
+&= \v{x} \cos \theta -\v{xyx}\sin \theta \\
+&= (\cos \theta -\v{xy}\sin \theta)\v{x}\\
+&= e^{-\v{xy}\theta} \v{x}
 \end{aligned}
 \]</span></p>
 
 <p>Next, the exponent does not differ in sign when left or right multiplying by the
-pseudo-scalar <span  class="math">\(\mathbf{xy}\)</span>:</p>
+pseudo-scalar <span  class="math">\(\v{xy}\)</span>:</p>
 
-<p><span  class="math">\[ \mathbf{xy}e^{\mathbf{xy}\theta} = e^{\mathbf{xy}\theta} \mathbf{xy} \]</span></p>
+<p><span  class="math">\[ \v{xy}e^{\v{xy}\theta} = e^{\v{xy}\theta} \v{xy} \]</span></p>
 
 <p>which can be seen again by expanding as per the previous example.</p>
 
-<p>Finally, it's worth noting that, based on the above definition of <span  class="math">\(e^{\mathbf{xy}\theta}\)</span>,
+<p>Finally, it's worth noting that, based on the above definition of <span  class="math">\(e^{\v{xy}\theta}\)</span>,
 both <span  class="math">\(\cos\theta\)</span> and <span  class="math">\(\sin\theta\)</span> can be represented as a combination of exponentials
 as follows:</p>
 
-<p><span  class="math">\[ \cos\theta = \frac{e^{\mathbf{xy}\theta} + e^{-\mathbf{xy}\theta}}{2} \]</span></p>
+<p><span  class="math">\[ \cos\theta = \frac{e^{\v{xy}\theta} + e^{-\v{xy}\theta}}{2} \]</span></p>
 
-<p><span  class="math">\[ \sin\theta = \frac{e^{\mathbf{xy}\theta} - e^{-\mathbf{xy}\theta}}{2\mathbf{xy}} \]</span></p>
+<p><span  class="math">\[ \sin\theta = \frac{e^{\v{xy}\theta} - e^{-\v{xy}\theta}}{2\v{xy}} \]</span></p>
 
 <h2 id="properties-of-hyperbolic-rotations">Properties of hyperbolic rotations</h2>
 
-<p>We can also investigate using another exponent, such as <span  class="math">\(\mathbf{x}\theta\)</span>, which
+<p>We can also investigate using another exponent, such as <span  class="math">\(\v{x}\theta\)</span>, which
 results in something less familiar, but just as significant when looking at the
 geometry of relativity.</p>
 
@@ -504,37 +592,37 @@ we <a href="../eulers-formula/">derived with Euler's formula</a>, to see how it 
 
 <p><span  class="math">\[
 \begin{aligned}
-e^{\mathbf{x}\theta}
-&= \sum_{k=0}^{\infty} \frac{(\mathbf{x}\theta)^k}{k!} \\
-&= \frac{(\mathbf{x}\theta)^0}{0!} + \frac{(\mathbf{x}\theta)^1}{1!} + \frac{(\mathbf{x}\theta)^2}{2!} + \frac{(\mathbf{x}\theta)^3}{3!} + ... \\
-&= \sum_{k=0}^{\infty} \frac{\theta^{2k}}{2k!} + \mathbf{x}\sum_{k=0}^{\infty} \frac{\theta^{2k + 1}}{(2k +1)!}
+e^{\v{x}\theta}
+&= \sum_{k=0}^{\infty} \frac{(\v{x}\theta)^k}{k!} \\
+&= \frac{(\v{x}\theta)^0}{0!} + \frac{(\v{x}\theta)^1}{1!} + \frac{(\v{x}\theta)^2}{2!} + \frac{(\v{x}\theta)^3}{3!} + ... \\
+&= \sum_{k=0}^{\infty} \frac{\theta^{2k}}{2k!} + \v{x}\sum_{k=0}^{\infty} \frac{\theta^{2k + 1}}{(2k +1)!}
 \end{aligned}
 \]</span></p>
 
 <p>The two summations in the last line are one way to define the hyperbolic functions
 <span  class="math">\(\cosh\theta\)</span> and <span  class="math">\(\sinh\theta\)</span> respectively, so that</p>
 
-<p><span  class="math">\[ e^{\mathbf{x}\theta} = \cosh\theta + \mathbf{x}\sinh\theta \]</span></p>
+<p><span  class="math">\[ e^{\v{x}\theta} = \cosh\theta + \v{x}\sinh\theta \]</span></p>
 
 <p>We will see later how this hyperbolic rotation becomes important for
 two-dimensional rotations in space-time but for now,
-a few analogous but different properties to note, all of which can be seen by expanding <span  class="math">\(e^{\mathbf{x}\theta}\)</span> to the equivalent trigonometric values:</p>
+a few analogous but different properties to note, all of which can be seen by expanding <span  class="math">\(e^{\v{x}\theta}\)</span> to the equivalent trigonometric values:</p>
 
-<p><span  class="math">\[\mathbf{x}e^{\mathbf{x}\theta} = e^{\mathbf{x}\theta}\mathbf{x}\]</span></p>
+<p><span  class="math">\[\v{x}e^{\v{x}\theta} = e^{\v{x}\theta}\v{x}\]</span></p>
 
-<p><span  class="math">\[\mathbf{y}e^{\mathbf{x}\theta} = e^{-\mathbf{x}\theta}\mathbf{y}\]</span></p>
+<p><span  class="math">\[\v{y}e^{\v{x}\theta} = e^{-\v{x}\theta}\v{y}\]</span></p>
 
-<p><span  class="math">\[\mathbf{x}e^{\mathbf{y}\theta} = e^{-\mathbf{y}\theta}\mathbf{x}\]</span></p>
+<p><span  class="math">\[\v{x}e^{\v{y}\theta} = e^{-\v{y}\theta}\v{x}\]</span></p>
 
-<p><span  class="math">\[\mathbf{y}e^{\mathbf{y}\theta} = e^{\mathbf{y}\theta}\mathbf{y}\]</span></p>
+<p><span  class="math">\[\v{y}e^{\v{y}\theta} = e^{\v{y}\theta}\v{y}\]</span></p>
 
-<p><span  class="math">\[\mathbf{xy}e^{\mathbf{x}\theta} = e^{-\mathbf{x}\theta}\mathbf{xy}\]</span></p>
+<p><span  class="math">\[\v{xy}e^{\v{x}\theta} = e^{-\v{x}\theta}\v{xy}\]</span></p>
 
-<p><span  class="math">\[\mathbf{xy}e^{\mathbf{y}\theta} = e^{-\mathbf{y}\theta}\mathbf{xy}\]</span></p>
+<p><span  class="math">\[\v{xy}e^{\v{y}\theta} = e^{-\v{y}\theta}\v{xy}\]</span></p>
 
-<p><span  class="math">\[ \cosh\theta = \frac{e^{\mathbf{x}\theta} + e^{-\mathbf{x}\theta}}{2} \]</span></p>
+<p><span  class="math">\[ \cosh\theta = \frac{e^{\v{x}\theta} + e^{-\v{x}\theta}}{2} \]</span></p>
 
-<p><span  class="math">\[ \sinh\theta = \frac{e^{\mathbf{x}\theta} - e^{-\mathbf{x}\theta}}{2\mathbf{x}} \]</span></p>
+<p><span  class="math">\[ \sinh\theta = \frac{e^{\v{x}\theta} - e^{-\v{x}\theta}}{2\v{x}} \]</span></p>
 
 <footer class=" footline" >
 	
@@ -741,25 +829,38 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1547846751"></script>
-    <script src="/js/perfect-scrollbar.min.js?1547846751"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1547846751"></script>
-    <script src="/js/jquery.sticky.js?1547846751"></script>
-    <script src="/js/featherlight.min.js?1547846751"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1547846751"></script>
-    <script src="/js/highlight.pack.js?1547846751"></script>
+    <script src="/js/clipboard.min.js?1549175850"></script>
+    <script src="/js/perfect-scrollbar.min.js?1549175850"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1549175850"></script>
+    <script src="/js/jquery.sticky.js?1549175850"></script>
+    <script src="/js/featherlight.min.js?1549175850"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1549175850"></script>
+    <script src="/js/highlight.pack.js?1549175850"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1547846751"></script>
-    <script src="/js/learn.js?1547846751"></script>
-    <script src="/js/hugo-learn.js?1547846751"></script>
+    <script src="/js/modernizr.custom.71422.js?1549175850"></script>
+    <script src="/js/learn.js?1549175850"></script>
+    <script src="/js/hugo-learn.js?1549175850"></script>
 
-    <link href="/mermaid/mermaid.css?1547846751" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1547846751"></script>
+    <link href="/mermaid/mermaid.css?1549175850" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1549175850"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js" integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            macros: {
+                "\\v": "\\mathbf{#1}",
+                "\\vcOne": "#1_x\\v{x}",
+                "\\vcTwo": "#1_x\\v{x} + #1_y\\v{y}",
+                "\\vcThree": "#1_x\\v{x} + #1_y\\v{y} + #1_z\\v{z}",
+                
+            }
+        });
+    });
+</script>
 
   </body>
 </html>

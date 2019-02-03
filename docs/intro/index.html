@@ -12,17 +12,17 @@
     <title>Intro to Geometric Algebra :: Geometry of Relativity</title>
 
     
-    <link href="/css/nucleus.css?1547846751" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1547846751" rel="stylesheet">
-    <link href="/css/hybrid.css?1547846751" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1547846751" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1547846751" rel="stylesheet">
-    <link href="/css/auto-complete.css?1547846751" rel="stylesheet">
-    <link href="/css/theme.css?1547846751" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1547846751" rel="stylesheet">
+    <link href="/css/nucleus.css?1549175850" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1549175850" rel="stylesheet">
+    <link href="/css/hybrid.css?1549175850" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1549175850" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1549175850" rel="stylesheet">
+    <link href="/css/auto-complete.css?1549175850" rel="stylesheet">
+    <link href="/css/theme.css?1549175850" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1549175850" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1547846751"></script>
+    <script src="/js/jquery-2.x.min.js?1549175850"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -38,7 +38,7 @@
 
   gtag('config', 'UA-47051063-2');
 </script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
 <style>
 #header h1 {
   font-size: 2rem;
@@ -57,6 +57,80 @@ figure.inline p {
 }
 figure.inline h4 {
   margin-bottom: 0;
+}
+
+ 
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+summary {
+    margin: -.5em -.5em 0;
+    padding: 0 2em;
+    cursor: pointer;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+summary:before {
+  border-radius: 5px;
+  content: "▶"; 
+  color: #00bdf3; 
+  font-weight: bold; 
+  position: absolute;
+  margin: 0 -1.5em;
+}
+details[open] summary:before {
+  content: "▼";
+}
+
+ 
+div.notice {
+  margin: 2rem 0;
+  padding: 0 0 0.5rem 0;
+  position: relative;
+}
+div.notice h5 {
+  padding: 0.5rem 0 0.5rem 7rem;
+  color: #fff;
+  font-weight: bold;
+}
+div.notice p {
+  padding: 0 1rem;
+}
+div.notice h5:before {
+  position: absolute;
+  top: 0.5rem;
+  color: #fff;
+  font-family: "Font Awesome 5 Free";
+  left: 10px;
+}
+
+div.notice.activity {
+  background: #fff2db;
+}
+div.notice.activity h5 {
+  background: #f0b37e;
+}
+div.notice.activity h5:before {
+  content: "\f303  Activity: ";
+}
+div.notice.tip {
+  background: #E6F9E6;
+}
+div.notice.tip h5 {
+  background: rgba(92, 184, 92, 0.8);
+}
+div.notice.tip h5:before {
+  content: "\f075  Info: ";
 }
 </style>
 
@@ -79,14 +153,14 @@ figure.inline h4 {
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1547846751"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1547846751"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1549175850"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1549175850"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/geometry-of-relativity.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1547846751"></script>
+<script type="text/javascript" src="/js/search.js?1549175850"></script>
 
     
   </div>
@@ -414,7 +488,7 @@ citizens, rather than arrows defined by coordinates on a coordinate
 system.</p>
 
 <p>For a flat Euclidean space, Geometric Algebra can be derived from a single rule that
-the square of the magnitude of any vector <span  class="math">\(\mathbf{a}\)</span> is equal to the
+the square of the magnitude of any vector <span  class="math">\(\v{a}\)</span> is equal to the
 square of the vector itself.</p>
 
 <p>With this one rule we can introduce addition and multiplication of two-dimensional vectors, as well as a simple rotation.</p>
@@ -423,9 +497,9 @@ square of the vector itself.</p>
 
 <h2 id="one-rule">One rule</h2>
 
-<p>The square of the magnitude of an arbitrary vector <span  class="math">\(\mathbf{a}\)</span> is equal to the square of the vector itself:</p>
+<p>The square of the magnitude of an arbitrary vector <span  class="math">\(\v{a}\)</span> is equal to the square of the vector itself:</p>
 
-<p><span  class="math">\[ |\mathbf{a}|^2 = \mathbf{a}^2  \]</span></p>
+<p><span  class="math">\[ |\v{a}|^2 = \v{a}^2  \]</span></p>
 
 <p>This is similar to the more familiar <a href="https://en.wikipedia.org/wiki/Dot_product#Geometric_definition">dot-product</a> of a vector with itself
 defining the Euclidean magnitude-squared of a vector, but as we will see, much more powerful.</p>
@@ -433,21 +507,21 @@ defining the Euclidean magnitude-squared of a vector, but as we will see, much m
 <h2 id="normal-basis-vectors">Normal basis vectors</h2>
 
 <p>Starting with a single dimension, we define a normal basis vector
-<span  class="math">\(\mathbf{x}\)</span> (bold will indicate a vector) as having a magnitude
+<span  class="math">\(\v{x}\)</span> (bold will indicate a vector) as having a magnitude
 of one:</p>
 
-<p><span  class="math">\[ \mathbf{x}^2 = 1\]</span></p>
+<p><span  class="math">\[ \v{x}^2 = 1\]</span></p>
 
-<p>Any other vector <span  class="math">\(\mathbf{a}\)</span> within this single dimension can be represented as some multiple
-of <span  class="math">\(\mathbf{x}\)</span>, such as <span  class="math">\(5\mathbf{x}\)</span> or
-<span  class="math">\(-3.141579\mathbf{x}\)</span> or, more generally,</p>
+<p>Any other vector <span  class="math">\(\v{a}\)</span> within this single dimension can be represented as some multiple
+of <span  class="math">\(\v{x}\)</span>, such as <span  class="math">\(5\v{x}\)</span> or
+<span  class="math">\(-3.141579\v{x}\)</span> or, more generally,</p>
 
-<p><span  class="math">\[\mathbf{a} = x_a\mathbf{x}\]</span></p>
+<p><span  class="math">\[\v{a} = \vcOne{a}\]</span></p>
 
-<p>Evaluating the magnitude-squared of <span  class="math">\(\mathbf{a}\)</span> results in:</p>
+<p>Evaluating the magnitude-squared of <span  class="math">\(\v{a}\)</span> results in:</p>
 
 <p><span  class="math">\[
-\mathbf{a}^2 = (x_a\mathbf{x})^2 = x_a\mathbf{x}x_a\mathbf{x} = x_a^2\mathbf{x}^2 = x_a^2
+\v{a}^2 = (\vcOne{a})^2 = \vcOne{a}\vcOne{a} = a_x^2\v{x}^2 = a_x^2
 \]</span></p>
 
 <p>as we would expect.</p>
@@ -457,36 +531,36 @@ of <span  class="math">\(\mathbf{x}\)</span>, such as <span  class="math">\(5\ma
 <p>To describe vectors in two dimensions we need to add a second basis vector <span  class="math">\(y\)</span> with the similar property of unit-magnitude,
 so when multiplied by itself,</p>
 
-<p><span  class="math">\[ \mathbf{y}^2 = 1 \]</span></p>
+<p><span  class="math">\[ \v{y}^2 = 1 \]</span></p>
 
-<p>We also need to ensure that this second vector <span  class="math">\(\mathbf{y}\)</span> is orthogonal
-to <span  class="math">\(\mathbf{x}\)</span>, though we don't yet know how to represent this orthogonality.
-Nonetheless, by defining a general two-dimensional vector <span  class="math">\(\mathbf{a}\)</span> as</p>
+<p>We also need to ensure that this second vector <span  class="math">\(\v{y}\)</span> is orthogonal
+to <span  class="math">\(\v{x}\)</span>, though we don't yet know how to represent this orthogonality.
+Nonetheless, by defining a general two-dimensional vector <span  class="math">\(\v{a}\)</span> as</p>
 
-<p><span  class="math">\[ \mathbf{a} = x_a\mathbf{x} + y_a\mathbf{y} \]</span></p>
+<p><span  class="math">\[ \v{a} = \vcTwo{a} \]</span></p>
 
 <p>we can derive orthogonality by using the rule that the magnitude-squared of any vector is equal to the vector squared,
 to evaluate that:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{a}^2
-&= (x_a\mathbf{x} + y_a\mathbf{y})(x_a\mathbf{x} + y_a\mathbf{y}) \\
-&= x_a\mathbf{x}x_a\mathbf{x} + x_a\mathbf{x}y_a\mathbf{y} + y_a\mathbf{y}x_a\mathbf{x} + y_a\mathbf{y}y_a\mathbf{y} \\
-&= x_a^2 + y_a^2 + x_a y_a(\mathbf{xy} + \mathbf{yx})
+\v{a}^2
+&= (\vcTwo{a})(\vcTwo{a}) \\
+&= a_x\v{x}a_x\v{x} + a_x\v{x}a_y\v{y} + a_y\v{y}a_x\v{x} + a_y\v{y}a_y\v{y} \\
+&= a_x^2 + a_y^2 + a_x a_y(\v{xy} + \v{yx})
 \end{aligned}
 \]</span></p>
 
-<p>So we see that the square of the magnitude of the vector <span  class="math">\(\mathbf{a}\)</span>  - a scalar number - will
+<p>So we see that the square of the magnitude of the vector <span  class="math">\(\v{a}\)</span>  - a scalar number - will
 only equal the square of the vector if</p>
 
-<p><span  class="math">\[ \mathbf{xy} = -\mathbf{yx} \]</span></p>
+<p><span  class="math">\[ \v{xy} = -\v{yx} \]</span></p>
 
 <p>This then is the definition of orthogonal vectors - they are anti-commutative.</p>
 
 <p>With this definition of orthogonality, we have</p>
 
-<p><span  class="math">\[ \mathbf{a}^2 = x^2 + y^2 \]</span></p>
+<p><span  class="math">\[ \v{a}^2 = x^2 + y^2 \]</span></p>
 
 <p>which is exactly what we are used to - Pythagoras' theorem.</p>
 
@@ -497,46 +571,37 @@ forward,</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{a} + \mathbf{b}
-&= (a_x\mathbf{x} + a_y\mathbf{y}) + (b_x\mathbf{x} + b_y\mathbf{y}) \\
-&= (a_x + b_x)\mathbf{x} + (a_y + b_y)\mathbf{y} \\
-&= \mathbf{b} + \mathbf{a}
+\v{a} + \v{b}
+&= (\vcTwo{a}) + (\vcTwo{b}) \\
+&= (a_x + b_x)\v{x} + (a_y + b_y)\v{y} \\
+&= \v{b} + \v{a}
 \end{aligned}
 \]</span></p>
 
 <p>The order in which the vectors are added is not relevant which means that
-vectors are associative under addition (and subtraction), as <span  class="math">\(\mathbf{a} +
-\mathbf{b} = \mathbf{b} + \mathbf{a}\)</span>.</p>
+vectors are associative under addition (and subtraction), as <span  class="math">\(\v{a} +
+\v{b} = \v{b} + \v{a}\)</span>.</p>
 
-<div class="notices note" ><p><strong>Activity</strong>: See if you can calculated the magnitude-squared of <span  class="math">\(\mathbf{a} + \mathbf{b}\)</span></p>
+<div class="notice activity"><h5>Magnitude squared of two vectors</h5><p>See if you can calculate the magnitude-squared of</p>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-        
-        Solution
-        
-        </span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Currently we can only evaluate this as:</p>
+<p><span  class="math">\[\v{a} + \v{b}\]</span></p>
+
+<p><details><p><summary>
+Solution
+</summary></p></p>
 
 <p><span  class="math">\[
 \begin{aligned}
-(\mathbf{a} + \mathbf{b})^2
-&= (\mathbf{a} + \mathbf{b})(\mathbf{a} + \mathbf{b}) \\
-&= \mathbf{a}^2 + \mathbf{ab} + \mathbf{ba} + \mathbf{b}^2
+(\v{a} + \v{b})^2
+&= (\v{a} + \v{b})(\v{a} + \v{b}) \\
+&= \v{a}^2 + \v{ab} + \v{ba} + \v{b}^2
 \end{aligned}
 \]</span></p>
 
-<p>but after the following section on multiplying two vectors, we will be able to
-see that this is in fact the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">law of
-cosines</a>.</p>
-
-    </div>
-</div>
+<p><p>We can't yet go any further as we haven't yet defined what a multiple of two
+general vectors means. But soon we'll see that our
+solution here is actually the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">law of cosines</a>.</p>
+</details></p>
 </div>
 
 
@@ -546,68 +611,73 @@ cosines</a>.</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{a} \mathbf{b}
-&= (a_x\mathbf{x} + a_y\mathbf{y})(b_x\mathbf{x} + b_y\mathbf{y}) \\
-&= a_x\mathbf{x}b_x\mathbf{x} + a_x\mathbf{x}b_y\mathbf{y} + a_y\mathbf{y}b_x\mathbf{x} + a_y\mathbf{y}b_y\mathbf{y} \\
-&= a_x b_x + a_y b_y + a_x b_y \mathbf{xy} + a_y b_x \mathbf{yx} \\
-&= a_x b_x + a_y b_y + \mathbf{xy}(a_x b_y - a_y b_x) \\
-\mathbf{ba} &= a_x b_x + a_y b_y - \mathbf{xy}(a_x b_y - a_y b_x)
+\v{a} \v{b}
+&= (\vcTwo{a})(\vcTwo{b}) \\
+&= a_x\v{x}b_x\v{x} + a_x\v{x}b_y\v{y} + a_y\v{y}b_x\v{x} + a_y\v{y}b_y\v{y} \\
+&= a_x b_x + a_y b_y + a_x b_y \v{xy} + a_y b_x \v{yx} \\
+&= a_x b_x + a_y b_y + \v{xy}(a_x b_y - a_y b_x) \\
 \end{aligned}
 \]</span></p>
 
-<p>The vector product is not commutative, as <span  class="math">\(\mathbf{ab} \neq \mathbf{ba}\)</span>
-nor is it anti-commutative, as <span  class="math">\(\mathbf{ab} \neq -\mathbf{ba}\)</span>.
+<p>While the reverse is,</p>
+
+<p><span  class="math">\[
+\v{ba} = a_x b_x + a_y b_y - \v{xy}(a_x b_y - a_y b_x)
+\]</span></p>
+
+<p>The general vector product is not commutative, as <span  class="math">\(\v{ab} \neq \v{ba}\)</span>
+nor is it anti-commutative, as <span  class="math">\(\v{ab} \neq -\v{ba}\)</span>.
 If you are familiar with the traditional vector dot and cross products,
-you may recognise <span  class="math">\(\mathbf{ab}\)</span> as some combination of both, but what is
+you may recognise <span  class="math">\(\v{ab}\)</span> as some combination of both, but what is
 relevant is that it is a combination of a scalar (a pure number)
-and a pseudo-scalar (the <span  class="math">\(\mathbf{xy}\)</span> term, which is not scalar, nor is
+and a pseudo-scalar (the <span  class="math">\(\v{xy}\)</span> term, which is not scalar, nor is
 it a vector).</p>
 
 <p>Based on the above, we can add or subtract the two products to end up with either a scalar or pseudo-scalar respectively:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{ab} + \mathbf{ba} &= 2(a_x b_x + a_y b_y) \\
-\mathbf{ab} - \mathbf{ba} &= 2\mathbf{xy}(a_x b_y - a_y b_x)
+\v{ab} + \v{ba} &= 2(a_x b_x + a_y b_y) \\
+\v{ab} - \v{ba} &= 2\v{xy}(a_x b_y - a_y b_x)
 \end{aligned}
 \]</span></p>
 
-<p>Of particular interest is that the pseudo-scalar <span  class="math">\(\mathbf{xy}\)</span> has the
+<p>Of particular interest is that the pseudo-scalar <span  class="math">\(\v{xy}\)</span> has the
 property that:</p>
 
-<p><span  class="math">\[ (\mathbf{xy})^2 = \mathbf{xyxy} = -\mathbf{xyyx} = -1 \]</span></p>
+<p><span  class="math">\[ (\v{xy})^2 = \v{xyxy} = -\v{xyyx} = -1 \]</span></p>
 
 <h2 id="rotating-vectors-in-twodimensions">Rotating vectors in two-dimensions</h2>
 
-<p>It is worth noting briefly that the product of two vectors, <span  class="math">\(\mathbf{ab}\)</span>
+<p>It is worth noting briefly that the product of two vectors, <span  class="math">\(\v{ab}\)</span>
 appears to define a scale and rotation. We will look at this in more
-detail later, but we can already see that if <span  class="math">\(\mathbf{a}\)</span> and <span  class="math">\(\mathbf{b}\)</span>
+detail later, but we can already see that if <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span>
 are perpendicular and have a magnitude of 1:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{a} &= \mathbf{x} \\
-\mathbf{b} &= \mathbf{y}
+\v{a} &= \v{x} \\
+\v{b} &= \v{y}
 \end{aligned}
 \]</span></p>
 
 <p>so that</p>
 
-<p><span  class="math">\[ \mathbf{ab} = \mathbf{xy}\]</span></p>
+<p><span  class="math">\[ \v{ab} = \v{xy}\]</span></p>
 
-<p>then this product will rotate any other vector <span  class="math">\(\mathbf{c}\)</span>:</p>
-
-<p><span  class="math">\[ \mathbf{c} = c_x\mathbf{x} + c_y\mathbf{y} \]</span></p>
-
-<p>by a right-angle each time it is applied:</p>
+<p>then this vector product will rotate any other vector <span  class="math">\(\v{c}\)</span>. To simplify things, let's
+multiply the unit vector <span  class="math">\(\v{x}\)</span>:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\mathbf{abc} &= \mathbf{xy}(c_x\mathbf{x} + c_y\mathbf{y}) \\
-&= c_y\mathbf{x} - c_x\mathbf{y} \\
-\mathbf{ababc} &= -c_x\mathbf{x} - c_y\mathbf{y} = -\mathbf{c} \\
-\mathbf{abababc} &= -c_y\mathbf{x} + c_x\mathbf{y} \\
-\mathbf{ababababc} &= \mathbf{c}
+\v{abx} &= \v{xyx} \\
+&= -\v{xxy} \\
+&= -\v{y} \\
+\v{xy}(-\v{y}) &= -\v{x} \\
+\v{xy}(-\v{x}) &= -\v{xyx} \\
+&= \v{xxy} \\
+&= \v{y} \\
+\v{xy(y)} &= \v{x} \\
 \end{aligned}
 \]</span></p>
 
@@ -812,25 +882,38 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1547846751"></script>
-    <script src="/js/perfect-scrollbar.min.js?1547846751"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1547846751"></script>
-    <script src="/js/jquery.sticky.js?1547846751"></script>
-    <script src="/js/featherlight.min.js?1547846751"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1547846751"></script>
-    <script src="/js/highlight.pack.js?1547846751"></script>
+    <script src="/js/clipboard.min.js?1549175850"></script>
+    <script src="/js/perfect-scrollbar.min.js?1549175850"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1549175850"></script>
+    <script src="/js/jquery.sticky.js?1549175850"></script>
+    <script src="/js/featherlight.min.js?1549175850"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1549175850"></script>
+    <script src="/js/highlight.pack.js?1549175850"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1547846751"></script>
-    <script src="/js/learn.js?1547846751"></script>
-    <script src="/js/hugo-learn.js?1547846751"></script>
+    <script src="/js/modernizr.custom.71422.js?1549175850"></script>
+    <script src="/js/learn.js?1549175850"></script>
+    <script src="/js/hugo-learn.js?1549175850"></script>
 
-    <link href="/mermaid/mermaid.css?1547846751" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1547846751"></script>
+    <link href="/mermaid/mermaid.css?1549175850" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1549175850"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js" integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            macros: {
+                "\\v": "\\mathbf{#1}",
+                "\\vcOne": "#1_x\\v{x}",
+                "\\vcTwo": "#1_x\\v{x} + #1_y\\v{y}",
+                "\\vcThree": "#1_x\\v{x} + #1_y\\v{y} + #1_z\\v{z}",
+                
+            }
+        });
+    });
+</script>
 
   </body>
 </html>
