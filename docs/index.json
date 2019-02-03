@@ -74,7 +74,7 @@
 	"title": "Credits",
 	"tags": [],
 	"description": "",
-	"content": "Contributors Thanks to them  for helping to spread the love of Geometric Algebra by having fun playing with its application in physics. Help others learn and get your contributions listed here! We need help creating visualisations, correcting and improving the text, adding activities where helpful, extending the text with testable implications, ...\n.ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @absoludity 16 commits   "
+	"content": "Contributors In addition to the contributors, I would never have heard of Geometric Algebra without the tireless work of David Hestines to promote it during his whole career, followed by the work of Dr Chris Doran and Professor Anthony Lasenby at the Cambridge Geometric Algebra group.\nThanks to them  for helping to spread the love of Geometric Algebra and having fun playing with its application in physics. If you are interested you can help others learn by submitting a Github pull request and your contributions will be listed here automatically! I need help creating visualisations, correcting and improving the text, as well as adding activities where helpful.\n.ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @absoludity 16 commits   "
 },
 {
 	"uri": "https://geometry-of-relativity.net/tags/",

@@ -17,8 +17,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://geometry-of-relativity.net/credits/</guid>
-      <description>Contributors Thanks to them  for helping to spread the love of Geometric Algebra by having fun playing with its application in physics. Help others learn and get your contributions listed here! We need help creating visualisations, correcting and improving the text, adding activities where helpful, extending the text with testable implications, ...
-.ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .</description>
+      <description>Contributors In addition to the contributors, I would never have heard of Geometric Algebra without the tireless work of David Hestines to promote it during his whole career, followed by the work of Dr Chris Doran and Professor Anthony Lasenby at the Cambridge Geometric Algebra group.
+Thanks to them  for helping to spread the love of Geometric Algebra and having fun playing with its application in physics. If you are interested you can help others learn by submitting a Github pull request and your contributions will be listed here automatically!</description>
     </item>
     
   </channel>
