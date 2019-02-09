@@ -2,7 +2,7 @@ baseURL = "https://geometry-of-relativity.net/"
 languageCode = "en-us"
 title = "Geometry of Relativity"
 theme = "learn"
-publishDir = "docs"
+publishDir = "output/docs"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
