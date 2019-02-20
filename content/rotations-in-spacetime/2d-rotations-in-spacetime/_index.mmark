@@ -84,7 +84,7 @@ rotation itself, ie. $$\v{A} = x_a\v{x} + t_a\v{t}$$, we can further simplify th
 
 $$
 \begin{aligned}
-\v{CBABC}
+\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}}
 &= e^{\v{xt}\frac{\phi}{2}}x_a\v{x}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi} \\
 &= x_a\v{x}e^{-\v{xt}\phi} + t_a\v{t}e^{-\v{xt}\phi} \\
 &= x_a\v{x}(\cosh\phi - \v{y}\sinh\phi) + t_a\v{t}(\cosh\phi - \v{y}\sinh\phi) \\
@@ -102,7 +102,7 @@ $$ \cosh\phi = \frac{1}{\sqrt{1-\tan^2\phi}} $$
 So with the substitution of $$v = \tanh\phi$$, we're left with the Lorentz
 transformation of $$\v{A} = x_a\v{x} + t_a\v{t}$$ (with the speed of light ratio normalized to 1):
 
-$$ \v{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t} $$
+$$ \v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t} $$
 
 ### A vector perpendicular to the direction of rotation
 Next let us look at the case where the vector being rotated is perpendicular to
@@ -110,7 +110,7 @@ the rotation, ie. $$\v{A} = y_a\v{y} + t_a\v{t}$$. In this case:
 
 $$
 \begin{aligned}
-\v{CBABC}
+\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}}
 &= y_a\v{y}e^{\v{xt}\frac{\phi}{2}}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi} \\
 &= y_a\v{y} + t_a\v{t}(\cosh\phi - \v{xt}\sinh\phi) \\
 &= y_a\v{y} + t_a\v{t}\cosh\phi - t_a\v{x}\sinh\phi \\
@@ -129,6 +129,14 @@ $$ \v{A} = x_a\v{x} + y_a\v{y} + t_a\v{t}$$
 is then
 
 $$
-\v{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + y_a\v{y} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t}
+\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + y_a\v{y} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t}
 $$
 
+Now that we have managed to derive the Lorentz transformation as a geometric
+rotation in Spacetime, it is time to further our understanding of Geometric
+Algebra so that we can remove some of the cognitive load. Up until this point, we
+have been working with a preferred coordinate frame with a set of basis vectors
+$$\v{x}$$ and $$\v{y}$$, but before we generalise this to the 3 dimensions of
+space and one of time within which we appear to exist, it is worth seeing how
+we can represent the Lorentz transformation without referring to a preferred
+reference frame.
