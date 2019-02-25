@@ -1,0 +1,23 @@
+---
+title: "Coordinate-free rotations"
+date: 2019-01-19T14:22:17+11:00
+draft: false
+weight: 30
+pre: "<b>4. </b>"
+---
+
+The previous section derived the Lorentz Transformation as a geometric rotation in
+two-dimensional Spacetime. Rather than simply generalising this to three dimensions,
+we will now take the opportunity to further our understanding of Geometric Algebra
+so that we can remove some of the cognitive load of dealing with lots of coordinates.
+
+One of the most important aspects of Geometric Algebra is that we can stop thinking
+in terms of coordinates of a specific reference frame, and rather represent everything
+as vectors.
+
+We will begin by revisiting the two-dimensional rotation in space and move towards
+the Lorentz Transformation with three spatial and one temporal dimension.
+
+<!--more-->
+
+{{% children description="true" depth="1" %}}

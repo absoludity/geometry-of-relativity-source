@@ -6,8 +6,9 @@
             macros: {
                 "\\v": "\\mathbf{#1}",
                 "\\vcOne": "#1_x\\v{x}",
-                "\\vcTwo": "#1_x\\v{x} + #1_y\\v{y}",
-                "\\vcThree": "#1_x\\v{x} + #1_y\\v{y} + #1_z\\v{z}",
+                "\\vcTwo": "\\vcOne{#1} + #1_y\\v{y}",
+                "\\vcThree": "\\vcTwo{#1} + #1_z\\v{z}",
+                "\\vcFour": "\\vcThree{#1} + #1_t\\v{t}",
                 //"\\delthree": "\\mathbf{x}\\frac{\\partial}{\\partial x} + \\mathbf{y}\\frac{\\partial}{\\partial y} + \\mathbf{z}\\frac{\\partial}{\\partial z}"
             }
         });
