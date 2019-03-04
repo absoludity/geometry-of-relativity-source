@@ -54,8 +54,8 @@ two-dimensional space:
 
 $$ \mathbf{a} = x_a\mathbf{x} + y_a\mathbf{y} $$
 
-But we can now additionally represent an arbitrary vector as a magnitude and
-orientation applied to a basis vector:
+But we can now additionally represent an arbitrary vector in two dimensions as
+a magnitude and orientation applied to a single basis vector:
 
 $$
 \mathbf{a} = r_a \mathbf{x}e^{\mathbf{xy}\theta_a} = r_a e^{-\mathbf{xy}\theta_a}\mathbf{x}

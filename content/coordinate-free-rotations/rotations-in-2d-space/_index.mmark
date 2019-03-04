@@ -2,6 +2,7 @@
 title: "Rotations in 2D Space revisited"
 date: 2019-02-20T14:28:06+11:00
 draft: false
+weight: 10
 ---
 
 Up until now we have represented a two-dimensional rotation defined by two normal vectors
@@ -26,7 +27,7 @@ $$ \v{a} = a_x\v{x} + a_y\v{y} $$
 
 or alternatively, using a rotation,
 
-$$ \v{a} = r_a\v{x}e^{\v{xy}\theta_a} $$
+$$ \v{a} = |\v{a}|\v{x}e^{\v{xy}\theta_a} $$
 
 so that the product of two vectors is
 
@@ -37,7 +38,7 @@ $$
 or equivalently,
 
 $$
-\v{ab} = r_a r_b e^{\v{xy}(\theta_b - \theta_a)}
+\v{ab} = |\v{a}| |\v{b}| e^{\v{xy}(\theta_b - \theta_a)}
 $$
 
 but both of these representations rely on a coordinate frame with basis vectors $$\v{x}$$ and $$\v{y}$$.
@@ -61,38 +62,49 @@ $$
 $$
 
 This is more formally known as the inner product of the two vectors and, as can
-be seen, has a scalar result. Importantly, the result is already independent of
-the chosen coordinate frame.
+be seen, has a scalar result. But can we show that this result is independent
+of the chosen reference frame?
 
 {{% notice activity "The inner product's independence of a reference frame" %}}
 Show that the value returned by the dot product of any two vectors is not dependent on
 the chosen reference frame with basis vectors $$\v{x}$$ and $$\v{y}$$.
+Particularly, show that
+
+$$ \v{a} \cdot \v{b} = |\v{a}| |\v{b}| \cos(\theta) $$
+
+where $$\theta$$ is the angular difference between $$\v{a}$$ and $$\v{b}$$.
 
 {{% details %}}
 {{< summary >}}
 Solution
 {{< /summary >}}
 
-If we define both vectors as a rotation of the chosen basis vector $$\v{x}$$, as
+We can define both vectors as a rotation of the chosen basis vector $$\v{x}$$, as
 
-$$ \v{a} = r_a \v{x}e^{\v{xy}\theta_a}\text{ and } \v{b} = r_b \v{x}e^{\v{xy}\theta_b} $$
+$$ \v{a} = |\v{a}| \v{x}e^{\v{xy}\theta_a}\text{ and } \v{b} = |\v{b}| \v{x}e^{\v{xy}\theta_b} $$
 
-then we have already seen that the product of these two vectors is
+but we can go further and just choose a specific reference frame where $$\v{a}$$ is aligned with
+the basis vector $$\v{x}$$, so that $$\theta_a$$ is zero and we can write more simply,
 
-$$ \v{ab} = r_a r_b e^{\v{xy}(\theta_b - \theta_a)} $$
+$$ \v{a} = |\v{a}|\v{x} \text{ and } \v{b} = |\v{b}| \v{x}e^{\v{xy}\theta} $$
+
+The product of these two vectors is then
+
+$$ \v{ab} = |\v{a}| |\v{b}| e^{\v{xy}\theta} $$
 
 which is equivalent to
 
-$$ \v{ab} = r_a r_b (\cos(\theta_b - \theta_a) + \v{xy}\sin(\theta_b - \theta_a)) $$
+$$ \v{ab} = |\v{a}| |\v{b}| (\cos\theta + \v{xy}\sin\theta) $$
 
-Here we can already see that the symmetric part of this result, which is our inner product,
+Here we can already see that the scalar symmetric part of this result, which is our inner product,
 is independent of any base vector:
 
-$$ \v{a} \cdot \v{b} = r_a r_b \cos(\theta_b - \theta_a) $$
+$$ \v{a} \cdot \v{b} = |\v{a}| |\v{b}| \cos\theta $$
 
-It depends only on the angular *difference* between the two vectors, and the magnitudes of the vectors
-themselves. On the other hand, we also see here that the anti-symmetric part of the product,
-the outer product, will not break free of its dependence on the reference frame so easily.
+This inner product depends only on the angular *difference* between the two
+vectors, and the magnitudes of the vectors themselves. On the other hand, we
+also see here that the anti-symmetric part of the product, the outer product,
+will not break free of its dependence on the reference frame so easily.
 
 {{% /details %}}
 {{% /notice %}}
@@ -106,7 +118,7 @@ $$
 \v{a} \wedge \v{b} = (a_x b_y - a_y b_x)\v{xy}
 $$
 
-This is knows as the outer product and may be familiar via the closely related
+This is known as the outer product and may be familiar via the closely related
 cross product of three-dimensional vectors, but unlike the cross product, the
 outer product has meaning outside of three dimensional space. Particularly, the result
 is an *area* in the plane defined by the two vectors $$\v{a}$$ and $$\v{b}$$ (which,
@@ -114,7 +126,7 @@ in two-dimensional space, happens to be the one and only plane $$\v{xy}$$).
 
 As
 
-$$ \v{ab} = r_a r_b e^{\v{xy}\theta} = r_a r_b (\cos\theta + \v{xy}\sin\theta) $$
+$$ \v{ab} = |\v{a}| |\v{b}| e^{\v{xy}\theta} = |\v{a}| |\v{b}| (\cos\theta + \v{xy}\sin\theta) $$
 
 the anti-symmetric outer product must be equal to the anti-symmetric part, so that
 
@@ -144,14 +156,14 @@ a unit of area in terms of $$\v{a}$$ and $$\v{b}$$ only? We need to be able
 to normalize the area. Starting with the outer product,
 
 $$
-\v{a} \wedge \v{b} = r_a r_b \v{xy} \sin(\theta)
+\v{a} \wedge \v{b} = |\v{a}| |\v{b}| \v{xy} \sin(\theta)
 $$
 
 Taking the magnitude of both sides, given $$|\v{xy}| = 1$$, gives a formula
 for the magnitude of the area $$\v{a} \wedge \v{b}$$ as
 
 $$
-|\v{a} \wedge \v{b}| = |r_a r_b \sin(\theta)|
+|\v{a} \wedge \v{b}| = |\v{a}| |\v{b}| |\sin(\theta)|
 $$
 
 which allows us to normalize the area to
@@ -172,7 +184,7 @@ $$
 so that we can now write the product of two vectors as
 
 $$
-\v{ab} = r_a r_b e^{\v{P}\theta}
+\v{ab} = |\v{a}| |\v{b}| e^{\v{P}\theta}
 $$
 
 Note that this definition of $$\v{P}$$ as the unit area in the plane has an
@@ -229,8 +241,21 @@ That is, that:
 
 $$\v{dab} = \v{bad}$$.
 
-It is helpful to note here that $$\v{dP} = -\v{Pd}$$, given that in the two-dimensional case,
-$$\v{P}$$ is the pseudo-scalar $$\v{xy}$$. TODO: fix to not use xy
+It is helpful to note here that $$\v{dP} = -\v{Pd}$$. Remember that in this two-dimensional
+example the unit area in the plane, $$\v{P}$$ will always be equivalent $$\v{xy}$$ for any
+reference frame which we choose (well, it could instead be equivalent to $$\v{yx}$$ depending on
+the orientation of $$\v{P}$$, but it will not make a difference here). So 
+
+$$
+\begin{aligned}
+\v{dP} 
+&= (d_x\v{x} + d_y\v{y})\v{xy} \\
+&= d_x\v{xxy} + d_y\v{yxy} \\
+&= -d_x\v{xyx} - d_y\v{xyy} \\
+&= -\v{xy}(d_x\v{x} + d_y\v{y}) \\
+&= -\v{Pd}
+\end{aligned}
+$$
 
 {{% details %}}
 {{< summary >}}
@@ -249,7 +274,7 @@ $$
 \end{aligned}
 $$
 
-Extra text.
+.
 
 {{% /details %}}
 {{% /notice %}}
