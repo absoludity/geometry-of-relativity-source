@@ -5,91 +5,67 @@ draft: false
 weight: 20
 ---
 
-In the previous section we saw that we can rotate a space-time multivector $$\v{A}$$ in
-space - using a rotation from one normal vector $$\v{b}$$ to another
-normal vector $$\v{c}$$ to form the rotation $$\v{bc} =
-e^{\v{xy}\frac{\theta}{2}}$$. We also saw that we can define a normal
-space-time multivector as $$\v{B} = \v{b}e^{\v{bt}\phi}$$, where $$\v{b}^2 = 1$$. In this section we will consider a space-time multivector $$\v{A}$$ being
-rotated in **space-time** - using a rotation from one normal multivector
-$$\v{B}$$ to another normal multivector $$\v{C}$$, and see that
-the result is the standard Lorentz transformation.
+In the previous section we saw that a combination of a scalar and a vector, a
+paravector, $$\v{A} = a_0 + \v{a}$$, has an amplitude-squared with the same
+metric as that of spacetime and yet can be rotated like a normal vector such
+that the scalar part is unchanged, while the vector part rotates in space, as
+$$\v{\c{R}}\v{A}\v{R}$$, where the rotor $$\v{R}$$ is itself comprised of a
+scalar and a bivector, $$\v{R} = e^{-\v{xy}\frac{\theta}{2}}$$.
+
+We also saw that we can define a normalised paravector as $$\v{B} =
+e^{-\v{b}\frac{\phi}{2}}$$, so that $$\v{B}\c{\v{B}} = 1$$. In this section we will
+consider rotating the paravector $$\v{A}$$ by a normalized paravector and
+see that the result, $$\v{B}\v{A}\v{B}$$, is equivalent to the standard
+Lorentz transformation.
 
 <!--more-->
 
-## A simplified Space-Time rotation
+## A hyperbolic rotation
 
-If we were to do a generic space-time multivector rotation, the rotation would be:
-
-$$
-\begin{aligned}
-\v{BC}
-&= \v{b}e^{\v{bt}\phi_B}\v{c}e^{\v{ct}\phi_C} \\
-\end{aligned}
-$$
-
-but we are going to simplify this in two ways. First by assuming that the
-vector component of both $$\v{B}$$ and $$\v{C}$$ are equal, and
-second that they are equal to the basis vector $$\v{x}$$. In which
-case we get a much simplified rotation:
+Similar to the spatial rotation, we can see that $$\v{A'} = \v{B}\v{A}\v{B}$$
+is some type of rotation of $$\v{A}$$, as even though we are not using the
+Clifford conjugation of the rotor for the left-hand multilication, the amplitude
+squared is still unchanged:
 
 $$
 \begin{aligned}
-\v{BC}
-&= \v{x}e^{\v{xt}\phi_B}\v{x}e^{\v{xt}\phi_C} \\
-&= e^{-\v{xt}\phi_B}\v{xx}e^{\v{xt}\phi_C} \\
-&= e^{\v{xt}(\phi_C-\phi_B)} \\
-&= e^{-\v{xt}\phi}
+\v{\c{A'}A'}
+&= \c{\v{B}\v{A}\v{B}} \v{B}\v{A}\v{B} \\
+&= \c{\v{B}}\c{\v{A}}\c{\v{B}} \v{B}\v{A}\v{B} \\
+&= \v{\c{A}A}
 \end{aligned}
 $$
 
-where $$\phi = \phi_B - \phi_C$$ is the angle between $$\v{B}$$ and $$\v{C}$$.
-
-Similar to [spatial rotations of space-time multivectors](../a-vector-in-spacetime/), $$\v{BC}$$ will not work as a rotation by simple multiplication:
-
-$$ (\v{ABC})^2 = \v{ABCABC} \neq \v{A}^2 $$
-
-but if we left and right multiply then the magnitude-squared remains constant, as it must under a rotation:
+Evaluating $$\v{A'}$$, we find
 
 $$
 \begin{aligned}
-(\v{CBABC})^2
-&= \v{CBABCCBABC} \\
-&= \v{CBAABC} \\
-&= \v{CBBCA}^2 \\
-&= \v{A}^2 \\
+\v{A'}
+&= \v{B}\v{A}\v{B} \\
+&= e^{-\v{b}\frac{\phi}{2}}(a_0 + \v{a})e^{-\v{b}\frac{\phi}{2}} \\
+&= a_0 e^{-\v{b}\phi} + e^{-\v{b}\frac{\phi}{2}} \v{a}e^{-\v{b}\frac{\phi}{2}}
 \end{aligned}
 $$
 
-Given that we are now applying tho rotation twice, we define $$\phi$$ as double the angle between $$\v{B}$$ and $$\v{C}$$:
-
-$$ \v{BC} = e^{-\v{xt}\frac{\phi}{2}} $$
-
-with the result that:
-
-$$
-\begin{aligned}
-\v{CBABC}
-&= e^{\v{xt}\frac{\phi}{2}}(\v{a} + t_a\v{t})e^{-\v{xt}\frac{\phi}{2}} \\
-&= e^{\v{xt}\frac{\phi}{2}}\v{a}e^{-\v{xt}\frac{\phi}{2}} + e^{\v{xt}\frac{\phi}{2}}t_a\v{t}e^{-\v{xt}\frac{\phi}{2}} \\
-&= e^{\v{xt}\frac{\phi}{2}}\v{a}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi}
-\end{aligned}
-$$
+which is, in fact...
 
 ## The Lorentz Transformation
 
-### A vector in the direction of rotation
+### A vector in the same direction as the rotation
 
-If we first look at the case where the vector being rotated is in the same direction as the
-rotation itself, ie. $$\v{A} = x_a\v{x} + t_a\v{t}$$, we can further simplify the rotation:
+If we first look at the case where the vector being rotated is in the same
+direction as the rotation itself, ie. $$\v{a}\v{b} = \v{b}\v{a} = |\v{a}|$$
+and since $$\v{b}^2 = 1$$, then $$\v{a} = |\v{a}|\v{b}$$, we can further simplify the rotation:
 
 $$
 \begin{aligned}
-\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}}
-&= e^{\v{xt}\frac{\phi}{2}}x_a\v{x}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi} \\
-&= x_a\v{x}e^{-\v{xt}\phi} + t_a\v{t}e^{-\v{xt}\phi} \\
-&= x_a\v{x}(\cosh\phi - \v{y}\sinh\phi) + t_a\v{t}(\cosh\phi - \v{y}\sinh\phi) \\
-&= \v{x}(x_a\cosh\phi - t_a\sinh\phi) + \v{t}(t_a\cosh\phi - x_a\sinh\phi) \\
-&= \cosh\phi(x_a - t_a\tanh\phi)\v{x} + \cosh\phi(t_a - x_a\tanh\phi)\v{t}
+\v{A'}
+&= a_0 e^{-\v{b}\phi} + e^{-\v{b}\frac{\phi}{2}} \v{a}e^{-\v{b}\frac{\phi}{2}} \\
+&= a_0 e^{-\v{b}\phi} + \v{a}e^{-\v{b}\phi} \\
+&= a_0 (\cosh{\phi} - \v{b} \sinh{\phi}) + \v{a}(\cosh{\phi} - \v{b} \sinh{\phi}) \\
+&= (a_0 \cosh{\phi} - \v{ab}\sinh{\phi}) + (\v{a}\cosh{\phi} - a_0 \v{b} \sinh{\phi}) \\ 
+&= (a_0 \cosh{\phi} - |\v{a}|\sinh{\phi}) + \v{b}(|\v{a}|\cosh{\phi} - a_0 \sinh{\phi}) \\ 
+&= \cosh{\phi}(a_0 - |\v{a}|\tanh{\phi}) + \v{b}\cosh{\phi}(|\v{a}| - a_0 \tanh{\phi}) \\ 
 \end{aligned}
 $$
 {{<figure class="inline" src="/sinh_cosh_tanh.svg.png" title="Plotting sinh, cosh and tanh" attr="Wikimedia Commons" attrlink="https://en.wikipedia.org/wiki/File:Sinh_cosh_tanh.svg" width="300px" >}}
@@ -100,43 +76,21 @@ and $$\tanh\phi$$ can be [related by](https://en.wikipedia.org/wiki/Hyperbolic_f
 $$ \cosh\phi = \frac{1}{\sqrt{1-\tan^2\phi}} $$
 
 So with the substitution of $$v = \tanh\phi$$, we're left with the Lorentz
-transformation of $$\v{A} = x_a\v{x} + t_a\v{t}$$ (with the speed of light ratio normalized to 1):
+transformation of $$\v{A} = a_0 + \v{a}$$:
 
-$$ \v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t} $$
+$$ \v{B}\v{A}\v{B} = \frac{1}{\sqrt{1-v^2}}(a_0 - |\v{a}|v) + \frac{1}{\sqrt{1-v^2}}(|\v{a}| - a_0 v)\v{x} $$
 
-### A vector perpendicular to the direction of rotation
+### A vector perpendicular to the direction of the rotation
 Next let us look at the case where the vector being rotated is perpendicular to
-the rotation, ie. $$\v{A} = y_a\v{y} + t_a\v{t}$$. In this case:
+the rotation, ie. $$\v{a}\v{b} = -\v{b}\v{a}$$. In this case:
 
 $$
 \begin{aligned}
-\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}}
-&= y_a\v{y}e^{\v{xt}\frac{\phi}{2}}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi} \\
-&= y_a\v{y} + t_a\v{t}(\cosh\phi - \v{xt}\sinh\phi) \\
-&= y_a\v{y} + t_a\v{t}\cosh\phi - t_a\v{x}\sinh\phi \\
-&= y_a\v{y} + \frac{t_a}{\sqrt{1-v^2}}\v{t} - \frac{v t_a}{\sqrt{1-v^2}}\v{x} \\
+\v{A'}
+&= a_0 e^{-\v{b}\phi} + e^{-\v{b}\frac{\phi}{2}} \v{a}e^{-\v{b}\frac{\phi}{2}} \\
+&= a_0 e^{-\v{b}\phi} + \v{a}e^{+\v{b}\frac{\phi}{2}} e^{-\v{b}\frac{\phi}{2}} \\
+&= a_0 e^{-\v{b}\phi} + \v{a} \\
 \end{aligned}
 $$
 
-So the component perpendicular to the direction of the rotation is not affected by the transformation, just as with the Lorentz transformation.
-
-### A general 2-dimensional space-time vector
-
-The space-time rotation of $$e^{\v{xt}\phi}$$ of a general 2-dimensional multivector:
-
-$$ \v{A} = x_a\v{x} + y_a\v{y} + t_a\v{t}$$
-
-is then
-
-$$
-\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + y_a\v{y} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t}
-$$
-
-Now that we have managed to derive the Lorentz transformation as a geometric
-rotation in Spacetime, it is time to further our understanding of Geometric
-Algebra so that we can remove some of the cognitive load. Up until this point, we
-have been working with a preferred coordinate frame with a set of basis vectors
-$$\v{x}$$ and $$\v{y}$$, but before we generalise this to the 3 dimensions of
-space and one of time within which we appear to exist, it is worth seeing how
-we can represent the Lorentz transformation without referring to a preferred
-reference frame.
+So the vector perpendicular to the direction of the rotation is not affected by the transformation, just as with the Lorentz transformation.

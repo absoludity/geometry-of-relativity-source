@@ -10,11 +10,12 @@ Geometric Algebra is a line of Mathematics which treats vectors as first-class
 citizens, rather than arrows defined by coordinates on a coordinate
 system.
 
-For a flat Euclidean space, Geometric Algebra can be derived from a single rule that
-the square of the magnitude of any vector $$\v{a}$$ is equal to the
-square of the vector itself.
+For a flat Euclidean space, the most interesting aspects of Geometric Algebra
+can be understood from a single rule that the square of the magnitude of any
+vector $$\v{a}$$ is equal to the square of the vector itself.
 
-With this one rule we can introduce addition and multiplication of two-dimensional vectors, as well as a simple rotation.
+With this one rule we can introduce addition and multiplication of
+two-dimensional vectors, as well as a simple rotation.
 
 <!--more-->
 
@@ -34,11 +35,13 @@ of one:
 
 $$ \v{x}^2 = 1$$
 
-Any other vector $$\v{a}$$ within this single dimension can be represented as some multiple
+Any other vector $$\v{a}$$ within this single dimension can be represented as a scalar multiple
 of $$\v{x}$$, such as $$5\v{x}$$ or
 $$-3.141579\v{x}$$ or, more generally,
 
 $$\v{a} = \vcOne{a}$$
+
+where $$a_x$$ is a real number ($$a_x \in \reals $$).
 
 Evaluating the magnitude-squared of $$\v{a}$$ results in:
 
@@ -49,7 +52,7 @@ $$
 as we would expect.
 
 ## Orthogonal basis vectors
-To describe vectors in two dimensions we need to add a second basis vector $$y$$ with the similar property of unit-magnitude,
+To describe vectors in two dimensions we need to add a second basis vector $$\v{y}$$ with the similar property of unit-magnitude,
 so when multiplied by itself,
 
 $$ \v{y}^2 = 1 $$
@@ -147,24 +150,24 @@ $$
 \v{ba} = a_x b_x + a_y b_y - \v{xy}(a_x b_y - a_y b_x)
 $$
 
-The general vector product is not commutative, as $$\v{ab} \neq \v{ba}$$
-nor is it anti-commutative, as $$\v{ab} \neq -\v{ba}$$.
+The general vector product is not commutative, as $$\v{ab} \ne \v{ba}$$
+nor is it anti-commutative, as $$\v{ab} \ne -\v{ba}$$.
 If you are familiar with the traditional vector dot and cross products,
 you may recognise $$\v{ab}$$ as some combination of both, but what is
 relevant is that it is a combination of a scalar (a pure number)
-and a pseudo-scalar (the $$\v{xy}$$ term, which is not scalar, nor is
-it a vector).
+and a bi-vector (the $$\v{xy}$$ term, which is not scalar, nor is
+it a vector, more on this later).
 
-Based on the above, we can add or subtract the two products to end up with either a scalar or pseudo-scalar respectively:
+Based on the above, we can add or subtract the two products to end up with either a scalar or bivector respectively:
 
 $$
 \begin{aligned}
-\v{ab} + \v{ba} &= 2(a_x b_x + a_y b_y) \\
-\v{ab} - \v{ba} &= 2\v{xy}(a_x b_y - a_y b_x)
+\frac{1}{2}(\v{ab} + \v{ba}) &= (a_x b_x + a_y b_y) \\
+\frac{1}{2}(\v{ab} - \v{ba}) &= \v{xy}(a_x b_y - a_y b_x)
 \end{aligned}
 $$
 
-Of particular interest is that the pseudo-scalar $$\v{xy}$$ has the
+Of particular interest is that the bivector $$\v{xy}$$ has the
 property that:
 
 $$ (\v{xy})^2 = \v{xyxy} = -\v{xyyx} = -1 $$
@@ -187,7 +190,7 @@ so that
 
 $$ \v{ab} = \v{xy}$$
 
-then this vector product will rotate any other vector $$\v{c}$$. To simplify things, let's
+then this vector product will rotate any other two-dimensional vector $$\v{c}$$. To simplify things, let's
 multiply the unit vector $$\v{x}$$:
 
 $$

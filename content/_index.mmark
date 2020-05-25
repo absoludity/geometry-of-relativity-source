@@ -21,7 +21,9 @@ processes involving vectors. This site is my attempt to understand and
 communicate the beauty of geometric algebra as simply as possible while having
 fun investigating a derivation of the Lorentz transformation as a geometric
 rotation in space-time, as well as looking at the implications of that
-geometry.
+geometry. If you are after a formal introduction to Geometric Algebra there
+are many great resources linked from the <a
+href="https://bivector.net/doc.html">BiVector.net docs page</a>.
 
 {{% children description="true" depth="1" %}}
 

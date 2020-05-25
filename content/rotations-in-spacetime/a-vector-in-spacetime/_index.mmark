@@ -1,5 +1,5 @@
 ---
-title: "A Vector in Spacetime"
+title: "A (para)Vector of space and time"
 date: 2018-10-18T22:29:56+11:00
 draft: false
 weight: 10
@@ -7,192 +7,222 @@ weight: 10
 
 So far we have considered operations on vectors only - linear combinations of
 the two basis vectors, $$\mathbf{x}$$ and $$\mathbf{y}$$. Here we will consider
-a more general combination of a vector together with an $$\mathbf{xy}$$
-component to form a "multivector". Furthermore, we will see that this extra
-component behaves geometrically as we expect time to behave in the space-time
-of Special Relativity and, by extension, in our every day experience. We will
-then see that we can rotate these space-time multivectors in space without
-affecting the temporal component, corresponding to changing your frame
-of reference within a single inertial frame.
+a more general combination of a vector together with a scalar
+component $$a_0$$ to form a something called a *paravector* - a scalar value plus a vector value. Furthermore, we will see that this scalar
+component results in a amplitude-squared metric matching the metric of space-time
+in Special Relativity. Finally, we will see that we can rotate these space-time
+paravectors in space without affecting the temporal component, corresponding
+to changing our frame of reference within a single inertial frame.
 
 <!--more-->
 
-For clarity, let's define $$\mathbf{t}$$ as
+Let's start by defining an arbitrary two-dimensional paravector as a vector plus a scalar component:
 
-$$\mathbf{t} = \mathbf{xy}$$
+$$ \v{A} = a_0 + \v{a} = a_0 + \vcTwo{a}$$
 
-noting that
+Note that a more general multivector in two dimensions would additionally have a term in
+$$\v{xy}$$. We are limiting the discussion here to a paravector only so we can
+gain some insight from the two dimensional case before we examine the three
+dimensional case more generically.
 
-$$
-\mathbf{t}^2 = \mathbf{xyxy} = -1
-$$
+## The amplitude-squared of a 2D paravector
 
-and
-
-$$
-\mathbf{xt} = \mathbf{xxy} = -\mathbf{xyx} = -\mathbf{tx} \\
-\mathbf{yt} = -\mathbf{ty}
-$$
-
-We can then define an arbitrary two-dimensional space-time multivector
-as a vector plus a component of $$\mathbf{t}$$:
-
-$$ \mathbf{A} = \mathbf{a} + t_a\mathbf{t} $$
-
-## The magnitude-squared of a space-time multivector
-
-Multiplying this multivector by itself, we see:
+Multiplying this paravector by itself, we see:
 
 $$
 \begin{aligned}
 \mathbf{A}^2
-&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{a} + t_a\mathbf{t}) \\
-&= \mathbf{a}^2 + t_a\mathbf{at} + t_a\mathbf{ta} + t_a^2\mathbf{tt} \\
-&= \mathbf{a}^2 + t_a\mathbf{at} - t_a\mathbf{at} - t_a^2 \\
-&= \mathbf{a}^2 - t_a^2 \\
-&= r_a^2 - t_a^2
+&= (a_0 + \v{a})(a_0 + \v{a}) \\
+&= a_0^2 + \v{a}a_0 + a_0\v{a} + \v{a}^2   \\
+&= a_0^{2} + \mathbf{a}^2 + 2a_0\v{a}
 \end{aligned}
 $$
 
-If you are familiar with Special Relativity, you will recognise this as the
-Minkowski space-time metric. Note, we have used above some of the earlier
-[properties of
-rotations](/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations)
-to equate $$\mathbf{ta} = -\mathbf{at}$$, but in full for clarity:
+which is *not* a scalar at all. So, unlike the case of a vector where the amplitude squared is just the square of the vector $$|\v{a}|^2 = \v{a}^2 $$, for a paravector $$ |\v{A}|^2 \ne \v{A}^2 $$.
+
+We need to find a *conjugate* of $$\v{A}$$, written $$\c{\v{A}}$$, such
+that $$|\v{A}|^2 = \v{A}\c{\v{A}} $$ results in a scalar value for a paravector
+while also simplifying, when the scalar component of $$\v{A}$$ is zero, to the familiar magnitude of a vector.
+
+{{% notice activity "Amplitude squared of a paravector" %}}
+See if you can show that the only possibility for such a conjugate of $$\v{A}$$ is:
+
+$$ \c{\v{A}} =  a_0 - \v{a} $$
+
+so that the ampitude squared is the scalar value
+
+$$ \v{A}\c{\v{A}} = a_0^2 - \v{a}^2 $$
+
+As a hint to get started, if we instead assume that the conjugate is a general linear function of the parts: $$\c{\v{A}} = f(\v{A}) = s_0 a_0 + s_a\v{a}$$ we can then solve to find the values of the real numbers that result in
+a scalar value.
+
+
+{{% details %}}
+
+Evaluating,
 
 $$
 \begin{aligned}
-\mathbf{ta}
-&= \mathbf{t}r_a \mathbf{x} e^{\mathbf{xy}\theta_a} \\
-&= - r_a \mathbf{xt} e^{\mathbf{xy}\theta_a} \\
-&= -r_a \mathbf{x}e^{\mathbf{xy}\theta_a}\mathbf{t} \\
-&= -\mathbf{at}
+\v{A}f(\v{A})
+&= (\v{a} + a_0)(s_a\v{a} + s_0 a_0) \\
+&= s_a\v{a}^2 + s_0 a_0 \v{a} + a_0 s_a\v{a} + s_0 a_0^2 \\
+&= s_a\v{a}^2 + a_0 \v{a}(s_0 + s_a) + s_0 a_0^2
 \end{aligned}
 $$
 
-So the square of a space-time multivector results in a
-scalar value, a value which matches the Minkowski space-time metric.
+This result will be a scalar value if and only if $$s_0 + s_a = 0$$. Our further
+requirement that for a plain vector $$|\v{a}|^2 = |\v{a}^2|$$ means that for the
+special case of $$\v{A} = \v{a} + 0$$ we have:
 
-$$ |\mathbf{A}|^2 = \mathbf{A}^2 = r_a^2 - t_a^2 $$
+$$\v{A}f(\v{A}) = (\v{a} + 0)(s_a\v{a} + s_0 0) = s_a\v{a}^2$$
 
-## Normalised Space-Time Multivectors
+So we are further restricted to $$s_a = \pm 1$$ and therefore $$s_0 = \mp 1$$. We will stick to convention for now (and see later on why the convention is useful) and choose: $$s_a = -1$$ and $$s_0 = 1$$ so that
 
-An arbitrary space-time multivector $$\mathbf{A}$$ is normal if
+$$ f(\v{A}) = \c{\v{A}} = a_0 - \v{a} $$
 
-$$\mathbf{A}^2 = 1$$
+.
+{{% /details %}}
+{{% /notice %}}
 
-Using the trigonometric identity that
+The definition of the conjugate, $$ \c{\v{A}} =  a_0 - \v{a} $$ gives us a metric for the amplitude squared of a scalar plus vector so that for any paravector $$\v{A} = a_0 + \v{a}$$,
+
+$$ |\v{A}|^2 = \v{A}\c{\v{A}} = a_0^2 - \v{a}^2 $$
+
+## The Clifford Conjugation
+
+The conjugation we have found here is called the [Clifford conjugation](https://en.wikipedia.org/wiki/Paravector#Clifford_conjugation). For a more general and formal definition of the Clifford Conjugation as well as a derivation of the amplitude squared for a multivector, see [Exploring the origin of Minkowski spacetime](https://arxiv.org/pdf/1501.04857.pdf).
+
+For our purposes here, it is enough to understand that the Clifford conjugation of any value of the geometric algebra is found by reversing all geometric products and negating all vectors. Let's see some examples.
+
+### Conjugating vectors
+As we've already seen, if $$\v{A} = a_0 + \v{a}$$, then
+
+$$ \c{\v{A}} = a_0 - \v{a}$$
+
+In this case, there are no products of vectors, so it is only the negation of vectors that is relevant. Note that we get the same result when represeting $$\v{a}$$ with respect to a specific orthonormal basis, so if $$\v{A} = a_0 + \vcTwo{a}$$, then
+
+$$ \c{\v{A}} = a_0 - a_x \v{x} - a_y\v{y} = a_0 - \v{a} $$
+
+### Conjugating products of vectors
+
+If a rotor is defined by the product of two normal vectors, $$\v{b}$$ and $$\v{c}$$, $$ \v{R} = \v{bc} $$, then
+
+$$ \c{\v{R}} = \c{\v{bc}} = \c{\v{c}}\c{\v{b}} = (\v{-c})(\v{-b}) = \v{cb} $$
+
+So in this case it is reversing the geometric product which is significant, while the negation of vectors cancels itself (in this case where there are an even number of vectors). Note that we get the same result if we instead represent the rotor as an exponent,
+
+$$\v{R} = \v{bc} = \cos(\theta) + \v{xy}\sin(\theta) = e^{\v{xy}\theta} $$
+
+where $$\theta$$ is the angle between the two normal vectors, then
+
+$$ \c{\v{R}} = e^{\v{yx}\theta} = e^{-\v{xy}\theta} $$
+
+### Conjugating arbitrary terms
+
+If we define another paravector (or arbitrary multi-vector), $$\v{B}$$ and use it to define a product of three terms, $$\v{BAR}$$, then the Clifford conjugate of that product is the reverse product of the individual conjugations:
+
+$$ \c{\v{BAR}} = \c{\v{R}}\c{\v{A}}\c{\v{B}} $$
+
+This is technically known as an [anti-automorphism](https://en.wikipedia.org/wiki/Antihomomorphism) and it ensures that the Clifford conjugate can always be applied a second time to get back the original value:
+
+$$ \c{(\c{\v{R}}\c{\v{A}}\c{\v{B}})} = \v{BAR} $$
+
+which is also known more technically as an [involution](https://en.wikipedia.org/wiki/Involution_(mathematics)).
+
+<!-- TODO: Add activity to show this -->
+
+## Normalised paravectors
+
+An arbitrary paravector $$\v{A}$$ is normal if
+
+$$|\v{A}|^2 = \v{A}\c{\v{A}} = a_0^2 - \v{a}^2 = 1$$
+
+Noting that this is similar to the trigonometric identity
 
 $$\cosh^2\phi - \sinh^2\phi = 1$$
 
-then $$\mathbf{A}$$ will be a normalised multivector if $$\mathbf{a}^2 = 1$$ and:
+allows us to choose a normalized vector $$\v{a}$$ and a value of $$\phi$$ such that
 
-$$ \mathbf{A} = \mathbf{a}\cosh \phi + \mathbf{t}\sinh \phi $$
+$$ \v{A} = \cosh \phi + \v{a}\sinh \phi $$
 
-We can verify this by expanding:
+We can now verify that $$\v{A}$$ is normal as long as $$\v{a}$$ is normal by expanding:
 
 $$
 \begin{aligned}
-\mathbf{A}^2
-&= (\mathbf{a}\cosh \phi + \mathbf{t}\sinh \phi)(\mathbf{a}\cosh \phi + \mathbf{t}\sinh \phi) \\
-&= \mathbf{a}^2\cosh^2\phi + \mathbf{at}\cosh\phi\sinh\phi + \mathbf{ta}\cosh\phi\sinh\phi + \mathbf{tt}\sinh^2\phi \\
-&= \cosh^2\phi + \mathbf{at}\cosh\phi\sinh\phi - \mathbf{at}\cosh\phi\sinh\phi - \sinh^2\phi \\
+\v{A\c{A}}
+&= (\cosh \phi + \v{a}\sinh \phi)(\cosh \phi - \v{a}\sinh \phi) \\
+&= \cosh^2\phi - \v{a}\cosh\phi\sinh\phi + \v{a}\cosh\phi\sinh\phi - \v{a}^2\sinh^2\phi \\
+&= \cosh^2\phi - \sinh^2\phi \\
 &= 1
 \end{aligned}
 $$
 
-We can simplify our definition of a normal space-time multivector by looking
+We can simplify our definition of a normal paravector even further by looking
 back to [Euler's formula and geometric
 algebra](/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-hyperbolic-rotations)
-where we saw that if $$ \mathbf{a}^2 = 1 $$, then
+where we saw that for a normal vector $$\v{a}$$,
 
-$$ e^{\mathbf{a}\phi} = \cosh\phi + \mathbf{a}\sinh\phi $$
+$$ e^{\mathbf{a}\phi} = \cosh\phi + \mathbf{a}\sinh\phi = \v{A}$$
 
-This allows us to simplify $$\mathbf{A}$$ as follows:
-
-$$
-\begin{aligned}
-\mathbf{A}
-&= \mathbf{a}\cosh\phi + \mathbf{t}\sinh\phi \\
-&= \mathbf{a}(\cosh\phi + \mathbf{at}\sinh\phi) & \text{, since }\mathbf{a}^2 = 1\\
-&= \mathbf{a}e^{\mathbf{at}\phi}
-\end{aligned}
-$$
-
-With this simpler definition of a normal space-time multivector, seeing
-that it is indeed normal is trivial:
+With this simpler definition of a normal paravector, $$ \v{A} = e^{\v{a}\phi}$$, it becomes trivial to show that is is indeed normal:
 
 $$
 \begin{aligned}
-\mathbf{A}^2
-&= \mathbf{a}e^{\mathbf{at}\phi}\mathbf{a}e^{\mathbf{at}\phi}\\
-&= \mathbf{a}e^{\mathbf{at}\phi}e^{-\mathbf{at}\phi}\mathbf{a} \\
+|\v{A}|^2
+&= \v{A}\c{\v{A}} \\
+&= e^{\v{a}\phi}e^{-\v{a}\phi} \\
 &= 1
 \end{aligned}
 $$
 
-## Time is unchanged under spatial rotations
+## Rotating a paravector in space only
 
-If we define a spatial rotation using two normalised vectors, $$\mathbf{b}$$ and
-$$\mathbf{c}$$, where the difference in orientation between the two is $$\theta$$, so that:
+If we define a spatial rotation using two normalised vectors, $$\v{b}$$ and $$\v{c}$$, as we did in [A Rotation in Space](/eulers-formula-and-geometric-algebra/#a-rotation-in-space),
+ where the difference in orientation between the two is
+$$\theta$$, so that:
 
-$$ \mathbf{bc} = e^{\mathbf{xy}\theta} $$
+$$ \v{R} = \mathbf{bc} = e^{\mathbf{xy}\theta} $$
 
-we find that it no longer defines a rotation when simply applied to an
-arbitrary multivector, because the magnitude-squared after the multiplication
-is not the same as before (Note, in the following section we will again use
-the earlier [properties of
-rotations](/rotations-in-space/eulers-formula-and-geometric-algebra/#properties-of-spatial-rotations)
-to equate $$\mathbf{cba} = \mathbf{abc}$$):
+we find that we cannot simply multiply a paravector by the rotor to obtain a new paravector, as:
 
 $$
 \begin{aligned}
-(\mathbf{Abc})^2
-&= \mathbf{AbcAbc} \\
-&= (\mathbf{a} + t_a\mathbf{t})\mathbf{bc}(\mathbf{a} + t_a\mathbf{t})\mathbf{bc} \\
-&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{bca} + t_a\mathbf{bct})\mathbf{bc} \\
-&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{acb} + t_a\mathbf{tbc})\mathbf{bc} \\
-&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{a}\mathbf{cbbc} + t_a\mathbf{t}\mathbf{bcbc}) \\
-&= (\mathbf{a} + t_a\mathbf{t})(\mathbf{a} + t_a\mathbf{t}e^{\mathbf{xy}2\theta}) \\
-&\neq \mathbf{A}^2
+\v{AR}
+&= \v{A}e^{\v{xy}\theta} \\
+&= (a_0 + \v{a})e^{\v{xy}\theta} \\
+&= a_0 e^{\v{xy}\theta} + \v{a}e^{\v{xy}\theta} \\
 \end{aligned}
 $$
 
-So instead we halve the angle of rotation, defining:
+includes a bivector ($$\v{xy}$$) term (if you expand the first term in the above result). The similar problem arises if we try to simply multiply an arbitrary three-dimensional vector by our rotor. It turns out that a much more general way to apply rotations (and other operations) is use the Clifford conjugate! If we halve the angle between the two vectors defining our rotor, so that:
 
-$$ \mathbf{bc} = e^{\mathbf{xy}\frac{\theta}{2}} $$
+$$ \v{R} = \mathbf{bc} = e^{-\v{xy}\frac{\theta}{2}} $$
 
-and apply it twice - once from the left and once from the right: $$\mathbf{cbAbc}$$.
-
-The fact that $$\mathbf{cbAbc}$$ is a rotation can be verified simply by
-confirming the magnitude-squared is now unchanged:
+and apply it twice - once from the left as the conjugate and once from the right, we find:
 
 $$
 \begin{aligned}
-(\mathbf{cbAbc})^2
-&= \mathbf{cbAbccbAbc} &\\
-&= \mathbf{cb}\mathbf{A}^2\mathbf{bc} \\
-&= \mathbf{A}^2\mathbf{cbbc} &\text{, as }\mathbf{A}^2\text{is scalar}\\
-&= \mathbf{A}^2
+\v{\c{R}AR} 
+&= e^{\v{xy}\frac{\theta}{2}}(a_0 + \v{a})e^{-\v{xy}\frac{\theta}{2}} \\
+&= e^{\v{xy}\frac{\theta}{2}}a_0e^{-\v{xy}\frac{\theta}{2}} + e^{\v{xy}\frac{\theta}{2}}\v{a}e^{-\v{xy}\frac{\theta}{2}} \\
+&= a_0 + \v{a}e^{-\v{xy}\theta} \\
 \end{aligned}
 $$
 
-Now, evaluating the actual rotation, we find:
+That is, when applying the spatial rotation in this way, the vector component of $$\v{A}$$ is rotated by $$\theta$$, while the scalar part is not affected at all.
+
+The fact that $$\v{\c{R}AR}$$ is a rotation can be verified simply by
+confirming that the amplitude-squared is unchanged:
 
 $$
 \begin{aligned}
-\mathbf{cbAbc}
-&= \mathbf{cb}(\mathbf{a} + t_a\mathbf{t})\mathbf{bc} \\
-&= \mathbf{cbabc} + t_a\mathbf{cbtbc} \\
-&= \mathbf{abcbc} + t_a\mathbf{tcbbc} \\
-&= \mathbf{a}e^{\mathbf{xy}\theta} + t_a\mathbf{t}
+|\v{\c{R}AR}|^2 
+&= \v{\c{R}AR}\c{\v{\c{R}AR}} \\
+&= \v{\c{R}AR}\v{\c{R}\c{A}R} \\
+&= \v{A}\c{\v{A}}
 \end{aligned}
 $$
 
-That is, when applying the spatial rotation in this way, the vector component of $$\mathbf{A}$$ is rotated by $$\theta$$, while the time component of the multi-vector is not affected at all.
-We can change position and orientation within the one inertial frame without
-affecting the measured time.
 
-But what if, rather than defining a rotation between two spatial vectors, we
-instead define a rotation between a spatial vector and the pseudo-scalar
-temporal component $$\mathbf{t}$$ - a [two-dimensional rotation in space-time](../2d-rotations-in-spacetime/)?
+But what if, rather than defining a rotation as a normalised combination of a scalar and a bivector, we
+instead define a rotation as a normalized combination of a scalar and a vector? As we will see, it turns out to be equivalent to the [Lorentz transformation of Special Relativity](../2d-rotations-in-spacetime/)!

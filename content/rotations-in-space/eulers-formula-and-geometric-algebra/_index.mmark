@@ -8,9 +8,14 @@ weight: 30
 While working to understand and derive Euler's formula we
 introduced an imaginary unit $$i$$ with the property that $$i^2 = -1$$. But
 we've already seen that the product of the two basis vectors has this same
-property in that $$ (\v{xy})^2 = -1 $$.
+property in that $$ (\v{xy})^2 = -1 $$, though it differs in other properties
+as we shall see.
 
-In this section we will investigate the properties of various rotations using Euler's formula and Geometric Algebra in two dimensional space.
+In this section we will investigate the properties of various rotations in 2D planes using Euler's formula and Geometric Algebra in two dimensional space.
+
+<!-- TODO: But unlike $$i$$, it doesn't commute with vectors. Need to update to 3D to do this. So follow 2D rotations in space with 3D rotations in space, and then a general invariant product for a multivector before doing space time? So move to 3D earlier and show alternate of rotating around a vector, rather than in a plane, where $$\frac{\theta}{2} = \v{v}^2$$ or similar.
+Also consider updating 2D rotations to remove need for coordinates, which which will make it easier for 3D (there's a branch for it too).
+-->
 
 <!--more-->
 
@@ -51,9 +56,7 @@ which, if $$\v{a}^2 = \v{b}^2 = 1$$, is equivalent to
 
 $$ \cos \theta + \v{xy}\sin \theta = e^{\v{xy}\theta}$$
 
-This will be clearer in the following section, [2d rotations in space](../2d-rotations-in-space), where we
-will use this rotation to simplify the way we represent arbitrary vectors, but
-for now we need to pause and note a few properties of this rotation
+For now we need to pause and note a few properties of this rotation
 $$e^{\v{xy}\theta}$$.
 
 ## Properties of spatial rotations
@@ -99,7 +102,7 @@ $$ \sin\theta = \frac{e^{\v{xy}\theta} - e^{-\v{xy}\theta}}{2\v{xy}} $$
 
 ## Properties of hyperbolic rotations
 
-We can also investigate using another exponent, such as $$\v{x}\theta$$, which
+We can also investigate rotations using another exponent, such as $$\v{x}\theta$$, which
 results in something less familiar, but just as significant when looking at the
 geometry of relativity.
 
