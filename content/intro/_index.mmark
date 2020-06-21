@@ -7,12 +7,12 @@ pre: "<b>1. </b>"
 ---
 
 Geometric Algebra is a line of Mathematics which treats vectors as first-class
-citizens, rather than arrows defined by coordinates on a coordinate
+citizens rather than arrows defined by coordinates on a specific coordinate
 system.
 
 For a flat Euclidean space, the most interesting aspects of Geometric Algebra
 can be understood from a single rule that the square of the magnitude of any
-vector $$\v{a}$$ is equal to the square of the vector itself.
+vector {{<k>}}\v{a}{{</k>}} is equal to the square of the vector itself.
 
 With this one rule we can introduce addition and multiplication of
 two-dimensional vectors, as well as a simple rotation.
@@ -20,73 +20,81 @@ two-dimensional vectors, as well as a simple rotation.
 <!--more-->
 
 ## One rule
-The square of the magnitude of an arbitrary vector $$\v{a}$$ is equal to the square of the vector itself:
+
+The square of the magnitude of an arbitrary vector {{<k>}}\v{a}{{</k>}} is equal to the square of the vector itself:
 
 $$ |\v{a}|^2 = \v{a}^2  $$
 
-This is similar to the more familiar [dot-product](https://en.wikipedia.org/wiki/Dot_product#Geometric_definition) of a vector with itself
-defining the Euclidean magnitude-squared of a vector, but as we will see, much more powerful.
+This is similar to the more familiar
+[dot-product](https://en.wikipedia.org/wiki/Dot_product#Geometric_definition)
+of a vector with itself defining the Euclidean magnitude-squared of a vector,
+but as we will see, much more powerful.
 
 ## Normal basis vectors
 
 Starting with a single dimension, we define a normal basis vector
-$$\v{x}$$ (bold will indicate a vector) as having a magnitude
+{{<k>}}\v{x}{{</k>}} (bold will indicate a vector) as having a magnitude
 of one:
 
 $$ \v{x}^2 = 1$$
 
-Any other vector $$\v{a}$$ within this single dimension can be represented as a scalar multiple
-of $$\v{x}$$, such as $$5\v{x}$$ or
-$$-3.141579\v{x}$$ or, more generally,
+Any other vector {{<k>}}\v{a}{{</k>}} within this single dimension can be represented as a scalar multiple
+of {{<k>}}\v{x}{{</k>}}, such as {{<k>}}5\v{x}{{</k>}} or
+{{<k>}}-3.141579\v{x}{{</k>}} or, more generally,
 
 $$\v{a} = \vcOne{a}$$
 
-where $$a_x$$ is a real number ($$a_x \in \reals $$).
+where {{<k>}}a_x{{</k>}} is a real number ({{<k>}}a_x \in \reals {{</k>}}).
 
-Evaluating the magnitude-squared of $$\v{a}$$ results in:
+Evaluating the magnitude-squared of {{<k>}}\v{a}{{</k>}} results in:
 
 $$
-\v{a}^2 = (\vcOne{a})^2 = \vcOne{a}\vcOne{a} = a_x^2\v{x}^2 = a_x^2
+\v{a}^2 = (\vcOne{a})^2 = \vcOne{a}\vcOne{a} = a_x^2\v{x}^2 = a_x^2 = |a_x|^2
 $$
 
 as we would expect.
 
 ## Orthogonal basis vectors
-To describe vectors in two dimensions we need to add a second basis vector $$\v{y}$$ with the similar property of unit-magnitude,
-so when multiplied by itself,
+
+To describe vectors in two dimensions we need to add a second basis vector
+{{<k>}}\v{y}{{</k>}} with the similar property of unit-magnitude, so when multiplied by
+itself,
 
 $$ \v{y}^2 = 1 $$
 
-We also need to ensure that this second vector $$\v{y}$$ is orthogonal
-to $$\v{x}$$, though we don't yet know how to represent this orthogonality.
-Nonetheless, by defining a general two-dimensional vector $$\v{a}$$ as
+We also need to ensure that this second vector {{<k>}}\v{y}{{</k>}} is orthogonal
+to {{<k>}}\v{x}{{</k>}}, though we don't yet know how to represent this orthogonality.
+Nonetheless, by defining a general two-dimensional vector {{<k>}}\v{a}{{</k>}} as
 
 $$ \v{a} = \vcTwo{a} $$
 
-we can derive orthogonality by using the rule that the magnitude-squared of any vector is equal to the vector squared,
-to evaluate that:
+we can derive orthogonality by using the rule that the magnitude-squared of
+any vector is equal to the vector squared, to evaluate that:
 
-$$
+{{< katex >}}
 \begin{aligned}
 \v{a}^2
 &= (\vcTwo{a})(\vcTwo{a}) \\
 &= a_x\v{x}a_x\v{x} + a_x\v{x}a_y\v{y} + a_y\v{y}a_x\v{x} + a_y\v{y}a_y\v{y} \\
-&= a_x^2 + a_y^2 + a_x a_y(\v{xy} + \v{yx})
+&= a_x^2 + a_y^2 + a_x a_y(\v{xy} + \v{yx}) \\
+&= a_x^2 + a_y^2 + 2a_x a_y(\frac{1}{2}(\v{xy} + \v{yx}))
 \end{aligned}
-$$
+{{< /katex >}}
 
-So we see that the square of the magnitude of the vector $$\v{a}$$  - a scalar number - will
-only equal the square of the vector if
+So the square of the magnitude of the vector, {{<k>}}|\v{a}|^2{{</k>}}, will only equal the square of the vector if
+{{<k>}}\v{xy}+ \v{yx}{{</k>}} is also a scalar number. If you are familiar with the [Law of cosines](https://en.wikipedia.org/wiki/Law_of_cosines) you may recognise the formula and in particular that {{<k>}}\frac{1}{2}(\v{xy} + \v{yx}){{</k>}} is likely to be {{<k>}}\cos(\theta){{</k>}} where {{<k>}}\theta{{</k>}} is the angle between the two vectors. For now we will simply note that if,
 
 $$ \v{xy} = -\v{yx} $$
 
-This then is the definition of orthogonal vectors - they are anti-commutative.
+then,
 
-With this definition of orthogonality, we have
-
-$$ \v{a}^2 = x^2 + y^2 $$
+$$ \v{a}^2 = a_x^2 + a_y^2 $$
 
 which is exactly what we are used to - Pythagoras' theorem.
+So for now let us make the tentative definition of orthogonal vectors:
+orthogonal vectors anti-commute. For any two vectors {{<k>}}\v{x}{{</k>}}
+and {{<k>}}\v{y}{{</k>}}, the vectors are orthogonal if they anti-commute so that
+{{<k>}}\v{xy} = -\v{{yx}}{{</k>}}.
 
 ## Adding two vectors
 

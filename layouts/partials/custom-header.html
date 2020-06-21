@@ -9,6 +9,11 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
+            // delimiters: [
+            //   {left: "%%", right: "%%", display: true},
+            //   {left: "$", right: "$", display: false},
+            //   {left: "\\(", right: "\\)", display: false}
+            // ],
             macros: {
                 "\\v": "\\mathbf{#1}",
                 "\\vcOne": "#1_x\\v{x}",
